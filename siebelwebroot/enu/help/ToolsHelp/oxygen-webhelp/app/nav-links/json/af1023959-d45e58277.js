@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Using Custom HTML Types with a Link","href":"ConfigApps\/topicrefs\/c_Using_Custom_HTML_Types_with_a_Link_af1023971.html","attributes": {"data-id":"af1023971",},"menu": {"hasChildren":false,},"tocID":"af1023971-d45e58296","topics":[]}]});

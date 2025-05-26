@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Elements of the Compare Objects Dialog Box","href":"UsingTools\/topicrefs\/c_Elements_of_the_Compare_Objects_Dialog_Box_am1181401.html","attributes": {"data-id":"am1181401",},"menu": {"hasChildren":false,},"tocID":"am1181401-d45e45310","topics":[]}]});

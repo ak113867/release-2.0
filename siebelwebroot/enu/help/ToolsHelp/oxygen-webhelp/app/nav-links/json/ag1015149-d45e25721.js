@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Document Object Model Events","href":"OIRef\/topicrefs\/c_Document_Object_Model_Events_ag1014962.html","attributes": {"data-id":"ag1014962",},"menu": {"hasChildren":false,},"tocID":"ag1014962-d45e25739","topics":[]}]});

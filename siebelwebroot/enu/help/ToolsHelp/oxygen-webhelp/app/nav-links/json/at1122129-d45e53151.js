@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Work That the New Table Wizard Performs","href":"ConfigApps\/topicrefs\/c_Work_That_the_New_Table_Wizard_Performs_at1122168.html","attributes": {"data-id":"at1122168",},"menu": {"hasChildren":false,},"tocID":"at1122168-d45e53170","topics":[]}]});

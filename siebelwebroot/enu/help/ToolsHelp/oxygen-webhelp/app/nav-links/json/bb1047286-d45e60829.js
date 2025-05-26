@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Modifying the Translate Property","href":"ConfigApps\/topicrefs\/c_Modifying_the_Translate_Property_bb1047336.html","attributes": {"data-id":"bb1047336",},"menu": {"hasChildren":false,},"tocID":"bb1047336-d45e60848","topics":[]}]});

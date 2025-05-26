@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Specifying the IDOC Message Type for SAP","href":"ToolsDevRef\/topicrefs\/c_Specifying_the_IDOC_Message_Type_for_SAP_ae574442.html","attributes": {"data-id":"ae574442",},"menu": {"hasChildren":false,},"tocID":"ae574442-d45e3381","topics":[]}]});

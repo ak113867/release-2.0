@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"About Copy and Constraint Pick Maps","href":"OTR\/topicrefs\/c_About_Copy_and_Constraint_Pick_Maps_ad1006023.html","attributes": {"data-id":"ad1006023",},"menu": {"hasChildren":false,},"tocID":"ad1006023-d45e14867","topics":[]}]});

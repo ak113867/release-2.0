@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How This Book Describes Relationships Between Objects","href":"ToolsDevRef\/topicrefs\/c_How_This_Book_Describes_Relationships_Between_Objects_ab856699.html","attributes": {"data-id":"ab856699",},"menu": {"hasChildren":false,},"tocID":"ab856699-d45e234","topics":[]}]});

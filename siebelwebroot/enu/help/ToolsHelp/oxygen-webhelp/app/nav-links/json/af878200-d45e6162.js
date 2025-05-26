@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Using the Product Selection and Pricing User Properties","href":"ToolsDevRef\/topicrefs\/c_Using_the_Product_Selection_and_Pricing_User_Properties_af878298.html","attributes": {"data-id":"af878298",},"menu": {"hasChildren":false,},"tocID":"af878298-d45e6180","topics":[]}]});

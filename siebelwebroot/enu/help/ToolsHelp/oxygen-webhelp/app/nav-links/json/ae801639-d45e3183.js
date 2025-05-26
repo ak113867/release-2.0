@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Guidelines for Using Literals Instead of Bind Variables","href":"ToolsDevRef\/topicrefs\/c_Guidelines_for_Using_Literals_Instead_of_Bind_Variables_ae830170.html","attributes": {"data-id":"ae830170",},"menu": {"hasChildren":false,},"tocID":"ae830170-d45e3201","topics":[]}]});

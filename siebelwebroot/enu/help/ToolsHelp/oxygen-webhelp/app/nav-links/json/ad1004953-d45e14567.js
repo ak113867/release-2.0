@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How a Business Component User Property Might Affect View Modes","href":"OTR\/topicrefs\/c_How_a_Business_Component_User_Property_Might_Affect_View_Modes_ad1004989.html","attributes": {"data-id":"ad1004989",},"menu": {"hasChildren":false,},"tocID":"ad1004989-d45e14586","topics":[]}]});

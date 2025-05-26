@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Modifying Available Substitutions","href":"BPFWorkflow\/topicrefs\/c_Modifying_Available_Substitutions_bc1184108.html","attributes": {"data-id":"bc1184108",},"menu": {"hasChildren":false,},"tocID":"bc1184108-d45e75096","topics":[]}]});

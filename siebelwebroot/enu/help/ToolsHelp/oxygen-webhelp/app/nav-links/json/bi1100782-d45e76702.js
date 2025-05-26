@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How Siebel Workflow Sends Email","href":"BPFWorkflow\/topicrefs\/c_How_Siebel_Workflow_Sends_Email.html","attributes": {"data-id":"bi1100886",},"menu": {"hasChildren":false,},"tocID":"bi1100886-d45e76720","topics":[]}]});

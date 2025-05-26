@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Guidelines for Copying a Predefined Business Component","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Copying_a_Predefined_Business_Component_az1057012.html","attributes": {"data-id":"az1057012",},"menu": {"hasChildren":false,},"tocID":"az1057012-d45e52382","topics":[]}]});

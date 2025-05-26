@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Workflow Policy Column","href":"OTR\/topicrefs\/c_Workflow_Policy_Column_ad1019572.html","attributes": {"data-id":"ad1019572",},"menu": {"hasChildren":false,},"tocID":"ad1019572-d45e18591","topics":[]}]});

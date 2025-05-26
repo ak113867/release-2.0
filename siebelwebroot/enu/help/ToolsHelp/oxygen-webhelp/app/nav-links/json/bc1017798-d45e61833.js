@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Configuring a Customer Dashboard Field to Display Data According to Context","href":"ConfigApps\/topicrefs\/c_Configuring_a_Customer_Dashboard_Field_to_Display_Data_Accordingto_Context_bc1007251.html","attributes": {"data-id":"bc1007251",},"menu": {"hasChildren":false,},"tocID":"bc1007251-d45e61852","topics":[]}]});

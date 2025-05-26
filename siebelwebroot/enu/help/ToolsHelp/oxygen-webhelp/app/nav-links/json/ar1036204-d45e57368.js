@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Including a New Button in a Multi-Value Group Applet","href":"ConfigApps\/topicrefs\/c_Including_a_New_Button_in_a_MultiValue_Group_Applet_ar1038502.html","attributes": {"data-id":"ar1038502",},"menu": {"hasChildren":false,},"tocID":"ar1038502-d45e57387","topics":[]}]});

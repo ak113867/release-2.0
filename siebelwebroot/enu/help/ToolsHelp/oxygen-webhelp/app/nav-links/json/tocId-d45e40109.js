@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"What&apos;s New in This Release","shortdesc":"<p class=\"shortdesc\"></p>","href":"UsingTools\/topicrefs\/c_Whats_New_in_This_Release.html","attributes": {"data-id":"u30216200",},"menu": {"hasChildren":false,},"tocID":"u30216200-d45e40110","topics":[]}]});

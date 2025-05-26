@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Example of Using an Array","href":"eScript\/topicrefs\/c_Example_of_Using_an_Array_ae1258115.html","attributes": {"data-id":"ae1258115",},"menu": {"hasChildren":false,},"tocID":"ae1258115-d45e28677","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"System Activity Object","href":"OTR\/topicrefs\/c_Properties_of_the_System_Activity_Object_ad1015116.html","attributes": {"data-id":"ad1015116",},"menu": {"hasChildren":false,},"tocID":"ad1015116-d45e17426","topics":[]}]});

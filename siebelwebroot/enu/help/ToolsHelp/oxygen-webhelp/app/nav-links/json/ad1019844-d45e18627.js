@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How Siebel Tools Uses Different Labels for Assignment Object Properties","href":"OTR\/topicrefs\/c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html","attributes": {"data-id":"ad1020405",},"menu": {"hasChildren":false,},"tocID":"ad1020405-d45e18646","topics":[]}]});

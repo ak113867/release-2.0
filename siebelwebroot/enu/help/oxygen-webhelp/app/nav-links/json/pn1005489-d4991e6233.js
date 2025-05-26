@@ -1,1 +1,0 @@
-define({"topics":[{"title":"Associating Literature With a Category Using Catalog Administration Screen","href":"AppsAdmin\/topicrefs\/c_Associating_Literature_With_a_Category_Using_Catalog_Administration_Screen_pn1005506.html","attributes":{"data-id":"pn1005506"},"menu":{"hasChildren":false},"tocID":"pn1005506-d4991e6251","topics":[]}]});

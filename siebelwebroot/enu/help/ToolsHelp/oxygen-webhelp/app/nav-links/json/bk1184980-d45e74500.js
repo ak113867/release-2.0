@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Using the Outbound Communications Manager with a Substitution","href":"BPFWorkflow\/topicrefs\/c_Using_the_Outbound_Communications_Manager_witha_Substitution_bk1183546.html","attributes": {"data-id":"u30011343",},"menu": {"hasChildren":false,},"tocID":"u30011343-d45e74518","topics":[]}]});

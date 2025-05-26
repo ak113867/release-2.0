@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Adding an Applet Menu Item","href":"ConfigApps\/topicrefs\/c_Adding_an_Applet_Menu_Item_af1023067.html","attributes": {"data-id":"af1023067",},"menu": {"hasChildren":false,},"tocID":"af1023067-d45e58124","topics":[]}]});

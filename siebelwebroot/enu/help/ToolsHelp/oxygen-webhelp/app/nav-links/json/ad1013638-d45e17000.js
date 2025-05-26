@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Schema Maintenance","href":"OTR\/topicrefs\/c_Schema_Maintenance_ad1013761.html","attributes": {"data-id":"ad1013761",},"menu": {"hasChildren":false,},"tocID":"ad1013761-d45e17018","topics":[]}]});

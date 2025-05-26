@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"View Name Tag","href":"ToolsDevRef\/topicrefs\/c_View_Name_Tag_ag60720.html","attributes": {"data-id":"ag60720",},"menu": {"hasChildren":false,},"tocID":"ag60720-d45e8094","topics":[]}]});

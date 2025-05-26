@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"HTML Hierarchy Bitmap","href":"OTR\/topicrefs\/c_Properties_of_the_HTML_Hierarchy_Bitmap_ad1011279.html","attributes": {"data-id":"ad1011279",},"menu": {"hasChildren":false,},"tocID":"ad1011279-d45e16194","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How a Business Component Field Provides Data to the Control or List Column of an Applet","href":"ConfigApps\/topicrefs\/c_How_a_Business_Component_Field_Provides_Data_tothe_Control_or_List_Column_of_an_Applet_ap1010469.html","attributes": {"data-id":"ap1010469",},"menu": {"hasChildren":false,},"tocID":"ap1010469-d45e48917","topics":[]}]});

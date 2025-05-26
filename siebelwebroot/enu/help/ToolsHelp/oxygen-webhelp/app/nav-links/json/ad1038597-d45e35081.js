@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Dynamic Arrays","href":"VBLANG\/topicrefs\/c_Dynamic_Arrays_ad1028341.html","attributes": {"data-id":"ad1028341",},"menu": {"hasChildren":false,},"tocID":"ad1028341-d45e35099","topics":[]}]});

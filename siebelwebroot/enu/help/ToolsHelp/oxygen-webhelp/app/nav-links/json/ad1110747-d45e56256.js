@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Properties of the Chart Object","href":"ConfigApps\/topicrefs\/c_Properties_of_the_Chart_Object_ad1110863.html","attributes": {"data-id":"ad1110863",},"menu": {"hasChildren":false,},"tocID":"ad1110863-d45e56277","topics":[]}]});

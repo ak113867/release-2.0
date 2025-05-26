@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Relationship Between a System Field and a System Column","href":"ConfigApps\/topicrefs\/c_Relationship_Between_a_System_Field_and_a_System_Column_ap1083942.html","attributes": {"data-id":"ap1083942",},"menu": {"hasChildren":false,},"tocID":"ap1083942-d45e49139","topics":[]}]});

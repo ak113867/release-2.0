@@ -1,1 +1,0 @@
-define({"topics":[{"title":"About the Simplified User Interface","href":"FundOUI\/topicrefs\/c_About_the_Simplified_User_Interface_am12440247.html","attributes":{"data-id":"am12440247"},"menu":{"hasChildren":false},"tocID":"am12440247-d4991e3958","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"About the Body, Header, and Footer","href":"ConfigApps\/topicrefs\/c_About_the_Body_Header_and_Footer_ai1056855.html","attributes": {"data-id":"ai1056855",},"menu": {"hasChildren":false,},"tocID":"ai1056855-d45e51033","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Confirming Siebel CRM is Set Up for Workflow Policies","href":"BPFWorkflow\/topicrefs\/c_Confirming_ph_conrefcommonvariablesditavarsetProduct_Namephis_Set_Up_for_Workflow_Policies_bi1103971.html","attributes": {"data-id":"bi1103971",},"menu": {"hasChildren":false,},"tocID":"bi1103971-d45e76486","topics":[]}]});

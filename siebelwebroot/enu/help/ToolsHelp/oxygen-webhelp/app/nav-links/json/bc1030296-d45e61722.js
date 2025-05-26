@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Object Types That the Customer Dashboard Uses","href":"ConfigApps\/topicrefs\/c_Object_Types_That_the_Customer_Dashboard_Uses_bc1006952.html","attributes": {"data-id":"bc1006952",},"menu": {"hasChildren":false,},"tocID":"bc1006952-d45e61741","topics":[]}]});

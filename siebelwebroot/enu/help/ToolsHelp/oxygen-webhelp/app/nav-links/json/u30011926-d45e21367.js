@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Using Script to Enable a Mini Button","href":"OIRef\/topicrefs\/c_Using_Script_to_Enable_a_Mini_Button_ad1047753.html","attributes": {"data-id":"ad1047753",},"menu": {"hasChildren":false,},"tocID":"ad1047753-d45e21385","topics":[]}]});

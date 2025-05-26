@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Java Beans Can Represent Siebel Integration Objects or Business Services","href":"ConfigApps\/topicrefs\/c_Java_Beans_Can_Represent_Siebel_Integration_Objects_or_Business_Services_ag1079015.html","attributes": {"data-id":"ag1079015",},"menu": {"hasChildren":false,},"tocID":"ag1079015-d45e47551","topics":[]}]});

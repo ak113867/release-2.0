@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Properties for Custom Extension Columns","href":"OTR\/topicrefs\/c_Properties_for_Custom_Extension_Columns_ad1015635.html","attributes": {"data-id":"ad1015635",},"menu": {"hasChildren":false,},"tocID":"ad1015635-d45e17482","topics":[]}]});

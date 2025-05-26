@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How the Viewbar Tag Implements Drop-Down Lists and Tabs","href":"ToolsDevRef\/topicrefs\/c_How_the_Viewbar_Tag_Implements_DropDown_Lists_and_Tabs_ag153677.html","attributes": {"data-id":"ag153677",},"menu": {"hasChildren":false,},"tocID":"ag153677-d45e8058","topics":[]}]});

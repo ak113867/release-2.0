@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"How <span class=\"ph\">Siebel CRM</span> Creates a Master-Detail View","href":"ConfigApps\/topicrefs\/c_How_ph_conrefcommonvariablesditavariablesProduct_NamephCreates_a_MasterDetail_View_am1056717.html","attributes": {"data-id":"am1056717",},"menu": {"hasChildren":false,},"tocID":"am1056717-d45e50277","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Guidelines for Starting a Workflow Process from a Business Service","href":"BPFWorkflow\/topicrefs\/c_Guidelines_for_Starting_a_Workflow_Process_from_a_Business_Service_bh1267278.html","attributes": {"data-id":"bh1267278",},"menu": {"hasChildren":false,},"tocID":"bh1267278-d45e73253","topics":[]}]});

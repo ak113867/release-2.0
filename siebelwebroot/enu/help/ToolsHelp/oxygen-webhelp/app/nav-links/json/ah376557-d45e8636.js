@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Configuring How Siebel CRM Uses the Columns Displayed Feature","href":"ToolsDevRef\/topicrefs\/c_Configuring_How_Siebel_CRM_Uses_the_Columns_Displayed_Feature_ah376717.html","attributes": {"data-id":"ah376717",},"menu": {"hasChildren":false,},"tocID":"ah376717-d45e8654","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Guidelines for Using Siebel VB","href":"VBLANG\/topicrefs\/c_Guidelines_for_Using_Siebel_VB_ad1019975.html","attributes": {"data-id":"ad1019975",},"menu": {"hasChildren":false,},"tocID":"ad1019975-d45e34883","next":"ad1019975-d45e34883",}]});

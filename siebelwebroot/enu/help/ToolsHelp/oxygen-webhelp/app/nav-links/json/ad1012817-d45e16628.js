@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Setting the Cascade Delete Property of a Link","href":"OTR\/topicrefs\/c_Setting_the_Cascade_Delete_Property_of_a_Link_ad1012791.html","attributes": {"data-id":"ad1012791",},"menu": {"hasChildren":false,},"tocID":"ad1012791-d45e16647","topics":[]}]});

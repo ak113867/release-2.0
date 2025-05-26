@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"What&apos;s New in This Release","href":"BusProcFramework\/topicrefs\/c_Whats_New_in_This_Release.html","attributes": {"data-id":"u30011800",},"menu": {"hasChildren":false,},"tocID":"u30011800-d45e63015","topics":[]}]});

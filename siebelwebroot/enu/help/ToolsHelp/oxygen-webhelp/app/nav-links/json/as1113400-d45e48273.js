@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Determining Availability of a Predefined Extension Column","href":"ConfigApps\/topicrefs\/c_Determining_Availability_of_a_Predefined_Extension_Column_as1113464.html","attributes": {"data-id":"as1113464",},"menu": {"hasChildren":false,},"tocID":"as1113464-d45e48292","topics":[]}]});

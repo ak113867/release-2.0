@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Guidelines for Modifying the Text Style of a Control or List Column in an Applet","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Modifying_the_Text_Style_of_a_Controlor_List_Column_in_an_Applet_ao1124760.html","attributes": {"data-id":"ao1124760",},"menu": {"hasChildren":false,},"tocID":"ao1124760-d45e55482","topics":[]}]});

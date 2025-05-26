@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Pager Object","href":"OTR\/topicrefs\/c_data_nametopicalias_valueHID_APPLET_REPOS_PAGER_OBJECT_LIST_Pager_Object_ad1013174.html","attributes": {"data-id":"ad1013174",},"menu": {"hasChildren":false,},"tocID":"ad1013174-d45e16833","topics":[]}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Example of the Script Performance Profiler Window","href":"UsingTools\/topicrefs\/c_Example_of_the_Script_Performance_Profiler_Window_an1132877.html","attributes": {"data-id":"an1132877",},"menu": {"hasChildren":false,},"tocID":"an1132877-d45e42831","topics":[]}]});

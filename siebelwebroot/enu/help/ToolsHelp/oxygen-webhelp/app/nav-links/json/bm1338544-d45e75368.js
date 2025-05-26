@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Grouping Workflow Policies That Include Similar Durations","href":"BPFWorkflow\/topicrefs\/c_Grouping_Workflow_Policies_That_Include_Similar_Durations_bm1344282.html","attributes": {"data-id":"bm1344282",},"menu": {"hasChildren":false,},"tocID":"bm1344282-d45e75386","topics":[]}]});

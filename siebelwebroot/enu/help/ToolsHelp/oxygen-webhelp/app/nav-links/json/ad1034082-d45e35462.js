@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Declaring a Procedure","href":"VBLANG\/topicrefs\/c_Declaring_a_Procedure_ad1034158.html","attributes": {"data-id":"ad1034158",},"menu": {"hasChildren":false,},"tocID":"ad1034158-d45e35480","next":"ad1034158-d45e35480",}]});

@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Calling a Method for an OK Control","href":"ConfigApps\/topicrefs\/c_Calling_a_Method_for_an_OK_Control_ao1121901.html","attributes": {"data-id":"ao1121901",},"menu": {"hasChildren":false,},"tocID":"ao1121901-d45e55312","topics":[]}]});

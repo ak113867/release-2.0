@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Welcome to Siebel Tools Online Help","href":"ToolsOLH\/topicrefs\/c_Welcome_to_Siebel_Tools_Online_Help.html","attributes": {"data-id":"u30121660",},"menu": {"hasChildren":true,},"tocID":"u30121660-d45e27","next":"u30121660-d45e27",}]});

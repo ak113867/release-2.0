@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Types of Applet Controls and List Columns","href":"ConfigApps\/topicrefs\/c_Types_of_Applet_Controls_and_List_Columns_ak1085714.html","attributes": {"data-id":"ak1085714",},"menu": {"hasChildren":false,},"tocID":"ak1085714-d45e49771","next":"ak1085714-d45e49771",}]});

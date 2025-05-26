@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Example of Using a Constructor Function","href":"eScript\/topicrefs\/c_Example_of_Using_a_Constructor_Function_ae1290007.html","attributes": {"data-id":"ae1290007",},"menu": {"hasChildren":false,},"tocID":"ae1290007-d45e32027","topics":[]}]});

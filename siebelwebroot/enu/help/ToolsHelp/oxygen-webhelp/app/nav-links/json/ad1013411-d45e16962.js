@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Repository","href":"OTR\/topicrefs\/c_Properties_of_the_Repository_ad1013651.html","attributes": {"data-id":"ad1013651",},"menu": {"hasChildren":false,},"tocID":"ad1013651-d45e16980","topics":[]}]});

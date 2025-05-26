@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Setting the Menu Text and Viewbar Text Properties of a Screen View","href":"OTR\/topicrefs\/c_Setting_the_Menu_Text_and_Viewbar_Text_Properties_of_a_Screen_View_ad1014080.html","attributes": {"data-id":"ad1014080",},"menu": {"hasChildren":false,},"tocID":"ad1014080-d45e17111","topics":[]}]});

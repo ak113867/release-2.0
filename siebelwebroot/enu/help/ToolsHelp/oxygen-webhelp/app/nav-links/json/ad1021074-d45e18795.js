@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Differences Between Static and Dynamic Drilldowns","href":"OTR\/topicrefs\/c_Differences_Between_Static_and_Dynamic_Drilldowns_ad1021126.html","attributes": {"data-id":"ad1021126",},"menu": {"hasChildren":false,},"tocID":"ad1021126-d45e18814","topics":[]}]});

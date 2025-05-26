@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Example of Updating the Parent Business Component if Siebel CRM Modifies Children","href":"ToolsDevRef\/topicrefs\/c_Example_of_Updating_the_Parent_Business_Component_if_Siebel_CRMModifies_Children_af877822.html","attributes": {"data-id":"af877822",},"menu": {"hasChildren":false,},"tocID":"af877822-d45e5549","topics":[]}]});

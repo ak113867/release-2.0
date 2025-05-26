@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Calling the Customer Dashboard Business Service from the Communications Event Log","href":"ConfigApps\/topicrefs\/c_Calling_the_Customer_Dashboard_Business_Service_from_the_Communications_Event_Log_bc1007428.html","attributes": {"data-id":"bc1007428",},"menu": {"hasChildren":false,},"tocID":"bc1007428-d45e62147","topics":[]}]});

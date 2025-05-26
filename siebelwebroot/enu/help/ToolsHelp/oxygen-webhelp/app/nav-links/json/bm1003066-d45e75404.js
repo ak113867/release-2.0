@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Developing Workflow Policies in Small Groups","href":"BPFWorkflow\/topicrefs\/c_Developing_Workflow_Policies_in_Small_Groups_bm1325457.html","attributes": {"data-id":"bm1325457",},"menu": {"hasChildren":false,},"tocID":"bm1325457-d45e75422","topics":[]}]});

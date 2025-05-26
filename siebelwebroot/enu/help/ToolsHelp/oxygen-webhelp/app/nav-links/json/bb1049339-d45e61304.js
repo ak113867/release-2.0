@@ -1,1 +1,0 @@
-define({"topics" : [{"title":"Preparing Criteria Values and Criteria Skills for an MLOV","href":"ConfigApps\/topicrefs\/c_Preparing_Criteria_Values_and_Criteria_Skills_for_an_MLOV_bb1049361.html","attributes": {"data-id":"bb1049361",},"menu": {"hasChildren":false,},"tocID":"bb1049361-d45e61323","topics":[]}]});
