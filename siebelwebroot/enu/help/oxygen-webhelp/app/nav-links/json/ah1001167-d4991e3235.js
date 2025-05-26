@@ -1,0 +1,1 @@
+define({"topics":[{"title":"Entering Activities Directly in the Calendar","href":"FundOUI\/topicrefs\/c_Entering_Activities_Directly_in_the_Calendar_ah1001304.html","attributes":{"data-id":"ah1001304"},"menu":{"hasChildren":false},"tocID":"ah1001304-d4991e3253","topics":[]}]});

@@ -1,0 +1,231 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="You can delete repositories using either the repimexp utility or the RRCleanup utility. repimexp utility. Using this utility, you can delete the existing repository using the /a t option. RRCleanup ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Process_of_Migrating_Repositories_ah1081162.html" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_localizing_strings_and_locale.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ah1148851" /><meta name="DC.Language" content="en" /><title>Deleting Repositories</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ah1148851-d45e43716" /><meta name="wh-source-relpath" content="UsingTools/topicrefs/c_Deleting_Repositories_ah1148851.dita" /><meta name="wh-out-relpath" content="UsingTools/topicrefs/c_Deleting_Repositories_ah1148851.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ah1148851" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html">Using Siebel Tools</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_managing_repositories.html">Managing Repositories</a></span></span></li><li class="active"><span class="topicref" data-id="ah1148851"><span class="title"><a href="../../UsingTools/topicrefs/c_Deleting_Repositories_ah1148851.html">Deleting Repositories</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+<span class="navprev"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_Process_of_Migrating_Repositories_ah1081162.html" title="Process of Migrating Repositories" aria-label="Previous topic: Process of Migrating Repositories" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_localizing_strings_and_locale.html" title="Localizing Strings and Locale Data" aria-label="Next topic: Localizing Strings and Locale Data" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e40108" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40109" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40109-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40109-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40130" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40130-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Web_Tools_Setup.html" id="tocId-d45e40130-link">Web Tools Setup</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40330" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40330-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_getting_started.html" id="tocId-d45e40330-link">Getting Started With Your Application</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41020" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41020-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_workspaces.html" id="tocId-d45e41020-link">Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41814" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41814-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_parallel_development_using_workspaces.html" id="tocId-d45e41814-link">Parallel Development Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e42068" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e42068-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_script_editors.html" id="tocId-d45e42068-link">Using Siebel Script Editors</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e42903" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e42903-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_customizing_objects.html" id="tocId-d45e42903-link">Customizing Objects</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e43390" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e43390-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_managing_repositories.html" id="tocId-d45e43390-link">Managing Repositories</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="managing_repositories-d45e43391" class="topicref" data-id="managing_repositories" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_managing_repositories.html" id="managing_repositories-d45e43391-link">Managing Repositories</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ah1129680-d45e43409" class="topicref" data-id="ah1129680" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ah1129680-d45e43409-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Overview_of_Managing_Repositories_ah1129680.html" id="ah1129680-d45e43409-link">Overview of Managing Repositories</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ah1150553-d45e43553" class="topicref" data-id="ah1150553" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ah1150553-d45e43553-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Exporting_and_Importing_Repositories_ah1150553.html" id="ah1150553-d45e43553-link">Exporting and Importing Repositories</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ah1152978-d45e43661" class="topicref" data-id="ah1152978" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ah1152978-d45e43661-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Upgrading_Repositories_ah1152978.html" id="ah1152978-d45e43661-link">Upgrading Repositories</a></span></span></li><li role="treeitem"><span data-tocid="u30229868-d45e43697" class="topicref" data-id="u30229868" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Process_of_Migrating_Repositories_ah1081162.html" id="u30229868-d45e43697-link">Process of Migrating Repositories</a></span></span></li><li role="treeitem" class="active"><span data-tocid="ah1148851-d45e43716" class="topicref" data-id="ah1148851" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Deleting_Repositories_ah1148851.html" id="ah1148851-d45e43716-link">Deleting Repositories</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e43734" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e43734-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_localizing_strings_and_locale.html" id="tocId-d45e43734-link">Localizing Strings and Locale Data</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44567" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44567-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_compile_test_trouble.html" id="tocId-d45e44567-link">Testing and Troubleshooting Your Customizations</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44640" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44640-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_archiving_objects.html" id="tocId-d45e44640-link">Archiving Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44931" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44931-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_appendix_a.html" id="tocId-d45e44931-link">Siebel Tools Reference Information</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e45454" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e45454-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/g_Advanced_Compile_ao1019447.html" id="tocId-d45e45454-link">Glossary</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Deleting Repositories</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">You can delete repositories using either the repimexp utility or the RRCleanup utility. </p>
+  <ul class="- topic/ul ul" id="ah1148851__ul_vfb_thq_snb">
+   <li class="- topic/li li">
+    <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b"> repimexp utility.</strong> Using this utility, you can delete the existing repository using
+     the <code class="+ topic/ph pr-d/codeph ph codeph">/a t</code> option.</p>
+   </li>
+   <li class="- topic/li li">
+    <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">RRCleanup utility.</strong> Using this utility, you can delete the existing repository or the
+     orphan records from Siebel database as follows: </p>
+        <ul class="- topic/ul ul" id="ah1148851__ul_pnw_kzs_tnb">
+          <li class="- topic/li li">
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Repository data.</strong> This option passes a valid repository as an argument to the
+              RRCleanup utility to delete repository data from all repository tables. The RRCleanup
+              utility deletes the LOVs (S_LST_OF_VAL) as well for this repository.</p>
+          </li>
+          <li class="- topic/li li">
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Orphan records.</strong> This option does not require you to pass a repository name as
+              an argument to the RRCleanup utility because orphan records do not have the valid
+              repository in the Siebel system and the repository does not exist in the S_REPOSITORY
+              table. The RRCleanup utility deletes the LOVs (S_LST_OF_VAL) as well for orphan
+              Workspaces.</p>
+          </li>
+        </ul>
+        <div class="- topic/note note note note_note"><span class="notetitle">Note:</span> A repository can contain multiple integration branches with each branch containing a
+          copy of List of Value. Deleting a repository has a cascading effect on branches and
+          LOVs.</div>
+    <p class="- topic/p p">The RRCleanup utility is located at this location (in Siebel Tools):</p>
+    <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>&lt;Siebel_Home&gt;\BIN\RRCleanup.exe</code></pre>
+    <p class="- topic/p p">The RRCleanup utility is located at this location in the Siebel Server:</p>
+    <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>&lt;Siebel_Home&gt;\ses\siebsrvr\BIN\RRCleanup.exe</code></pre>
+    <p class="- topic/p p">The following procedure shows how to run the RRCleanup Utility. </p>
+    
+   </li>
+  </ul>
+<section class="- topic/section section" id="ah1148851__ah1149651"><h2 class="- topic/title title sectiontitle">To run the RRCleanup utility</h2>  <ol class="- topic/ol ol">
+<li class="- topic/li li"><p class="- topic/p p">Open the Command Prompt window from your computer by clicking
+the Start button and then selecting the Run option.</p><p class="- topic/p p">The Run
+window appears.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Enter the value CMD in the Open field.</p><p class="- topic/p p">The Command Prompt
+window appears.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Change the directory in the Command Prompt window using one
+of the following commands:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>cd &lt;Siebel_Home&gt;\BIN</code></pre><p class="- topic/p p">or</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>cd &lt;Siebel_Home&gt;\ses\siebsrvr\BIN</code></pre></li>
+<li class="- topic/li li"><p class="- topic/p p">Run the RRCleanup.exe utility.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">The Command Prompt window opens and displays the following
+arguments and parameters, which you can use to run the RRCleanup utility:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-t</code> Siebel Table Owner (required)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-u</code> Username (required)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-p</code> Password (required)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-o</code> ODBC Data Source (required)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-l</code> Log File Name (default: RRCleanup.log)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-r</code> Repository Name (delete Runtime Repository data for repository name pass. For
+                example: “Siebel Repository” )</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-a</code> Orphan Flag (Pass Y if required to delete only orphan records)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-s</code>
+                <code class="+ topic/ph pr-d/codeph ph codeph">Siebsrvr/Tools Installation</code> path specified (required)</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-b</code> Repository Type ((R)unTime, (B)Both (DR and RR)) (required)</p></li>
+            <li class="- topic/li li">
+              <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">-d</code> DB Platform Name (Oracle, MSSQL, DB2UDB, or DB2390)</p>
+            </li>
+</ul></li>
+<li class="- topic/li li"><p class="- topic/p p">Use the following command to delete a particular repository
+data from repository tables:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>RRCleanup.exe -t "Table Owner" -u "Siebel User Name" -p "Siebel User Name Password" 
+-r "Repository Name" -o "ODBC Data Source" -s "Siebsrvr/Tools home location" -b Repository Type </code></pre><div class="- topic/note note note note_note"><span class="notetitle">Note:</span> For the <code class="+ topic/ph pr-d/codeph ph codeph">-r</code> argument, you can pass only one repository at a time as a
+      parameter. For the <code class="+ topic/ph pr-d/codeph ph codeph">-b</code> argument, you can pass either of the repository types
+      as parameter such as <code class="+ topic/ph pr-d/codeph ph codeph">-b R</code> to delete data from Runtime Repository tables or
+       <code class="+ topic/ph pr-d/codeph ph codeph">–b B</code> to delete data from all repository tables.</div></li>
+<li class="- topic/li li"><p class="- topic/p p">Use the following command to delete orphan records:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>RRCleanup.exe -t "Table Owner" -u "Siebel User Name" -p "Siebel User Name 
+Password" -a Y -o "ODBC Data Source" -s "Siebsrvr/Tools home location" -b Repository Type </code></pre><div class="- topic/note note note note_note"><span class="notetitle">Note:</span> In one command, you can delete either a repository
+or orphan records but not both. However, if you pass a repository
+as parameter and the orphan flag is also set to true then the orphan
+takes precedence.</div></li>
+<li class="- topic/li li"><p class="- topic/p p">View the output stages that represent the progress of the tasks
+performed by the utility to ensure that the RRCleanup utility is run
+successfully.</p></li>
+</ol> </section>
+  <section class="- topic/section section" id="ah1148851__About_Removing_Repository_Data_and_or_Orphan_Records"><h2 class="- topic/title title sectiontitle">About Removing Repository Data and/or Orphan Records</h2>
+   
+   <div class="- topic/p p">Before running the RRCleanup utility, note that the following options are available to remove
+    Runtime Repository (RR) data and/or LOV orphan records: <ol class="- topic/ol ol" id="ah1148851__ol_bsk_g1l_tnb">
+     <li class="- topic/li li">
+      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Option 1, </strong><code class="+ topic/ph pr-d/codeph ph codeph">-b R</code>: Removes all RR definitions only. </p>
+      <div class="- topic/p p">In a RR environment, all RR definitions will be removed but LOVs will remain. You could run
+       this option before a Full Publish operation in a Design Time Repository (DR) environment
+       (however, it is not necessary since Full Publish will do this automatically). For example,
+       the following removes the RR "RepName"
+       :<pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>-r "RepName" -b R -a N     &lt;-- (or just leave out -a N) --&gt;</code></pre></div>
+     </li>
+     <li class="- topic/li li">
+      <div class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Option 2, </strong><code class="+ topic/ph pr-d/codeph ph codeph">-b B</code>: Removes all RR and DR definitions for
+              Workspace-enabled objects and LOVs. You should use this option in RR environments. For
+              example, the following removes the DR, RR, and LOVs associated with "RepName" :
+              <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>-r "RepName" -b B -a N     &lt;-- (or just leave out -a N) --&gt; </code></pre></div>
+      <p class="- topic/p p">This is the best option.</p>
+      <div class="- topic/note note tip note_tip"><span class="tiptitle">Tip:</span>  If you have orphaned data because you ran <code class="+ topic/ph pr-d/codeph ph codeph">-b
+        R</code> for example instead of <code class="+ topic/ph pr-d/codeph ph codeph">-b B</code>, then using <code class="+ topic/ph pr-d/codeph ph codeph">-a</code>
+       (without any <code class="+ topic/ph pr-d/codeph ph codeph">-b</code>) will get rid of that. </div>
+     </li>
+     <li class="- topic/li li">
+      <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Option 3, </strong><code class="+ topic/ph pr-d/codeph ph codeph">-b B a Y</code>: Removes any orphan data in DR, RR, or LOVs –
+              that is, all records with a WS_ID that do not exist in S_WORKSPACE. If you use Option
+              2 all the time, then you would never have to do this.</p>
+      <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>-b B -a Y</code></pre>
+     </li>
+    </ol></div>
+  </section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

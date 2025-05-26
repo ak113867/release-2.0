@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"User Properties and Methods that You can Use with the CSSBCContactSIS Class","href":"ToolsDevRef\/topicrefs\/c_User_Properties_and_Methods_That_You_Can_Use_withthe_CSSBCContact_SIS_Class_ad852513.html","attributes": {"data-id":"ad852513",},"menu": {"hasChildren":false,},"tocID":"ad852513-d45e1175","next":"ad852513-d45e1175",}]});

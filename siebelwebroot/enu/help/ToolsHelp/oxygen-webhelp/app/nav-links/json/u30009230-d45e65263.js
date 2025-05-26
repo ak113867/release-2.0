@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Classes That Siebel CRM Uses with a Transient Business Components","href":"BusProcFramework\/topicrefs\/c_Classes_That_Siebel_CRM_Uses_with_a_Transient_Business_Components_ah1234296.html","attributes": {"data-id":"u30009231",},"menu": {"hasChildren":false,},"tocID":"u30009231-d45e65281","topics":[]}]});

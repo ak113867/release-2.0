@@ -1,0 +1,114 @@
+<div class="siebui-d2p-tab-content">
+    <div class="siebui-action-area">
+        <div class="siebui-area-title" id="connectionTitle">
+            <div data-res="INTL_TITLE_CONNECTION" class="siebui-title-header">Connections</div>
+            <div class="siebui-button-section siebui-title-header">
+                <button id="addConnection" type="button" class="siebui-d2p-button btn" data-bind="click: $root.saveConnection" data-res="INTL_CONNECTION_CREATE">New Connection</button>
+            </div>
+        </div>
+        <div class="siebui-d2p-tile-outer-container" id="connectionsOuterContainer">
+            <div id="connectionRightArrow" class="siebui-d2p-tile-arrow siebui-d2p-tile-arrow-right siebui-icon-arrow-right"
+                style="display: none">
+            </div>
+            <div class="siebui-d2p-inner-container">
+                <div id="connectionTileContainer">
+                    <!-- ko if: connections().length > 0-->
+                    <div data-bind="foreach: connections">
+                        <div class="tile siebui-d2p-connection-tile" data-bind="attr: {id: 'connectionTile' + id() }, click: $root.showMigrationObjects">
+                            <div style="display: block">
+                                <div class="tile-header">
+                                    <h4 class="tile-title siebui-d2p-tile-title" data-bind="text: name, attr: { title: name }"></h4>
+                                    <!-- ko ifnot: status() == null -->
+                                    <span data-bind="visible: status, attr: {id: 'connectionStatus' + id() }"
+                                        class="siebui-d2p-connection-alive siebui-icon-connect-cloud" data-title="INTL_TITLE_ACTIVE_STATUS" title="Active"></span>
+                                    <span data-bind="visible: !status(), attr: {id: 'connectionStatus' + id() }"
+                                        class="siebui-d2p-connection-not-alive siebui-icon-connect-cloud" data-title="INTL_TITLE_NOT_ACTIVE_STATUS" title="Not Active"></span>
+                                    <!-- /ko -->
+
+                                    <!-- ko if: status() == null -->
+                                    <span data-bind="visible: !status(), attr: {id: 'connectionStatus' + id() }"
+                                        class="siebui-d2p-connection-unknown siebui-icon-connect-cloud" data-title="INTL_TITLE_UNKNOWN_STATUS" title="Status Unknown"></span>
+                                    <!-- /ko -->
+                                </div>
+
+                                <div class="tile-footer siebui-d2p-connection-footer">
+                                    <input type="hidden" data-bind="value: id"/>
+
+                                    <span data-bind="click: $root.addWatermark, visible: watermarkEnable() " id="addWaterMark"
+                                        class="siebui-d2p-connection-icon siebui-icon-high-water-mark" data-title="INTL_TITLE_WATERMARK" title="Watermark"></span>
+									<span data-bind="visible: !watermarkEnable()"
+                                          class="siebui-d2p-connection-icon siebui-icon-high-water-mark disabled" data-title="INTL_TITLE_WATERMARK" title="Watermark"></span>
+ 
+                                    <span data-bind="visible: favourite, click: $root.toggleFavourite"
+                                        class="siebui-d2p-connection-icon siebui-icon-fav-selected siebui-d2p-connection-fav" data-title="INTL_TITLE_FAV" title="Favourite"></span>
+
+                                    <span data-bind="visible: !favourite(), click: $root.toggleFavourite"
+                                        class="siebui-d2p-connection-icon siebui-icon-fav-notselected siebui-d2p-connection-fav" data-title="INTL_TITLE_FAV" title="Favourite"></span>
+
+                                    <span data-bind="attr: {id: 'editConnectionTile' + id()}, click: $root.editConnection"
+                                        class="siebui-d2p-connection-icon siebui-icon-edit" data-title="INTL_TITLE_EDIT" title="Edit"></span>
+
+                                    <span data-bind="visible: deleteEnable, click: $root.deleteConnection"
+                                        class="siebui-d2p-connection-icon siebui-icon-delete siebui-d2p-connection-delete" data-title="INTL_TITLE_DELETE" title="Delete"></span>
+
+                                    <span data-bind="visible: !deleteEnable()"
+                                          class="siebui-d2p-connection-icon siebui-icon-delete siebui-d2p-connection-delete disabled" data-title="INTL_TITLE_DELETE" title="Delete"></span>
+
+                                    <span data-bind="click: $root.refreshMigrationObjects, visible: refreshEnable()"
+                                        class="siebui-d2p-connection-refresh siebui-d2p-connection-icon siebui-icon-in-progress" data-title="INTL_TITLE_REFRESH" title="Refresh"></span>
+                                    <span data-bind="visible: !refreshEnable()"
+                                        class="siebui-d2p-connection-refresh siebui-d2p-connection-icon siebui-icon-in-progress disabled" data-title="INTL_TITLE_REFRESH" title="Refresh"></span>
+                                </div>
+
+                                <div data-bind="attr: {id: 'connection' + id() }"
+                                    class="siebui-callout-connection ui-helper-hidden">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div id="connectionLeftArrow" class="siebui-d2p-tile-arrow siebui-icon-arrow-left siebui-d2p-tile-arrow-left"
+                style="display: none">
+            </div>
+        </div>
+    </div>
+    <!-- ko if: connections().length > 0-->
+    <div class="siebui-action-area" id="connectionObjects">
+        <div id="data" class="siebui-d2p-migration-data">
+            <div class="siebui-area-title" data-res="INTL_SUPPORTED_RESOURCES">Supported Resources For Migration</div>
+            <div class="siebui-d2p-migration-objects">
+                <div class="form-expand">
+                    <a class="group-toggle siebui-accordionButton"><i class="siebui-d2p-accordion siebui-icon-arrow-down"></i><span data-res="INTL_MIGRATION_RESOURCE_DBUTILS">Metadata and Files</span></a>
+                    <fieldset class="grid-padded form-collapse siebui-accordionContent siebui-accordionContentDB">
+                        <!-- ko if: migrationResourcesDB().length > 0-->
+                        <ul data-bind="foreach: migrationResourcesDB">
+                            <li data-bind="text: name" class="siebui-d2p-source-label"></li>
+                        </ul>
+                        <!-- /ko -->
+                        <!-- ko if: migrationResourcesDB().length == 0-->
+                        <div class="siebui-accordian-nodata"></div>
+                        <!-- /ko -->
+                    </fieldset>
+                </div>
+                <div class="form-expand">
+                    <a class="group-toggle siebui-accordionButton"><i class="siebui-d2p-accordion siebui-icon-arrow-down"></i><span data-res="INTL_MIGRATION_RESOURCE_ADM">Application Deployment Manager Projects</span></a>
+                    <fieldset class="grid-padded form-collapse siebui-accordionContent siebui-accordionContentADM">
+                        <!-- ko if: migrationResourcesADM().length > 0-->
+                        <ul data-bind="foreach: migrationResourcesADM">
+                            <li data-bind="text: name" class="siebui-d2p-source-label"></li>
+                        </ul>
+                        <!-- /ko -->
+                        <!-- ko if: migrationResourcesADM().length == 0-->
+                        <div class="siebui-accordian-nodata"></div>
+                        <!-- /ko -->
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: connections().length == 0-->
+    <!-- /ko -->
+</div>

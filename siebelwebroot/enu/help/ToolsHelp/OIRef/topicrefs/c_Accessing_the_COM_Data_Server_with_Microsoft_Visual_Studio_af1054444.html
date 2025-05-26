@@ -1,0 +1,325 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="This topic describes how to create a simple COM client in Microsoft Visual C++ and the Microsoft Foundation Class (MFC) library that accesses the Siebel Data Server. To access the COM Data Server with ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../OIRef/topicrefs/c_Accessing_a_Siebel_Object_Interface_af1045229.html" /><meta name="DC.Relation" scheme="URI" content="../../OIRef/topicrefs/c_Example_of_Accessing_the_COM_Data_Server_af1045605.html" /><meta name="DC.Relation" scheme="URI" content="../../OIRef/topicrefs/c_Accessing_COM_Data_Control_af1054432.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="af1054444" /><meta name="DC.Language" content="en" /><title>Accessing the COM Data Server with Microsoft Visual Studio</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="af1054444-d45e20321" /><meta name="wh-source-relpath" content="OIRef/topicrefs/c_Accessing_the_COM_Data_Server_with_Microsoft_Visual_Studio_af1054444.dita" /><meta name="wh-out-relpath" content="OIRef/topicrefs/c_Accessing_the_COM_Data_Server_with_Microsoft_Visual_Studio_af1054444.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="af1054444" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html">Siebel Object Interfaces Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../OIRef/topicrefs/c_Customizing_Siebel_Object_Interfaces.html#customizing_siebel_object_interfaces">Customizing Siebel Object Interfaces</a></span></span></li><li><span class="topicref" data-id="af1045229"><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_a_Siebel_Object_Interface_af1045229.html">Accessing a Siebel Object Interface</a></span></span></li><li class="active"><span class="topicref" data-id="af1054444"><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_COM_Data_Server_with_Microsoft_Visual_Studio_af1054444.html">Accessing the COM Data Server with Microsoft Visual Studio</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../OIRef/topicrefs/c_Example_of_Accessing_the_COM_Data_Server_af1045605.html" title="Example of Accessing the COM Data Server" aria-label="Previous topic: Example of Accessing the COM Data Server" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../OIRef/topicrefs/c_Accessing_COM_Data_Control_af1054432.html" title="Accessing COM Data Control" aria-label="Next topic: Accessing COM Data Control" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e19322" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19323" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19323-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19323-link">What's New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19379" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19379-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Object_Interfaces_and_Programming_Environment.html" id="tocId-d45e19379-link">About Object Interfaces and the Programming Environment</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e20049" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e20049-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Customizing_Siebel_Object_Interfaces.html#customizing_siebel_object_interfaces" id="tocId-d45e20049-link">Customizing Siebel Object Interfaces</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="customizing_siebel_object_interfaces-d45e20050" class="topicref" data-id="customizing_siebel_object_interfaces" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Customizing_Siebel_Object_Interfaces.html#customizing_siebel_object_interfaces" id="customizing_siebel_object_interfaces-d45e20050-link">Customizing Siebel Object Interfaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1053959-d45e20068" class="topicref" data-id="af1053959" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1053959-d45e20068-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Process_of_Customizing_a_Siebel_Object_Interface_af1053959.html" id="af1053959-d45e20068-link">Process of Customizing a Siebel Object Interface</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="af1045229-d45e20194" class="topicref" data-id="af1045229" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action af1045229-d45e20194-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_a_Siebel_Object_Interface_af1045229.html" id="af1045229-d45e20194-link">Accessing a Siebel Object Interface</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="af1046058-d45e20212" class="topicref" data-id="af1046058" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1046058-d45e20212-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_Mobile_Web_Client_Automation_Server_af1046058.html" id="af1046058-d45e20212-link">Accessing the Mobile Web Client Automation Server</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1004811-d45e20249" class="topicref" data-id="af1004811" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1004811-d45e20249-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_Siebel_COM_Interface_af1004811.html" id="af1004811-d45e20249-link">Accessing the Siebel COM Interface</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1045402-d45e20285" class="topicref" data-id="af1045402" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1045402-d45e20285-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_COM_Data_Server_af1045402.html" id="af1045402-d45e20285-link">Accessing the COM Data Server</a></span></span></li><li role="treeitem" class="active"><span data-tocid="af1054444-d45e20321" class="topicref" data-id="af1054444" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_COM_Data_Server_with_Microsoft_Visual_Studio_af1054444.html" id="af1054444-d45e20321-link">Accessing the COM Data Server with Microsoft Visual Studio</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1054432-d45e20339" class="topicref" data-id="af1054432" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1054432-d45e20339-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_COM_Data_Control_af1054432.html" id="af1054432-d45e20339-link">Accessing COM Data Control</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1046167-d45e20393" class="topicref" data-id="af1046167" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1046167-d45e20393-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Accessing_the_Siebel_Java_Data_Bean_af1046167.html" id="af1046167-d45e20393-link">Accessing the Siebel Java Data Bean</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1005833-d45e20627" class="topicref" data-id="af1005833" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1005833-d45e20627-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Customizing_Object_Interface_Events_and_Extension_Events_af1005833.html" id="af1005833-d45e20627-link">Customizing Object Interface Events and Extension Events</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1021082-d45e20789" class="topicref" data-id="af1021082" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1021082-d45e20789-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Configuring_Error_Handling_af1021082.html" id="af1021082-d45e20789-link">Configuring Error Handling</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e20861" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e20861-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Using_Siebel_VB_and_Siebel_eScript.html#using_siebel_vb_and_siebel_escript" id="tocId-d45e20861-link">Using Siebel Visual Basic and Siebel eScript</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e21421" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e21421-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Interfaces_Reference.html" id="tocId-d45e21421-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e25503" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e25503-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Browser_Script_Quick_Reference_ag1015666.html" id="tocId-d45e25503-link">Browser Script Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e25757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e25757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Siebel_VB_Quick_Reference.html#siebel_vb_quick_reference" id="tocId-d45e25757-link">Siebel VB Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e25976" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e25976-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Siebel_eScript_Quick_Reference.html#siebel_escript_quick_reference" id="tocId-d45e25976-link">Siebel eScript Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26194" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26194-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_COM_Data_Server_Quick_Reference.html#com_data_server_quick_reference" id="tocId-d45e26194-link">COM Data Server Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26304" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26304-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_COM_Data_Control_Quick_Reference.html#com_data_control_quick_reference" id="tocId-d45e26304-link">COM Data Control Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26414" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26414-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Mobile_Web_Client_Automation_Server_Quick_Reference.html" id="tocId-d45e26414-link">Mobile Web Client Automation Server Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26525" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26525-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Java_Quick_Reference.html" id="tocId-d45e26525-link">Siebel Java Data Bean Quick Reference</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Accessing the COM Data Server with Microsoft Visual Studio</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">This topic describes how to create a simple COM client in Microsoft
+Visual C++ and the Microsoft Foundation Class (MFC) library that accesses
+the Siebel Data Server. </p>
+<section class="- topic/section section" id="af1054444__af1054446"><h2 class="- topic/title title sectiontitle">To access the COM Data Server with
+Microsoft Visual Studio</h2> <ol class="- topic/ol ol">
+<li class="- topic/li li" id="af1054444__af1054448"><p class="- topic/p p">In Microsoft Visual C++, choose the File menu,
+New, and then the Project menu item. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Choose the MFC AppWizard (exe) project type.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the Project name field, enter <kbd class="+ topic/ph sw-d/userinput ph userinput">SiebelCOM</kbd>, and then click OK.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the MFC AppWizard, choose the Dialog-based option and then
+click Next.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the What Other Support Would You Like to Include frame,
+do the following:</p><ol class="- topic/ol ol" type="a">
+<li class="- topic/li li"><p class="- topic/p p">Make sure the Automation option contains a check mark.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Make sure the ActiveX Controls does not contain a check mark.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Click Next. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Click Next.</p></li>
+</ol></li>
+<li class="- topic/li li"><p class="- topic/p p">Click Finish, and then click OK.</p><p class="- topic/p p">The Application Wizard
+creates the MFC code that you use for this project, including the
+headers and libraries that COM automation requires. For more information
+about the MFC libraries, see the documentation for Microsoft MSDN
+Visual Studio.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Modify the new dialog box.</p><p class="- topic/p p">Microsoft Visual C++ displays
+a new dialog box. To resize and modify the text in this dialog box,
+right-click the label in the dialog box and edit the properties. Modify
+the dialog box so that it resembles the following illustration.</p><img class="- topic/image image" src="../images/mfc4.png" height="113" width="186" alt="mfc4.png&#34;" /></li>
+<li class="- topic/li li"><p class="- topic/p p">Choose the View menu, ClassWizard, and then the Automation
+menu item.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Click Add Class, and then click From a Type Library.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Navigate to the <code class="+ topic/ph pr-d/codeph ph codeph"><em class="+ topic/ph hi-d/i ph i">SIEBSRVR_ROOT</em>\bin folder</code>, and then choose sobjsrv.tlb.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the Confirm Classes dialog box, make sure all Siebel classes
+are chosen, click OK, and then click OK again to close the Class Wizard.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Add code to communicate with the Siebel COM Server.</p><ol class="- topic/ol ol" type="a">
+<li class="- topic/li li"><p class="- topic/p p">In the workspace window, click the FileView tab.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Expand the Source Files folder and the Header Files folder.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Double-click the SiebelCOMDlg.h file.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the code window, add the following code to the SiebelCOMDlg.h
+file. Add only the code that uses bold typeface:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>#if _MSC_VER &gt; 1000
+#pragma once
+#endif // _MSC_VER &gt; 1000
+
+<strong class="+ topic/ph hi-d/b ph b">#include "sobjsrv.h" // Include Siebel wrapper classes</strong>
+
+class CSiebelCOMDlgAutoProxy;
+///////////////////////////////////////////////////////////
+
+// CSiebelCOMDlg dialog
+class CSiebelCOMDlg : public CDialog{
+  DECLARE_DYNAMIC(CSiebelCOMDlg);
+  friend class CSiebelCOMDlgAutoProxy;
+  <strong class="+ topic/ph hi-d/b ph b">SiebelApplication sApp; // Declare Siebel object</strong>
+
+//Construction
+public:
+  CSiebelCOMDlg(CWnd* pParent = NULL); //standard constructor
+  virtual ~CSiebelCOMDlg();
+</code></pre></li>
+<li class="- topic/li li"><p class="- topic/p p">Choose Open from the File menu, and then choose the SiebelCOMDlg.cpp
+file.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Add the following code to the OnInitDialog procedure. Add only
+the code that uses bold typeface:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>CDialog::OnInitDialog();
+
+...
+
+// TODO: Add extra initialization here
+// Start the Siebel Data Server
+<strong class="+ topic/ph hi-d/b ph b">if (!sApp.CreateDispatch(_T("SiebelDataServer.ApplicationObject)))
+{
+  AfxMessageBox("Cannot start Siebel Data Server.");
+EndDialog(-1); // Fail
+} else
+{
+  AfxMessageBox("Siebel Data Server initialized.");
+}
+
+return TRUE; // Return TRUE unless you make a control active</strong>
+...
+</code></pre></li>
+<li class="- topic/li li"><p class="- topic/p p">In the same file, add the following code to the OnOK procedure.</p><p class="- topic/p p">To add this code correctly, do the following:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">Make sure that the line that begins with sApp.LoadObjects references
+the location of the Siebel application configuration (CFG) file you
+intend to use. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the line that begins with sApp.Login, make sure you use
+a valid logon name and password.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Add only the code that uses bold typeface.</p></li>
+</ul><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>void CSiebelCOMDlg::OnOK()
+{
+
+  <strong class="+ topic/ph hi-d/b ph b">short sErr;
+  // Load configuration file
+  // Make sure that the following line references the correct file
+  sApp.LoadObjects(C:\Siebel\8.1\Server\BIN\ENU\siebel.cfg", &amp;sErr);
+  if(sErr)
+  {
+    AfxMessageBox("LoadObject failed.");
+    return;
+  } else
+  {
+    AfxMessageBox("CFG file loaded.");
+  }
+  
+  // Log in as SADMIN
+  sApp.Login("SADMIN", "SADMIN", &amp;sErr);
+  if(sErr)
+  {
+    AfxMessageBox("Login failed.");
+    return;
+  } else
+  {
+    AfxMessageBox("Logged in to Siebel database.");
+  }
+  
+  // Get Account business object
+  LPDISPATCH lpdBo;
+  lpdBo = sApp.GetBusObject("Account", &amp;sErr);
+  if(sErr)
+  {
+    AfxMessageBox("GetBusObject failed.");
+    return;
+  } else
+  {
+    AfxMessageBox("Account business object returned.");
+  }
+  SiebelBusObject Bo(lpdBo);
+  
+  // Get Account business component
+  LPDISPATCH lpdBc;
+  lpdBc = Bo.GetBusComp("Account", &amp;sErr);
+  if(sErr)
+  {
+    AfxMessageBox("GetBusComp failed.");
+    return;
+  } else
+  {
+    AfxMessageBox("Account business component returned.");
+  }
+  SiebelBusComp Bc(lpdBc);
+  
+  // Get the name of the first account
+  if (sErr) return;
+  Bc.ClearToQuery(&amp;sErr);
+  if (sErr) return;
+  Bc.SetSearchSpe("Name", "*", &amp;sErr);
+  if (sErr) return;
+  Bc.ExecuteQuery(ForwardOnly, &amp;sErr);
+  if (sErr) return;
+  Bc.FirstRecord(&amp;sErr);
+  if (sErr) return;
+  
+  // Display the account name in a message box
+  CString csAcctName;
+  csAcctName = Bc.GetFieldValue("Name", &amp;sErr);
+  AfxMessageBox(csAcctName);
+  Bc = null;
+  lpdBc = null;
+  Bo = null;
+  lpdBo = null;
+  
+  return;
+</strong>
+  
+  if (CanExit())
+    CDialog::OnOK();
+
+}
+</code></pre></li>
+</ol></li>
+<li class="- topic/li li"><p class="- topic/p p">Test your work:</p><ol class="- topic/ol ol" type="a">
+<li class="- topic/li li"><p class="- topic/p p" id="af1054444__af1054506">Start the Siebel client.</p><p class="- topic/p p">Make sure you
+use the same Siebel application configuration (CFG) file and login
+arguments that you specified in the code.</p></li>
+<li class="- topic/li li"><p class="- topic/p p" id="af1054444__af1054508">Navigate to the Accounts screen, and then the
+All Accounts view.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Verify that at least one account is visible in the Account
+list applet. </p><p class="- topic/p p">If at least one account is not visible, then create
+one. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Exit the Siebel client.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Open the Siebel application configuration (CFG) file you specified
+in the code and make sure the DataSource parameter indicates the correct
+Siebel database source.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In Microsoft Visual C++, choose the Build menu, and then the
+SiebelCOM.exe menu item. </p><p class="- topic/p p">If Microsoft Visual C++ displays an
+error or warning in the output window, then correct the error and
+repeat this step.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Choose the Build menu, and then the Execute SiebelCOM.exe menu
+item.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Wait for Microsoft Visual C++ to display the following message:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>Siebel Data Server initialized.
+</code></pre></li>
+<li class="- topic/li li"><p class="- topic/p p">Click OK. </p><p class="- topic/p p">The Siebel application displays the following
+series of messages:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>CFG file loaded.
+Logged in to Siebel database.
+Account business object returned.
+Account business component returned.
+</code></pre><p class="- topic/p p">The Siebel application displays the name of the first
+account in the All Accounts view.</p></li>
+</ol></li>
+</ol> </section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

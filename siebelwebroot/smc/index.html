@@ -1,0 +1,1281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Siebel Management Console</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <meta name="description" content="Oracle Siebel Cloud" />
+    <meta name="keywords" content="Oracle, Siebel" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="icon" href="../images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="../scripts/3rdParty/jqGrid/current/css/ui.jqgrid.css?v=2cdda056c4"
+    />
+    <link rel="stylesheet" href="../files/smc.css?v=5ab7857524" />
+  </head>
+
+  <body tabindex="-1">
+    <component-header></component-header>
+    <div id="container" class="container table">
+      <div
+        data-bind="component: {name: 'component-sidebar'}"
+        class="sidebar"
+      ></div>
+      <div data-bind="component: {name: 'component-main'}" class="main"></div>
+    </div>
+    <component-compare></component-compare>
+    <component-bootstrapgateway></component-bootstrapgateway>
+    <component-log></component-log>
+    <div
+      class="modal-mask-overlay smc-wait"
+      id="modalLoading"
+      role="alertdialog"
+    >
+      <div class="modal-loading"></div>
+    </div>
+    <div
+      class="modal"
+      id="modalConfirm"
+      role="alertdialog"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalText"
+    ></div>
+    <div
+      class="modal"
+      id="modalAlert"
+      role="alertdialog"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalText"
+    ></div>
+    <script id="modalTmpl" type="text/template" style="display: none;">
+      <div class="modal-content" role="document">
+          <div class="modal-content-inner">
+              <div class="modal-content-title" data-name="title" id="modalTitle" tabindex="-1"></div>
+              <div class="modal-content-text" data-name="text" id="modalText" tabindex="-1"></div>
+              <div class="modal-content-check" data-name="force-check" aria-hidden="true">
+                  <label class="modal-content-check-label">
+                      <input type="checkbox" data-name="force_delete" id="modalCheckbox" tabindex="0">
+                      <span class="siebui-label form-label" data-name="force-check-label"><span>
+                  </label>
+              </div>
+              <div class="modal-content-btns" data-type="confirm" aria-hidden="true">
+                  <input type="button" class="appletButton" data-click="confirm_ok" value="" tabindex="0" role="button">
+                  <input type="button" class="appletButton" data-click="confirm_cancel" value="" tabindex="0" role="button">
+              </div>
+              <div class="modal-content-btns" data-type="alert" aria-hidden="true">
+                  <input type="button" class="appletButton" data-click="alert_ok" value="" tabindex="0" role="button">
+              </div>
+          </div>
+      </div>
+    </script>
+    <script id="template-header" type="text/html">
+      <div id="header" class="header">
+          <!-- ko if: userInfoVisible -->
+              <div id="modalMaskOverlay" class="modal-mask-overlay" data-bind="click: events.hideUserInfo" style="display: block;">
+                  <div class="container overflow-hidden">
+                      <div class="userinfo-wrap" id="userinfo">
+                          <div class="userinfo-content">
+                              <img src="../images/photo.png" class="userinfo-content-avatar">
+                              <div class="userinfo-content-text">
+                                  <label data-bind="text: labels.userName" tabindex="-1"></label>
+                                  <span data-bind="text: labels.username" tabindex="-1"></span>
+                              </div>
+                          </div>
+                          <div class="userinfo-btns">
+                              <button type="button" id="logout" class="appletButton" data-bind="automation: automation.logout, text: labels.logout, click: events.logout, attr: {title: labels.logout}" tabindex="0">Logout</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <!-- /ko -->
+          <div class="container clearfix">
+              <div class="header-logo" data-bind="attr: {'aria-label': labels.logo}" role="presentation" tabindex="0"></div>
+              <div class="header-menu" role="region">
+                  <a href="javascript:;" class="header-menu-sidebar-toggle" data-bind="click: events.toggleSidebar" tabindex="-1">
+                      <span alt="sidebar toggle" class="siebui-icon-toggle"></span>
+                  </a>
+                  <div class="overflow-hidden" data-bind="click: events.hideSidebar">
+                      <div id="sidebarIndicator" class="header-menu-indicator" data-bind="text: pathName, attr: {'aria-label': pathName}" tabindex="0" role="presentation"></div>
+                      <div class="header-icon-container">
+                          <component-globalsearch></component-globalsearch>
+                          <button type="button" class="form-btn header-icon header-icon-search siebui-icon-search" data-bind="attr: {title: labels.search}, click: events.toggleSearch" tabindex="-1" role="button"></button>
+                          <button type="button" id="showUserInfo" class="form-btn header-icon header-icon siebui-icon-user" data-bind="automation: automation.showUserInfo, click: events.showUserInfo, attr: {title: labels.userName}" tabindex="0" role="button"></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </script>
+    <script id="template-globalsearch" type="text/html">
+      <div class="header-search-container">
+          <input id="searchbox" role="searchbox" tabindex="0" class="header-search-box" data-bind="value: searchKey, valueUpdate: 'afterkeydown',
+              attr: {placeholder: labels.inputPlaceholder, 'aria-haspopup': searchOpen},
+              automation: automation,
+              event: {blur: $component.events.loseFocus}">
+          <!-- ko if: searchOpen -->
+          <ul data-bind="foreach: searchResult" class="header-search-list" tabindex="0">
+              <li>
+                  <!-- ko if: isCategory-->
+                  <a href="javascript:; " data-bind="text: text, click: $component.events.itemSelected, clickBubble: false,
+                      attr: {'aria-label': text}, automation" class="item-category"></a>
+                  <!-- /ko -->
+                  <!-- ko ifnot: isCategory-->
+                  <a href="javascript:; " data-bind="click: $component.events.itemSelected,
+                      attr: {'aria-label': localeType + ' ' + text}"> <span data-bind="text: shortType" class="item-type"></span><span data-bind="html: displayText, automation" class="item-text"></span> </a>
+                  <!-- /ko -->
+              </li>
+          </ul>
+          <!-- /ko -->
+      </div>
+    </script>
+    <script id="template-sidebar" type="text/html">
+      <div id="sidebar" role="navigation" tabindex="-1" data-bind="automation: $component.automation">
+          <ul data-bind="foreach: children, attr: {'aria-label': $component.captions.label}" class="sidebar-list" role="tree" aria-multiselectable="true">
+              <li class="sidebar-list-item" role="presentation">
+                  <a href="javascript:;" class="sidebar-list-item-link-parent" role="treeitem" data-bind="
+                      css: {selected: active},
+                      click: enabled() ? $component.events.clickSidebarItem : null,
+                      attr: {tabindex: tabindex, id: id, 'aria-owns': (children && (children.length > 0 || children().length > 0)) ? (id + '_subtree') : null,
+                      'aria-expanded': (children && (children.length > 0 || children().length > 0)) ? expand().toString() : null,
+                      'aria-label': label,
+                      'aria-selected': active}">
+                      <span data-bind="attr: {class: icon + ' sidebar-list-parent-icon'}"></span><span class="sidebar-list-item-text"
+                          data-bind="text: label, attr: {title: label}, automation"></span></a>
+                  <!-- ko if: (children && (children.length > 0 || children().length > 0)) -->
+                  <ul class="sidebar-sub-list" role="group" data-bind="
+                      template: {name: 'navigationItem',
+                      foreach: children},
+                      visible: expand,
+                      attr: {id: id + '_subtree'}">
+                  </ul>
+                  <!-- /ko -->
+              </li>
+          </ul>
+      </div>
+    </script>
+    <script id="navigationItem" type="text/html">
+      <li class="sidebar-sub-list-item" role="presentation">
+          <div class="sidebar-sub-list-item-wrapper" role="presentation" data-bind="css: {selected: active}">
+              <a href="javascript:;" class="sidebar-sub-list-item-link-child" role="treeitem" data-bind="click: $component.events.clickSidebarSubItem,
+                  css: { hasChild: children && (children.length > 0 || children().length > 0)},
+                  attr: {tabindex: tabindex, id: id, 'aria-owns': (children && (children.length > 0 || children().length > 0)) ? (id + '_subtree') : null,
+                  'aria-expanded': (children && (children.length > 0 || children().length > 0)) ? expand().toString() : null,
+                  'aria-label': (status && type.indexOf('Gateway') < 0) ? label() + ' ' + status() + (isPrimary ? (' ' + $component.captions.primaryLabel) : '') : label,
+                  'aria-selected': active}">
+                  <span data-bind="if: icon, attr: {class: icon + ' sidebar-sub-list-item-icon'}"></span>
+                  <span data-bind="if: !icon, css: $component.getStatusIcon($data)" class="sidebar-sub-list-item-icon"></span>
+                  <span class="sidebar-list-item-text" data-bind="text: label,
+                      attr: {title: (isPrimary ? label() + ' (' + $component.captions.primaryLabel + ')': label)},
+                      css: {primary: isPrimary},
+                      automation"></span>
+              </a>
+              <span class="siebui-icon-arrow-down" data-bind="
+                  visible: (children && (children.length > 0 || children().length > 0)),
+                  css: {expand: expand },
+                  click: $component.events.clickSidebarSubItemArrow,
+                  automation: {ot: ot, rn: rn ? rn + ' expander' : ''}"></span>
+          </div>
+          <!-- ko if: (children && (children.length > 0 || children().length > 0)) -->
+          <ul class="sidebar-sub-list" role="group" data-bind="
+              template: {name: 'navigationItem', foreach: children},
+              visible: expand,
+              attr: {id: id + '_subtree'}">
+          </ul>
+          <!-- /ko -->
+      </li>
+    </script>
+    <script id="template-compare" type="text/html">
+      <div id="profile-compare" class="compare-popup" data-bind="if: display, automation: automation.container">
+          <div class="compare-modal">
+              <div class="compare-content">
+                  <div class="compare-content-inner" role="dialog" data-bind="attr: {'aria-label': captions.title}" aria-model="true">
+                      <div class="compare-header">
+                          <div class="compare-header-title" data-bind="text:captions.title" tabindex="0"></div>
+                          <div class="siebui-icon-close" data-bind="click: events.closeCompare"></div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="compare-diff-area">
+                          <table>
+                              <thead class="compare-header-row">
+                                  <tr>
+                                      <th class="compare-column-param">
+                                          <span tabindex="0" class="compare-header-text siebui-label" data-bind="text: captions.paramColumnTitle"></span>
+                                      </th>
+                                      <!-- ko foreach: $component.selectedProfileList -->
+                                      <th class="compare-column-data">
+                                          <select tabindex="0" data-bind="options: $component.profileList,
+                                              optionsCaption: $component.captions.profileSelectCaption,
+                                              value: name,
+                                              event: {change: $component.events.selectChanged},
+                                              automation,
+                                              optionsAfterRender: $component.setAutomationForOptions">
+                                          </select>
+                                      </th>
+                                      <!-- /ko -->
+                                  </tr>
+                              </thead>
+                              <tbody class="compare-diff-data" tabindex="-1" data-bind="css:{incompare: isComparing}">
+                                  <tr data-bind="foreach: {data: compareDataArray, as: 'topItem'}">
+                                      <td data-bind="css: {'compare-column-param': topItem.isParam, 'compare-column-data': !topItem.isParam}">
+                                          <ul class="compare-list" role="tree" data-bind="template: {name: 'compareListItem', foreach: children}">
+                                          </ul>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <div class="compare-footer">
+                          <button tabindex="0" type="button" class="appletButton" data-bind="click: events.closeCompare,
+                              text: captions.closeBtnCaption,
+                              automation: automation.closeBtn"></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </script>
+    <script id="compareListItem" type="text/html">
+      <li role="presentation" data-bind="attr: {class: $component.getItemClass($data, topItem.isParam)}">
+          <div role="presentation">
+              <!-- ko if: topItem.isParam -->
+              <span class="compare-expander" data-bind="click: $component.events.expanderClicked,
+                  css: {'siebui-icon-minus': expandChild(), 'siebui-icon-add': !expandChild()}, style: {visibility: hasChild ? 'visible' : 'hidden'}"></span>
+              <!-- /ko -->
+              <span role="treeitem" class="compare-key" data-bind="text: (key==='undefined' ? '-' : key),
+                  attr: {title: (key==='undefined' ? '-' : key), tabindex: tabindex,'aria-expanded': (hasChild ? expandChild().toString() : null),
+                  'aria-label': (!topItem.isParam && !hasChild && (key === 'undefined' || key==='')) ? $component.captions.notConfigured : ariaLabel,
+                  id: id,
+                  'aria-selected': (tabindex && tabindex() === '0')}"></span>
+          </div>
+          <div data-bind="if: hasChild, visible: expandChild" role="presentation">
+              <ul role="group" data-bind="template:{name: 'compareListItem', foreach: children}" class="compare-child-list">
+              </ul>
+          </div>
+      </li>
+    </script>
+    <script id="template-log" type="text/html">
+      <div class="log-popup" data-bind="if: display">
+          <div class="compare-modal">
+              <div class="compare-content">
+                  <div class="compare-content-inner" role="dialog" data-bind="attr: {'aria-label': captions.title}">
+                      <div class="compare-header">
+                          <div class="compare-header-title" data-bind="text:captions.title" tabindex="0"></div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="compare-diff-area">
+                          <div class="log-content" data-bind="text: logContent,
+                              attr: {'aria-label': logContent, tabindex: (logContent() ? '0' : undefined)}">
+                          </div>
+                      </div>
+                      <div class="compare-footer">
+                          <button type="button" class="appletButton" tabindex="0" data-bind="click: events.close, text: captions.closeBtnCaption"></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </script>
+    <script id="template-bootstrapgateway" type="text/html">
+      <div class="bootstrap-gateway-popup" data-bind="if: extras.displayModal">
+          <div class="bootstrap-gateway-modal" id="gatewayBootstrapModel" role="alertdialog">
+              <div class="bootstrap-gateway-content" role="document">
+                  <!-- ko if: extras.displayStep01 -->
+                      <div class="compare-content-inner">
+                          <div class="compare-header">
+                              <div class="compare-header-title" data-bind="text:labels.setupStep01, attr: {title: labels.setupStep01}" tabindex="0"></div>
+                          </div>
+                          <div class="bootstrap-gateway-body">
+                              <div class="form-area">
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelCGHostURI" data-bind="text: labels.CGHostURI"></span><span class="required-mark">*</span>
+                                      <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.CGHostURI, value: CGHostURI, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" aria-labelledby="labelCGHostURI" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelTLSListenerPort" data-bind="text: labels.TLSListenerPort"></span><span class="required-mark">*</span>
+                                      <input type="text" class="siebui-ctrl-input" data-bind="value: TLSListenerPort, valueUpdate: 'afterkeyup'" data-validate="port" tabindex="0" aria-labelledby="labelTLSListenerPort" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="pull-right">
+                              <input type="button" class="appletButton" data-bind="automation: $component.automation.submit, click: events.submitStep01, value: labels.submit" tabindex="0" role="button">
+                          </div>
+                      </div>
+                  <!-- /ko -->
+                  <!-- ko if: extras.displayStep02 -->
+                      <div class="compare-content-inner">
+                          <div class="compare-header">
+                              <div class="compare-header-title" data-bind="text:labels.setupStep02, attr: {title: labels.setupStep02}" tabindex="0"></div>
+                          </div>
+                          <div class="bootstrap-gateway-body">
+                              <div class="form-area">
+                                  <!-- ko if: (extras.currSection() === 1) -->
+                                  <div class="form-expand">
+                                        <label class="form-group">
+                                          <span class="siebui-label form-label" id="labelProfileName" data-bind="text: labels.ProfileName" tabindex="0"></span><span class="required-mark">*</span>
+                                          <input type="text"  class="siebui-ctrl-input" tabindex="0" data-bind="automation: $component.automation.ProfileName, value: ProfileName, attr: {title: $component.tooltips.INTL_LABEL_PROFILE_NAME}, valueUpdate: 'afterkeyup'" readonly="true" data-validate="required" aria-readonly="true" aria-labelledby="labelProfileName" aria-required="true">
+                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                        </label>
+                                      <div class="form-group group-toggle mtb10">
+                                          <span data-bind="text: labels.DataSources" tabindex="0"></span>
+                                          <span class="form-error hidden" id="datasourcesError" tabindex="0" role="tooltip"></span>
+                                          <button type="button" class="form-btn form-btn-add siebui-icon-add" data-bind="automation: $component.automation.addDataSource, click: events.addDataSource, attr: {'aria-label': $component.tooltips.INTL_LABEL_ADD_DATA_SOURCE}" tabindex="0" role="button"></button>
+                                      </div>
+                                      <div class="form-collapsed">
+                                      <!-- ko foreach: DataSources -->
+                                          <div class="form-expand">
+                                              <a href="javascript:;" class="group-toggle" data-bind="click: $component.events.toggleDataSource, css: {'group-toggle-active': $data.extras.expanded()}" tabindex="-1">
+                                                  <button type="button" class="form-btn" data-bind="attr: {'aria-label': $component.tooltips.INTL_LABEL_TOGGLE_DATA_SOURCE, 'aria-expanded': $data.extras.expanded()}" tabindex="0" role="button">
+                                                      <i data-bind="automation: $component.automation.toggleDataSource, css: {'siebui-icon-arrow-right': (!$data.extras.expanded()), 'siebui-icon-arrow-down': $data.extras.expanded()}"></i>
+                                                      <span data-bind="text: $component.labels.DataSource"></span>
+                                                  </button>
+                                                  <button type="button" data-bind="automation: $component.automation.removeDataSource, click: $component.events.removeDataSource, attr: {'aria-label': $component.tooltips.INTL_LABEL_DELETE_DATA_SOURCE}" class="form-btn siebui-icon-deleteselection form-btn-delete" tabindex="0" role="button"></button>
+                                              </a>
+                                              <div data-bind="css: {'hidden': !$data.extras.expanded()}">
+                                                  <label class="form-group">
+                                                      <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceName"></span><span class="required-mark">*</span>
+                                                      <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceName, value: $data.Name, attr: {title: $component.tooltips.INTL_LABEL_NAME_OF_DATA_SOURCE, readonly: $data.Type() === 'LDAP', 'aria-disabled': $data.Type() === 'LDAP'}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" aria-required="true">
+                                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                  </label>
+                                                  <div class="form-group">
+                                                      <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceType"></span><span class="required-mark">*</span>
+                                                      <!-- ko foreach: $component.extras.DataSourceTypeOptions -->
+                                                      <label class="block">
+                                                          <input type="radio" name="DataSourceType" data-bind="automation: $component.automation.DataSourceType, value: $data.value, attr: {title: $component.tooltips.INTL_LABEL_TYPE_OF_DATA_SOURCE, tabindex: ($parent.Type() === $data.value) ? '0' : '-1'}, checked: $parent.Type">
+                                                          <span class="form-label" data-bind="text: $data.label"></span>
+                                                      </label>
+                                                      <!-- /ko -->
+                                                  </div>
+                                                  <!-- ko if: ($data.Type() === 'DB' || $data.Type() === 'LDAP') -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceHost"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceHost, value: $data.Host, attr: {title: $component.tooltips.INTL_LABEL_HOST_TO_CONNECT_PLEASE_NOTE_THAT_YOU_MAY_HAVE_TO_GIVE}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourcePort"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourcePort, value: $data.Port, attr: {title: $component.tooltips.INTL_LABEL_HOSTS_LISTENING_PORT}, valueUpdate: 'afterkeyup'" data-validate="port" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'DB' || $data.Type() === 'DB_Advanced') -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text:  $component.labels.DataSourceSqlStyle"></span>
+                                                          <!-- ko foreach: $component.extras.DataSourceSqlStyleOptions -->
+                                                          <label class="block">
+                                                              <input type="radio" name="DataSourceSqlStyle" data-bind="automation: $component.automation.DataSourceSqlStyle, value: $data.value, attr: {title: $component.tooltips.INTL_LABEL_SQL_STYLE_OF_DATABASE, tabindex: ($parent.SqlStyle() === $data.value) ? '0' : '-1'}, checked: $parent.SqlStyle">
+                                                              <span class="form-label" data-bind="text: $data.label"></span>
+                                                          </label>
+                                                          <!-- /ko -->
+                                                      </label>
+                                                  <!-- ko if: $data.Type() === 'DB_Advanced' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text:  $component.labels.DataSourceConnectionString"></span><span class="required-mark">*</span>
+                                                          <textarea data-bind="automation: $component.automation.DataSourceConnectionString, value: $data.ConnectionString, attr: {title: $component.tooltips.INTL_LABEL_DATABASE_AUTHENTICATION_CONNECTIONSTR_TT}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          </textarea>
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'DB' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text:  $component.labels.DataSourceEndpoint"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceEndpoint, value: $data.Endpoint, attr: {title: $component.tooltips.INTL_LABEL_DATABASE_SERVICE_NAME}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text:  $component.labels.DataSourceTableOwner"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceTableOwner, value: $data.TableOwner, attr: {title: $component.tooltips.INTL_LABEL_TABLE_OWNER + '.'}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceApplicationUser"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceApplicationUser, value: $data.ApplicationUser, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_USER_NAME_OF_A_RECORD_IN_THE_DIRECTORY}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceApplicationPassword"></span><span class="required-mark">*</span>
+                                                          <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceApplicationPassword, value: $data.ApplicationPassword, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_PASSWORD_IN_THE_DIRECTORY_FOR_THE_USER_DEFINED}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceBaseDN"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceBaseDN, value: $data.BaseDN, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_BASE_DISTINGUISHED_NAME_WHICH_IS_THE_ROOT_OF}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'Custom' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceLibrary"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceLibrary,value: $data.Library, attr: {title: $component.tooltips.INTL_LABEL_NAME_OF_THE_CUSTOM_SECURITY_ADAPTER_IMPLEMENNTATION_THAT_CAN_BE_PLUGGED_IN}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'DB' || $data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                  <label class="form-group">
+                                                      <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceCRC"></span>
+                                                      <input type="text" data-bind="automation: $component.automation.DataSourceCRC, value: $data.CRC, attr: {title: $component.tooltips.INTL_LABEL_CHECKSUM_VALIDATION_APPLICABLE_ONLY_FOR_SIEBEL_SERVER_USE_THIS_PARAMETER_TO}, valueUpdate: 'afterkeyup'" data-validate="digit" tabindex="0">
+                                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                  </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'Custom' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceInfo"></span>
+                                                          <textarea data-bind="automation: $component.automation.DataSourceInfo,value: $data.Info, attr: {title: $component.tooltips.INTL_LABEL_ANY_ADITIONAL_INFORMATION_TO_BE_PASSED_INTO_THE_CUSTOM_SECURITY_ADAPTER}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          </textarea>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceCredentialsAttributeType"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceCredentialsAttributeType, value: $data.CredentialsAttributeType, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ATTRIBUTE_TYPE_THAT_STORES_A_DATABASE_ACCOUNT_FOR}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" data-bind="automation: $component.automation.DataSourceHashDBPwd, checked: $data.HashDBPwd, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_PASSWORD_HASHING_FOR_DATABASE_CREDENTIALS_PASSWORDS}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceHashDBPwd"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <label class="form-group">
+                                                      <input type="checkbox" data-bind="automation: $component.automation.DataSourceHashUserPwd, checked: $data.HashUserPwd, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_PASSWORD_HASHING_FOR_USER_PASSWORDS_USES_THE_HASHING_ALGORITHM}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceHashUserPwd"></span>
+                                                  </label>
+                                                  <!-- ko if: ($data.HashDBPwd() || $data.HashUserPwd())-->
+                                                      <label class="form-group readonly">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceHashAlgorithm"></span>
+                                                          <!-- ko foreach: $component.extras.DataSourceHashAlgorithmOptions -->
+                                                          <label class="block">
+                                                              <input type="radio" name="DataSourceHashAlgorithm" data-bind="automation: $component.automation.DataSourceHashAlgorithm_SHA2,value: $data.value, attr: {title: $component.tooltips.INTL_LABEL_HASH_ALGORITHM_TO_BE_USED_FOR_PASSWORD_HASHING, tabindex: ($parent.HashAlgorithm() === $data.value) ? '0' : '-1'}, checked: $parent.HashAlgorithm" readonly>
+                                                              <span class="form-label" data-bind="text: $data.label"></span>
+                                                          </label>
+                                                          <!-- /ko -->
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourcePasswordAttributeType"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourcePasswordAttributeType, checked: $data.HashUserPwd, value: $data.PasswordAttributeType, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ATTRIBUTE_TYPE_UNDER_WHICH_THE_USERS_LOGIN_PASSWORD}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" data-bind="automation: $component.automation.DataSourcePropagateChange, checked: $data.PropagateChange, attr: {title: $component.tooltips.INTL_LABEL_SET_THIS_PARAMETER_TO_TRUE_TO_ALLOW_ADMINISTRATION_OF_THE}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourcePropagateChange"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceRolesAttributeType"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceRolesAttributeType, value: $data.RolesAttributeType, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ATTRIBUTE_TYPE_FOR_ROLES_STORED_IN_THE_DIRECTORY}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSharedCredentialsDN"></span><span class="required-mark">*</span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSharedCredentialsDN, value: $data.SharedCredentialsDN, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ABSOLUTE_PATH_NOT_RELATIVE_TO_THE_BASEDN_OF}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                          <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSharedDBUsername"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSharedDBUsername, value: $data.SharedDBUsername, attr: {title: $component.tooltips.INTL_LABEL_SPECIFY_THE_USER_NAME_TO_CONNECT_TO_THE_SIEBEL_DATABASE}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSharedDBPassword"></span>
+                                                          <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSharedDBPassword, value: $data.SharedDBPassword, attr: {title: $component.tooltips.INTL_LABEL_SPECIFY_THE_PASSWORD_ASSOCIATED_WITH_THE_SHARED_DB_USERNAME_PARAMETER}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" data-bind="automation: $component.automation.DataSourceUseAdapterUsername, checked: $data.UseAdapterUsername, attr: {title: $component.tooltips.INTL_LABEL_IF_TRUE_THEN_THIS_PARAMETER_INDICATES_THAT_WHEN_THE_USER}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceUseAdapterUsername"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <!-- ko if: $data.UseAdapterUsername() -->
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSiebelUsernameAttributeType"></span>
+                                                              <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSiebelUsernameAttributeType, value: $data.SiebelUsernameAttributeType, attr: {title: $component.tooltips.INTL_LABEL_IF_SET_TO_TRUE_THEN_THIS_PARAMETER_IS_THE_ATTRIBUTE}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          </label>
+                                                      <!-- /ko -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" data-bind="automation: $component.automation.DataSourceSSL, checked: $data.SSL, attr: {title: $component.tooltips.INTL_LABEL_ENABLE_SSL_FOR_SOCKET_CONNECTIONS_TO_HOST}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSSL"></span>
+                                                      </label>
+                                                      <!-- ko if: $data.SSL() -->
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceWalletPassword"></span>
+                                                              <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceWalletPassword, value: $data.WalletPassword, attr: {title: $component.tooltips.INTL_LABEL_WALLET_PASSWORD_TO_OPEN_THE_WALLET_GENERATED_BY_ORACLE_WALLET}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          </label>
+                                                      <!-- /ko -->
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSingleSignOn, checked: $data.SingleSignOn, attr: {title: $component.tooltips.INTL_LABEL_IF_TRUE_THEN_THE_SECURITY_ADAPTER_IS_USED_IN_WEB}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSingleSignOn"></span>
+                                                      </label>
+                                                      <!-- ko if: $data.SingleSignOn() -->
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceTrustToken"></span>
+                                                              <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceTrustToken, value: $data.TrustToken, attr: {title: $component.tooltips.INTL_LABEL_USED_AS_PASSWORD_WHEN_RUNNING_IN_WEB_SSO_MODE}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          </label>
+                                                      <!-- /ko -->
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'DB_Advanced' -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSingleSignOnSSO, checked: $data.SingleSignOnSSO, attr: {title: $component.tooltips.INTL_LABEL_IF_TRUE_THEN_THE_SECURITY_ADAPTER_IS_USED_IN_WEB}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSingleSignOnSSO"></span>
+                                                      </label>
+                                                      <!-- ko if: $data.SingleSignOnSSO() -->
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceTrustTokenSSO"></span><span class="required-mark">*</span>
+                                                              <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceTrustTokenSSO, value: $data.TrustTokenSSO, attr: {title: $component.tooltips.INTL_LABEL_USED_AS_PASSWORD_WHEN_RUNNING_IN_WEB_SSO_MODE}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                              <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                          </label>
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSharedDBUsernameSSO"></span><span class="required-mark">*</span>
+                                                              <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSharedDBUsernameSSO, value: $data.SharedDBUsernameSSO, attr: {title: $component.tooltips.INTL_LABEL_SPECIFY_THE_USER_NAME_TO_CONNECT_TO_THE_SIEBEL_DATABASE}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                              <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                          </label>
+                                                          <label class="form-group">
+                                                              <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSharedDBPasswordSSO"></span><span class="required-mark">*</span>
+                                                              <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSharedDBPasswordSSO, value: $data.SharedDBPasswordSSO, attr: {title: $component.tooltips.INTL_LABEL_SPECIFY_THE_PASSWORD_ASSOCIATED_WITH_THE_SHARED_DB_USERNAME_PARAMETER}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                                              <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                                          </label>
+                                                      <!-- /ko -->
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSaltAttributeType"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceSaltAttributeType, value: $data.SaltAttributeType, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ATTRIBUTE_THAT_STORES_THE_SALT_VALUE_IF_YOU}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: ($data.Type() === 'LDAP' || $data.Type() === 'Custom') -->
+                                                      <label class="form-group">
+                                                          <input type="checkbox" data-bind="automation: $component.automation.DataSourceSaltUserPwd, checked: $data.SaltUserPwd, attr: {title: $component.tooltips.INTL_LABEL_SET_THIS_PARAMETER_TO_TRUE_TO_SPECIFY_THAT_SALT_VALUES}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceSaltUserPwd"></span>
+                                                      </label>
+                                                  <!-- /ko -->
+                                                  <!-- ko if: $data.Type() === 'LDAP' -->
+                                                      <label class="form-group">
+                                                          <span class="siebui-label form-label" data-bind="text: $component.labels.DataSourceUsernameAttributeType"></span>
+                                                          <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.DataSourceUsernameAttributeType, value: $data.UsernameAttributeType, attr: {title: $component.tooltips.INTL_LABEL_SPECIFIES_THE_ATTRIBUTE_TYPE_UNDER_WHICH_THE_USERS_LOGIN_NAME}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                      </label>
+                                                  <!-- /ko -->
+                                              </div>
+                                          </div>
+                                      <!-- /ko -->
+                                      </div>
+                                  </div>
+                                  <!-- /ko -->
+                                  <!-- ko if: (extras.currSection() === 2) -->
+                                  <div class="form-expand">
+                                      <button type="button" class="form-btn group-toggle" data-bind="click: events.toggleBasicInfo, css: {'group-toggle-active': extras.basicInfoExpanded()}" tabindex="0" role="button">
+                                          <i data-bind="automation: $component.automation.basicInfo, css: {'siebui-icon-arrow-right': (!extras.basicInfoExpanded()), 'siebui-icon-arrow-down': extras.basicInfoExpanded()}"></i>
+                                          <span data-bind="text: labels.basicInfo"></span>
+                                      </button>
+                                      <div data-bind="css: {'hidden': !extras.basicInfoExpanded()}">
+                                          <label class="form-group">
+                                              <span class="siebui-label form-label" data-bind="text: labels.SecAdptMode, valueUpdate: 'afterkeyup'"></span><span class="required-mark">*</span>
+                                              <!-- ko foreach: $component.extras.DataSourceTypeOptions -->
+                                              <label class="block">
+                                                  <input type="radio" name="SecAdptMode" data-bind="automation: $component.automation.SecAdptMode, value: $data.value, attr: {title: $component.tooltips.INTL_LABEL_TYPE_OF_DATA_SOURCE, tabindex: ($parent.SecAdptMode() === $data.value) ? '0' : '-1'}, checked: $component.SecAdptMode">
+                                                  <span class="form-label" data-bind="text: $data.label"></span>
+                                              </label>
+                                              <!-- /ko -->
+                                          </label>
+                                          <!-- ko if: (SecAdptMode() === 'DB' || SecAdptMode() === 'DB_Advanced') -->
+                                              <label class="form-group">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.SecAdptName"></span><span class="required-mark">*</span>
+                                                  <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.SecAdptName, value: SecAdptName, attr: {title: $component.tooltips.INTL_LABEL_CHOSEN_SECURITY_ADAPTER_FOR_DB_IT_ALWAYS_DBSECADPT}, valueUpdate: 'afterkeyup'" data-validate="required" readonly tabindex="0">
+                                                  <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                              </label>
+                                          <!-- /ko -->
+                                          <!-- ko if: (SecAdptMode() === 'LDAP') -->
+                                              <label class="form-group">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.SecAdptName"></span><span class="required-mark">*</span>
+                                                  <select class="siebui-ctrl-input" data-bind="automation: $component.automation.SecAdptName, options: extras.DataSourcesLDAP, value: SecAdptName, optionsCaption: labels.DataSourceOptionsCaption, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" role="listbox">
+                                                  </select>
+                                                  <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                              </label>
+                                          <!-- /ko -->
+                                          <!-- ko if: (SecAdptMode() === 'Custom') -->
+                                              <label class="form-group">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.SecAdptName"></span><span class="required-mark">*</span>
+                                                  <select class="siebui-ctrl-input" data-bind="automation: $component.automation.SecAdptName, options: extras.DataSourcesCustom, value: SecAdptName, optionsCaption: labels.DataSourceOptionsCaption, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" role="listbox">
+                                                  </select>
+                                                  <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                              </label>
+                                          <!-- /ko -->
+                                          <!-- ko if: (SecAdptMode() === 'DB') -->
+                                              <label class="form-group">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.DBSecurityAdapterDataSource"></span><span class="required-mark">*</span>
+                                                  <select class="siebui-ctrl-input" data-bind="automation: $component.automation.DBSecurityAdapterDataSource, options: extras.DataSourcesDB, value: DBSecurityAdapterDataSource, optionsCaption: labels.DataSourceOptionsCaption, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" role="listbox">
+                                                  </select>
+                                                  <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                              </label>
+                                              <label class="form-group">
+                                                  <input type="checkbox" data-bind="automation: $component.automation.DBSecurityAdapterPropagateChange, checked: DBSecurityAdapterPropagateChange, attr: {title: $component.tooltips.INTL_LABEL_CREDENTIAL_PROPAGATION_SWITCH_FOR_DB_ADAPTER}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.DBSecurityAdapterPropagateChange"></span>
+                                              </label>
+                                          <!-- /ko -->
+                                          <!-- ko if: (SecAdptMode() === 'DB_Advanced') -->
+                                              <label class="form-group">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.DBSecurityAdapterDataSource"></span><span class="required-mark">*</span>
+                                                  <select class="siebui-ctrl-input" data-bind="automation: $component.automation.DBSecurityAdapterDataSource, options: extras.DataSourcesDB_Advanced, value: DBSecurityAdapterDataSource, optionsCaption: labels.DataSourceOptionsCaption, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" role="listbox">
+                                                  </select>
+                                                  <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                              </label>
+                                              <label class="form-group">
+                                                  <input type="checkbox" data-bind="automation: $component.automation.DBSecurityAdapterPropagateChange, checked: DBSecurityAdapterPropagateChange, attr: {title: $component.tooltips.INTL_LABEL_CREDENTIAL_PROPAGATION_SWITCH_FOR_DB_ADAPTER}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                                  <span class="siebui-label form-label" data-bind="text: labels.DBSecurityAdapterPropagateChange"></span>
+                                              </label>
+                                          <!-- /ko -->
+                                          <label class="form-group">
+                                              <span class="siebui-label form-label" data-bind="text: labels.NSAdminRole"></span>
+                                              <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.NSAdminRole, value: NSAdminRole, attr: {title: $component.tooltips.INTL_LABEL_AUTHORIZATION_ROLES_TO_BE_CHECKED_FOR_THE_USERS_LOGGING_IN}, valueUpdate: 'afterkeyup'" tabindex="0">
+                                          </label>
+                                      </div>
+                                  </div>
+                                  <div class="form-expand">
+                                      <button type="button" class="form-btn group-toggle" data-bind="click: events.toggleTestingConn, css: {'group-toggle-active': extras.testingConnExpanded()}" tabindex="0">
+                                          <i data-bind="automation: $component.automation.testingConn,css: {'siebui-icon-arrow-right': !extras.testingConnExpanded(), 'siebui-icon-arrow-down': extras.testingConnExpanded()}"></i>
+                                          <span data-bind="text: labels.testingConn"></span>
+                                      </button>
+                                      <div data-bind="css: {'hidden': !extras.testingConnExpanded()}">
+                                          <label class="form-group">
+                                              <span class="siebui-label form-label" data-bind="text: labels.TestUserName"></span><span class="required-mark">*</span>
+                                              <input type="text" class="siebui-ctrl-input" data-bind="automation: $component.automation.TestUserName, value: TestUserName, attr: {title: $component.tooltips.INTL_LABEL_USER_TO_TEST_THE_CONNECTION_WITH}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                              <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                          </label>
+                                          <label class="form-group">
+                                              <span class="siebui-label form-label" data-bind="text: labels.TestUserPwd"></span><span class="required-mark">*</span>
+                                              <input type="password" class="siebui-ctrl-input" data-bind="automation: $component.automation.TestUserPwd, value: TestUserPwd, attr: {title: $component.tooltips.INTL_LABEL_PASSWORD_TO_TEST_THE_CONNECTION_WITH}, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0">
+                                              <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                          </label>
+                                      </div>
+                                  </div>
+                                  <!-- /ko -->
+                              </div>
+                          </div>
+                          <div class="pull-right">
+                              <!-- ko if: (extras.currSection() === 2) -->
+                                  <input type="button" class="appletButton" data-bind="automation: $component.automation.btnPrev,value: labels.btnPrev, click: events.goPrevSection" tabindex="0" role="button">
+                              <!-- /ko -->
+                              <!-- ko if: (extras.currSection() === 1) -->
+                                  <input type="button" class="appletButton" data-bind="automation: $component.automation.btnNext, value: labels.btnNext, click: events.goNextSection" tabindex="0" role="button">
+                              <!-- /ko -->
+                              <!-- ko if: (extras.currSection() === 2) -->
+                                  <input type="button" class="appletButton" data-bind="automation: $component.automation.submit, click: events.submitStep02, value: labels.submit" tabindex="0" role="button">
+                              <!-- /ko -->
+                          </div>
+                      </div>
+                  <!-- /ko -->
+                  <!-- ko if: extras.displayStep03 -->
+                      <div class="compare-content-inner">
+                          <div class="compare-header">
+                              <div class="compare-header-title" data-bind="text:labels.setupStep03, attr: {title: labels.setupStep03}" tabindex="0"></div>
+                          </div>
+                          <div class="bootstrap-gateway-body">
+                              <div class="form-area">
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelRegistryPort" data-bind="text: labels.registryPort"></span><span class="required-mark">*</span>
+                                      <input type="text" class="siebui-ctrl-input" data-bind="automation: automation.registryPort, value: registryPort, valueUpdate: 'afterkeyup'" data-validate="requiredPort" tabindex="0" aria-labelledby="labelRegistryPort" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelRegistryUserName"  data-bind="text: labels.registryUserName"></span><span class="required-mark">*</span>
+                                      <input type="text" class="siebui-ctrl-input" data-bind="automation: automation.registryUserName, value: registryUserName, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" aria-labelledby="labelRegistryUserName" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelRegistryPassword" data-bind="text: labels.registryPassword"></span><span class="required-mark">*</span>
+                                      <input type="password" class="siebui-ctrl-input" id="registryPassword" data-bind="automation: automation.registryPassword, value: registryPassword, valueUpdate: 'afterkeyup'" data-validate="required" tabindex="0" aria-labelledby="labelRegistryPassword" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                                  <!-- ko if: registryPassword -->
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelRegistryConfirmPassword" data-bind="text: labels.registryConfirmPassword"></span><span class="required-mark">*</span>
+                                      <input type="password" class="siebui-ctrl-input" data-bind="automation: automation.registryConfirmPassword, value: registryConfirmPassword, valueUpdate: 'afterkeyup'" data-validate="requiredConfirmPwd" data-password-id="registryPassword" tabindex="0" aria-labelledby="labelRegistryConfirmPassword" aria-required="true">
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                                  <!-- /ko -->
+                                  <label class="form-group">
+                                      <span class="siebui-label form-label" id="labelPrimaryLanguage" data-bind="text: labels.primaryLanguage"></span><span class="required-mark">*</span>
+                                      <select class="siebui-ctrl-input" data-bind="automation: automation.primaryLanguage, options: extras.languages, optionsText: 'name', optionsValue: 'value', value: primaryLanguage" data-validate="required" tabindex="0" aria-labelledby="labelPrimaryLanguage" aria-required="true" role="listbox">
+                                      </select>
+                                      <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="pull-right">
+                              <input type="button" class="appletButton" data-bind="automation: $component.automation.submit, click: events.submitStep03, value: labels.submit" tabindex="0" role="button">
+                          </div>
+                      </div>
+                  <!-- /ko -->
+              </div>
+          </div>
+      </div>
+    </script>
+    <script id="template-main" type="text/html">
+      <div id="main" role="main" class="main-wrap" data-bind='component: {
+          name: componentName
+      }'>
+      </div>
+      <div class="copyright" id="copyright">
+          <span data-bind="text: copyright, attr: {title: copyright}, automation" tabindex="0"></span>
+      </div>
+    </script>
+    <script id="template-home" type="text/html">
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type }}"></div>
+          <div data-bind="component: {name: 'component-chart', params: {rootName: rootName, type: type }}"></div>
+      </div>
+      <div data-bind="component: {name: 'component-form', params: {rootName: rootName, type: type}}"></div>
+    </script>
+    <script id="template-profiles" type="text/html">
+      <div class="area" style="min-height: 700px;" tabindex="0">
+      </div>
+    </script>
+    <script id="template-hierarchy" type="text/html">
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type(), name: name() }}"></div>
+          <div data-bind="component: {name: 'component-chart', params: {rootName: rootName, type: type(), name: name() }}"></div>
+      </div>
+      <div data-bind="component: {name: 'component-form', params: {rootName: rootName, type: type(), name: name() }}"></div>
+    </script>
+    <script id="template-configuration" type="text/html">
+      <div data-bind="component: {name: 'component-breadcrumb', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+          <div data-bind="component: {name: 'component-listview', params: {rootName: rootName, type: type(), path: path(), pathname: pathname(), id: id() }}"></div>
+      </div>
+      <div data-bind="component: {name: 'component-form', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+    </script>
+    <script id="template-management" type="text/html">
+      <div data-bind="component: {name: 'component-breadcrumb', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+          <div data-bind="component: {name: 'component-listview', params: {rootName: rootName, type: type(), path: path(), pathname: pathname(), id: id() }}"></div>
+      </div>
+      <div data-bind="component: {name: 'component-form', params: {rootName: rootName, type: type(), name: name(), path: path(), pathname: pathname() }}"></div>
+    </script>
+    <script id="template-profile" type="text/html">
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type() }}"></div>
+          <div data-bind="component: {name: 'component-listview', params: {rootName: rootName, type: type(), id: id() }}"></div>
+      </div>
+      <div data-bind="component: {name: 'component-form', params: {rootName: rootName, type: type() }}"></div>
+    </script>
+    <script id="template-cache" type="text/html">
+      <div class="area">
+          <div data-bind="component: {name: 'component-action', params: {rootName: rootName, type: type }}"></div>
+          <div data-bind="component: {name: 'component-listview', params: {rootName: rootName, type: type }}"></div>
+      </div>
+    </script>
+    <script id="template-settings" type="text/html">
+      <div class="area form-area form-settings">
+          <div class="title-area">
+              <div class="title-area-title" data-bind="text: labels.settings, attr: {'aria-label': labels.settings}" tabindex="0"></div>
+          </div>
+          <div class="overflow-hidden">
+              <div class="form-group">
+                  <label class="form-label siebui-label"><span class="bold" id="labelRefreshConfiguration" data-bind="text: labels.refreshConfiguration"></span></label>
+                  <label class="form-label siebui-label"><span data-bind="text: labels.refreshConfigurationTooltip" style="white-space: normal;" tabindex="0" aria-labelledby="labelRefreshConfiguration" role="tooltip"></span></label>
+              </div>
+              <div class="form-group pull-right">
+                  <input type="button" class="appletButton" data-bind="automation: automation.refreshConfiguration, value: labels.refreshConfiguration, click: events.refreshConfiguration" tabindex="0" role="button">
+                  <input type="button" class="appletButton" data-bind="automation: automation.viewLog, value: labels.viewLog, click: events.viewLog" tabindex="0" role="button">
+              </div>
+          </div>
+          <div class="overflow-hidden">
+              <div class="form-group">
+                  <label class="form-label siebui-label"><span class="bold" id="labelHostURI" data-bind="text: labels.hostURI"></span></label>
+                  <input class="form-control" type="text" readonly="true" data-bind="automation: automation.hostURI, value: hostURI" tabindex="0" aria-readonly="true" aria-labelledby="labelHostURI" aria-required="true">
+              </div>
+              <label class="form-group pull-left overflow-hidden">
+                  <input type="checkbox" class="checkbox pull-left form-settings-agree-to-delete" data-bind="automation: automation.agreeToDelete, checked: agreeToDelete" tabindex="0" aria-labelledby="labelAgreeToDelete">
+                  <span class="pull-left form-settings-agree-to-delete-text" id="labelAgreeToDelete" data-bind="text: labels.agreeToDelete"></span>
+              </label>
+              <div class="form-group pull-right">
+                  <input type="button" data-bind="automation: automation.deleteBootstrapGateway, value: labels.deleteBootstrapGateway, click: events.deleteBootstrapGateway, attr: {readonly: disAgreeToDelete, 'aria-disabled': disAgreeToDelete}, css: {appletButton: agreeToDelete, appletButtonDis: disAgreeToDelete}" tabindex="0" role="button">
+              </div>
+          </div>
+          <div class="overflow-hidden">
+              <div class="form-group">
+                  <label class="form-label siebui-label" for="syncUp"><span class="bold" id="labelSyncUpInterval" data-bind="text: labels.syncUpInterval"></span></label>
+                  <input class="form-control" type="text" id="syncUp" data-bind="automation: automation.syncUpInterval, value: syncUpInterval, valueUpdate: 'afterkeydown'" tabindex="0" aria-labelledby="labelSyncUpInterval" aria-required="true">
+                  <!-- ko if: labels.syncUpIntervalError -->
+                  <div data-bind="text: labels.syncUpIntervalError, 'aria-label': labels.syncUpIntervalError" class="form-error" role="alert" aria-live="assertive"></div>
+                  <!-- /ko -->
+              </div>
+              <div class="form-group pull-right">
+                  <!-- ko if: displaySaveTip -->
+                  <span class="save-tip" data-bind="text:labels.saveTip, 'aria-label': labels.saveTip" role="alert" aria-live="assertive"></span>
+                  <!-- /ko -->
+                  <button type="button" class="appletButton" data-bind="automation: automation.save, css: {appletButtonDis: dataValid() === false},click: events.saveInterval, text: labels.save"></button>
+                  <button type="button" class="appletButton" data-bind="automation: automation.reset, click: events.resetInterval, text: labels.reset"></button>
+              </div>
+          </div>
+          <div style="margin-top:10px;">
+            <!--  configure safemode parameters -->
+            <form id="gatewaySafemodeCredentials" >
+                    <div class="overflow-hidden">
+                    <label class="siebui-label"><span class="bold" id="labelGatewaySafemodeCredentials" data-bind="text: labels.gatewaySafemodeCredentials"></span></label>
+                    <div class="action-icons" id="actionIcons" data-bind="foreach: $data.btnArr">
+                        <!-- ko if: (type !== 'btn') -->
+                            <!-- ko if: visible-->
+                                <a href="javascript:;" class="action-btn-wrapper" data-bind="click: $parent.events.click, disable: disabled, css: {disabled: disabled}, style: { pointerEvents: disabled() == true ? 'none' : 'auto' }, attr: {'title': text, 'data-index': $index, 'data-key': key, 'aria-disabled': disabled, 'aria-label': text}" tabindex="0" role="button">
+                                    <span data-bind="css: icon, automation" class="siebui-ctrl-btn"></span>
+                                </a>
+                            <!-- /ko -->
+                        <!-- /ko -->
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label siebui-label" id="labelUsername" for="username">
+                            <span  id='spanGatewaySafemodeUserid' data-bind="text: labels.username()"></span>
+                            <span class="required-mark" id="requiredUsername">*</span>
+                        </label>
+                        <input class="form-control" type="text" id="username"  name="username" data-bind="automation: automation.userId, value: safemodeUsername, disable: disableState"  data-validate="required" autofocus="autofocus" tabindex="0" aria-readonly="true" role="textbox" aria-required="true" aria-labelledby="spanGatewaySafemodeUserid">
+                        <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                    </div>
+                    <div class="form-group" data-bind="visible: visibleState">
+                        <label class="form-label siebui-label" id="labelPassword" for="password">
+                            <span  id='spanGatewaySafemodePassword' data-bind="text: labels.password"></span>
+                            <span class="required-mark" id="requiredPassword">*</span>
+                        </label>
+                        <input class="form-control" type="password" id="safemodePassword" name="password" data-bind="automation: automation.password," data-validate="required" tabindex="0" role="textbox" aria-required="true" aria-labelledby="spanGatewaySafemodePassword">
+                        <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                    </div>
+                    <div class="form-group reconfig-confirm-password" data-bind="visible: visibleState">
+                        <label class="form-label siebui-label" id="labelConfirmPassword" for="password">
+                            <span  id='spanGatewaySafemodeConfirmPassword' data-bind="text: labels.confirmPassword"></span>
+                            <span class="required-mark" id="requiredConfirmPassword">*</span>
+                        </label>
+                        <input class="form-control" type="password" id="confirmPassword"  name="confirmPassword" data-bind="automation: automation.confirmPassword" data-validate="requiredConfirmPwd" data-password-id="safemodePassword" tabindex="0" role="textbox" aria-required="true" aria-labelledby="spanGatewaySafemodeConfirmPassword">
+                        <span class="form-error hidden" tabindex="0" role="tooltip"></span>
+                    </div>
+                    <div class="form-group pull-right" data-bind="visible: visibleState">
+                        <button type="button" class="appletButton" data-bind="automation: automation.saveToRegistry, css: {appletButtonDis: dataValid() === false},click: events.goSaveSection, text: labels.submit"></button>
+                        <button type="button" class="appletButton" data-bind="automation: automation.reset, click: events.resetSafemode, text: labels.reset"></button>
+                        <button type="button" class="appletButton" data-bind="automation: automation.cancel, click: events.cancel, text: labels.btnTextCancel"></button>
+                    </div>
+                </div>
+            </form>
+          </div>
+      </div>
+    </script>
+    <script id="template-listview" type="text/html">
+      <div class='listview' id='listview'>
+          <table id="listview-table" class="listview-table"></table>
+          <div id="listview-pager"></div>
+      </div>
+    </script>
+    <script id="template-chart" type="text/html">
+      <div class="overflow-hidden" data-bind="automation: automation">
+          <a data-bind="text: $data.labelLegend, event: { mouseover: $data.events.showLegend, mouseout: $data.events.hideLegend }" class="toggle-legend">Legend</a>
+          <!-- ko if: $data.refresh -->
+              <ul data-bind="visible: $data.showLegend(), event: { mouseover: $data.events.showLegend, mouseout: $data.events.hideLegend }" class="tree-legend ui-menu ui-widget ui-widget-content" tabindex="-1">
+                  <!-- ko foreach: iconArr -->
+                  <li class="tree-legend-li">
+                      <b data-bind="css: $data.className"></b>
+                      <span data-bind="text: $data.text"></span>
+                  </li>
+                  <!-- /ko -->
+                  <!-- ko if: $data.iconArr2.length -->
+                      <!-- ko foreach: iconArr2 -->
+                      <li class="tree-legend-li">
+                          <b data-bind="css: $data.className"></b>
+                          <span class="legend-primary" data-bind="text: $data.text"></span>
+                      </li>
+                      <!-- /ko -->
+                  <!-- /ko -->
+                  <!-- ko if: $data.iconArr3.length -->
+                      <!-- ko foreach: iconArr3 -->
+                      <li class="tree-legend-li">
+                          <b data-bind="css: $data.className"></b>
+                          <span data-bind="text: $data.text"></span>
+                      </li>
+                      <!-- /ko -->
+                  <!-- /ko -->
+              </ul>
+              <ul class="tree" id="tree" tabindex="-1">
+                  <li class="tree-li" data-bind="template: {name: 'treeItem', data: data}">
+                  </li>
+              </ul>
+          <!-- /ko -->
+      </div>
+    </script>
+    <script id="treeItem" type="text/html">
+      <a href="javascript:;" class="tree-link" data-bind="click: $component.events.clickTreeNode, css: {'primary': $data.isPrimary, 'tree-link-curr': ($data.type === $component.type && ($data.label === $component.name || (!$component.name && $data.hasChild)))}, automation" tabindex="-1">
+          <span class="tree-link-title" data-bind="attr: {title: $data.label + ($data.isPrimary ? ' (' + $component.iconArr2[0].text + ')' : '')}">
+              <span data-bind="css: 'tree-link-icon ' + $data.iconClassName, attr: {title: ($data.rtStatus && $data.rtStatus.toLowerCase() !== 'notapplicable') ? $data.rtStatus : $data.status}"></span>
+              <span class="tree-link-label" data-bind="text: $data.label"></span>
+          </span>
+          <p class="tree-link-text" data-bind="text: $data.physicalHostIP, attr: {title: $data.physicalHostIP}"></p>
+      </a>
+      <!-- ko if: $data.hasChild -->
+      <div data-bind="css: {'tree-ul-abs': $data.isSiebelServerOverview}" tabindex="-1">
+          <!-- ko foreach: $data.children -->
+          <ul class="tree-ul" tabindex="-1">
+              <!-- ko foreach: $data -->
+              <li class="tree-li" data-bind="template: {name: 'treeItem', data: $data}">
+              </li>
+              <!-- /ko -->
+          </ul>
+          <!-- /ko -->
+      </div>
+      <!-- /ko -->
+    </script>
+    <script id="template-action" type="text/html">
+      <div class="title-area" role="toolbar" data-bind="automation: automation">
+          <div class="title-area-title action-title" data-bind="text: title, attr: {'aria-label': title}" id="actionTitle" tabindex="0"></div>
+          <div class="action-icons" id="actionIcons" data-bind="foreach: $data.btnArr">
+              <!-- ko if: (type !== 'btn') -->
+                  <!-- ko if: visible-->
+                      <a href="javascript:;" class="action-btn-wrapper" data-bind="click: $parent.events.click, disable: disabled, css: {disabled: disabled}, attr: {'title': text, 'data-index': $index, 'data-key': key, 'aria-disabled': disabled, 'aria-label': text}" tabindex="0" role="button">
+                          <span data-bind="css: icon, automation" class="siebui-ctrl-btn"></span>
+                      </a>
+                  <!-- /ko -->
+                  <!-- ko if: hasChildren -->
+                      <ul data-bind="foreach: children, visible: displayChild" class="action-btn-sub-grp ui-menu ui-widget ui-widget-content" id="uimenu">
+                          <li data-bind="click: $component.events.click" class="ui-menu-item">
+                              <a href="javascript:;" class="ui-menu-item-wrapper" data-bind="text: text, css: {'ui-state-disabled': disabled}, attr: {'title': text, 'data-index': $index, 'aria-disabled': disabled, 'aria-label': text}, automation" role="menuitem" tabindex="-1" role="button"></a>
+                          </li>
+                      </ul>
+                  <!-- /ko -->
+              <!-- /ko -->
+          </div>
+          <div class="action-btns" id="actionBtns" data-bind="foreach: $data.btnArr">
+              <!-- ko if: (type === 'btn') -->
+                  <input type="button" data-bind="click: $parent.events.click, readonly: disabled, css: {appletButton: !disabled(), appletButtonDis: disabled}, attr: {'title': text, 'value': text, 'data-index': $index, 'data-key': key, 'aria-disabled': disabled, 'aria-label': text}, automation" tabindex="-1" role="button">
+              <!-- /ko -->
+          </div>
+      </div>
+    </script>
+    <script id="template-form" type="text/html">
+      <div class="area form-area" data-bind="automation">
+          <div role="form" class="title-area">
+              <div data-bind="if: formState() !== 'idle'">
+                  <div id="form-title" tabindex='0' class="title-area-title" data-bind="attr: {'aria-label': formTitle(), title: formTitle()}, text: formTitle()">formTitle</div>
+                  <!-- ko if: (!deployment) && (!serveradmin) -->
+                      <div class="form-group form-group-profile-info" data-bind="foreach: profileInfo.attributes">
+                          &nbsp;&nbsp;
+                          <input role="textbox" tabindex="0" class="form-control form-control-profile-info" data-bind="automation, attr: { 'aria-required': 'true', 'aria-readonly': disabled, type: type, name: name, readonly: ( disabled ), 'aria-placeholer': label + '*', placeholder: label + '*', title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, value: value, valueUpdate: 'afterkeyup'">
+                          <div data-bind = "if: value.hasError">
+                              <span tabindex="0" class="form-error block" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, text: value.validationMessage"> </span>
+                          </div>
+                      </div>
+                  <!-- /ko -->
+              </div>
+              <div data-bind="component: {name: 'component-form-action', params: {rootName: rootName, type: type, name: name, path: path, pathname: pathname }}"></div>
+          </div>
+          <!-- control new-->
+          <div data-bind="if: formState() !== 'idle'">
+              <!-- ko if: $component.controlMeta.length > 1 -->
+              <nav role="tablist" class="nav nav-step">
+                  <h3 class="form-sub-title" data-bind="text: $data.currentPageLabel()"></h3>
+                  <ol data-bind="foreach: $data.controlMeta">
+                      <!-- ko if: $index() < $parent.currentPage() -->
+                      <li tabindex="-1" aria-selected="true" role="tab" class="complete" data-bind="automation, attr: {id: 'pagenav_'+$index(), title: label }, click: $parent.events.jumpTo">
+                          <a></a>
+                      </li>
+                      <!-- /ko -->
+                      <!-- ko if: $index() == $parent.currentPage() -->
+                      <li tabindex="0" aria-selected="true" role="tab" class="current" data-bind="automation, event: {keyup: $component.events.keyup}, attr: {id: 'pagenav_'+$index(), title: label }, click: $parent.events.jumpTo">
+                          <a></a>
+                      </li>
+                      <!-- /ko -->
+                      <!-- ko if: $index() > $parent.currentPage() -->
+                      <li tabindex="-1" aria-selected="true" role="tab" data-bind="automation, attr: {id: 'pagenav_'+$index(), title: label }, click: $parent.events.jumpTo">
+                          <a></a>
+                      </li>
+                      <!-- /ko -->
+                  </ol>
+              </nav>
+              <!-- /ko -->
+              <div data-bind="foreach: $data.controlMeta">
+                  <div role="tabpanel" data-bind="visible: $index() === $parent.currentPage()">
+                      <div data-bind="template: {name: 'controlnew', data: $data}"></div>
+                      <div class="form-group form-btns" data-bind="if: $parent.formState() !== 'review'">
+                          <!-- ko if: !$parent.serveradmin -->
+                              <input type="button" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.previous}, value: $parent.btnTextPrev, click: $parent.events.prevSec, attr: { 'aria-disabled': $index() === 0, readonly: $index() === 0 }, css: {appletButton: $index() !== 0, appletButtonDis: $index() === 0}">
+                              <input type="button" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.next}, value: $parent.btnTextNext, click: $parent.events.nextSec,
+                                  attr: { 'aria-disabled':$index() === $parent.controlMeta.length - 1, readonly: $index() === $parent.controlMeta.length - 1 },
+                                  css: {appletButton: $index() !== $parent.controlMeta.length -1, appletButtonDis: $index() === $parent.controlMeta.length - 1}">
+                          <!-- /ko -->
+                          <input type="button" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.submit}, value: $parent.btnTextSubmit, click: $parent.events.submit,
+                              attr: { 'aria-disabled': ($parent.formState() === 'create' && $index() != $parent.controlMeta.length-1), readonly: ($parent.formState() === 'create' && $index() != $parent.controlMeta.length-1 ) },
+                              css: {appletButton: !($parent.formState() === 'create' && $index() != $parent.controlMeta.length-1),
+                              appletButtonDis: ($parent.formState() === 'create' && $index() != $parent.controlMeta.length-1)}">
+                          <input type="button" class="appletButton" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.cancel}, value: $parent.btnTextCancel, click: $parent.events.cancel">
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end of control new-->
+          <!-- Idle template-->
+          <div data-bind="if: formState() === 'idle'">
+          </div>
+      </div>
+    </script>
+    <script id="template-form-action" type="text/html">
+      <div class="action-icons" id="actionIcons" data-bind="foreach: $data.btnArr" role="toolbar">
+          <!-- ko if: visible() -->
+              <a href="javascript:;" class="action-btn-wrapper" data-bind="automation, click: $parent.events.click, disable: disabled, css: {disabled: disabled}, attr: {'title': text, 'data-index': $index, 'data-key': key, 'aria-disabled': disabled, 'aria-label': text}" tabindex="0" role="button">
+                  <span data-bind="css: icon" class="siebui-ctrl-btn"></span>
+              </a>
+          <!-- /ko -->
+      </div>
+    </script>
+    <script id="controlnew" type="text/html">
+      <!-- ko if: ((type === 'text' || type === 'number') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group" data-bind= "css: { 'form-two-column': $component.serveradmin }">
+              <label class="form-label siebui-label"><span data-bind="text: label"></span><span class="required-mark" data-bind="attr: { id: name }, visible: required">*</span></label>
+              <input role="textbox" class="form-control" data-bind="automation, event: {keypress: $component.events.checkKey}, attr: {'aria-required': required, type: type, name: name, 'aria-readonly': disabled, readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, value: value, valueUpdate: 'afterkeyup'">
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'password') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group">
+              <label class="form-label siebui-label"><span data-bind="text: label"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <input class="form-control" data-bind="automation, attr: {'aria-required': required, type: passwordType, name: name, readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, textInput: value, valueUpdate: 'afterkeyup'">
+              <button class="control-icon siebui-icon-simulate" ref="javascript:;" data-bind="automation: $component.automation.showHidePwd, css:{ 'siebui-icon-hide': (passwordType() === 'password'), 'siebui-icon-show': (passwordType() === 'text')}, attr: {title: $component.titleShowHidePassword[passwordType()]}, click: $component.events.toggleShowPassword">
+              </button>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'textarea') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group">
+              <label class="form-label siebui-label"><span data-bind="text: label"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <textarea role="textbox" aria-multiline="true" cols="80" data-bind="automation, attr: {'aria-required': required, rows: name === 'Info' ? 6 : 12, readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label }, value: value, valueUpdate: 'afterkeyup'"></textarea>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'checkbox') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group" data-bind="css: {readonly: ( $component.formState() === 'review' || ( (typeof readonly) !== 'undefined' && readonly ) ), 'form-two-column-checkbox': $component.serveradmin}">
+              <input class="checkbox" data-bind="automation, attr: {type: type, name: name, id: id, readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label, 'aria-checked': value}, checked: value, event: {change: $component.events.restAuthenticationStatusChange.bind(value)}">
+              <label class="form-label siebui-label" data-bind="attr:{for: id}"><span data-bind="text: label"></span></label>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'select') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group" data-bind="css: {readonly: $component.formState() === 'review', 'form-two-column': $component.serveradmin }">
+              <label class="form-label siebui-label"><span data-bind="text: label"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <select class="combobox form-control" data-bind="automation, event: {keyup: $component.events.keyup}, attr: {readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, options: options, optionsText: 'label', optionsValue: 'value', optionsCaption: optionsCaption, value: value"></select>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'dynaSelect') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group" data-bind="css: {readonly: $component.formState() === 'review', 'form-two-column': $component.serveradmin }">
+              <label class="form-label siebui-label"><span data-bind="text: label"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <select class="form-control combobox" data-bind="automation, attr: {readonly: disabled, title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, options: options(), optionsText: 'label', optionsValue: 'value', optionsCaption: optionsCaption, value: value"></select>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'radio') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div role="radiogroup" class="form-group" data-bind="attr: {'aria-labelledby': id}, css: {readonly: $component.formState() === 'review' || disabled}">
+              <label class="form-label siebui-label" data-bind="attr: { id: id }"><span data-bind="text: label, attr: {title: ( typeof tooltip !== 'undefined')  ? tooltip : label}"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <div class="form-radios" data-bind="foreach: options">
+                  <label class="form-label siebui-label" data-bind="css: {'block': !($parent.name === 'LogLevel' || $parent.name === 'DefaultLogLevel'), 'form-flat-radio': ($parent.name === 'LogLevel' || $parent.name === 'DefaultLogLevel')}">
+                      <input role="radio" type="radio" data-bind="automation, attr:{name: name, value: value, readonly: $parent.disabled}, checked: $parent.value" />
+                      <span class="form-label siebui-label" data-bind="text: label"></span>
+                  </label>
+              </div>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ((type === 'multiCheck') && (display === 'both' || ( $component.formState() === 'review' && display === 'read' ) || ($component.formState() !== 'review' && display === 'write') )) -->
+          <!-- ko if: ( (typeof visible) === 'undefined' || visible) -->
+          <div class="form-group" data-bind="css: {readonly: $component.formState() === 'review'}">
+              <label class="form-label siebui-label" data-bind="attr:{id:id}"><span data-bind="text: label, attr: {title: ( typeof tooltip !== 'undefined')  ? tooltip : label}"></span><span class="required-mark" data-bind="visible: required">*</span></label>
+              <div class= "overflow-hidden" data-bind="foreach: options">
+                  <label data-bind="css: {'block': !($parent.name === 'EnableCompGroupsSIA' || $parent.name === 'DeployedLanguage'), 'form-flat-radio-2-column': ($parent.name === 'EnableCompGroupsSIA'|| $parent.name === 'DeployedLanguage')}">
+                      <input type="checkbox" data-bind="automation, attr:{'aria-labelledby': $parent.id, 'aria-checked': $parent.value().indexOf(value) !== -1, name: name, value: value, readonly: $parent.disabled}, checked: $parent.value" />
+                      <span class="form-label siebui-label" data-bind="text:label"></span>
+                  </label>
+              </div>
+              <span tabindex="0" class="form-error" data-bind="attr: {title: value.validationMessage, 'aria-label': value.validationMessage, role: 'tooltip'}, visible: value.hasError, text: value.validationMessage"> </span>
+          </div>
+          <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if: ( type === 'page') -->
+      <div data-bind="foreach: attributes" class="form-content">
+          <div data-bind="template: {name: 'controlnew', data: $data}"></div>
+      </div>
+      <!-- /ko -->
+      <!-- ko if: (( type === 'object' || type === 'section' ) && ( (typeof visible) === 'undefined' || visible )) -->
+      <div data-bind="css: {'form-expand': expandable}">
+          <!-- ko if: ( (typeof showLabel) === 'undefined' || showLabel )-->
+          <div class="sec-heading" role='heading' aria-level='3'>
+              <a role="button"  href="javascript:;" class="group-toggle" data-bind="automation, event: {keyup: $component.events.keyup}, attr: {'aria-expanded': expanded() ? 'true' : 'false'}, click: $component.events.toggleExpanded, css: {'group-toggle-active': expanded()}">
+                  <span class="inline-block" data-bind="if: expandable">
+                      <i data-bind="css: {'siebui-icon-arrow-right': (!expanded()), 'siebui-icon-arrow-down': expanded()}"></i>
+                  </span>
+                  <!-- ko if: ( (typeof isArrayItem) === 'undefined' || !isArrayItem )-->
+                      <span data-bind="text: label"></span>
+                  <!-- /ko -->
+                  <!-- ko if: ( (typeof isArrayItem) !== 'undefined' && isArrayItem )-->
+                      <span data-bind="text: label()"></span>
+                      <!-- ko if: ( (typeof isPrimary) !== 'undefined' && isPrimary)-->
+                          <span class="badge primary-badge" data-bind="text: $component.labelPrimary"></span>
+                      <!-- /ko -->
+                      <span tabindex="0" class="form-error" data-bind="attr: {title: label.validationMessage, 'aria-label': label.validationMessage, role: 'tooltip'}, visible: label.hasError, text: label.validationMessage"> </span>
+                      <!-- ko if: ( (typeof isPrimary) !== 'undefined' && isPrimary)-->
+                          <div class="sec-buttons pull-right">
+                              <button type="button" tabindex="0" class="siebui-icon-clone form-btn form-btn-clone" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.clone}, event: {keyup: $component.events.keyup}, attr: {title: tooltipClone}, click: $component.events.cloneArrayItem, visible: !$component.isReviewState()"></button>
+                              <button type="button" tabindex="0" class="siebui-icon-deleteselection form-btn-delete disabled form-btn-clone-primary" aria-disabled="true" disable:"disabled" data-bind="attr: {title: tooltipDelete}, click: $component.events.deleteArrayItem, visible: !$component.isReviewState()"></button>
+                          </div>
+                      <!-- /ko -->
+                      <!-- ko if: ( (typeof isPrimary) === 'undefined' || !isPrimary)-->
+                          <div class="sec-buttons">
+                              <button type="button" tabindex="0" class="siebui-icon-clone form-btn form-btn-clone" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.clone}, event: {keyup: $component.events.keyup}, attr: {title: tooltipClone}, click: $component.events.cloneArrayItem, visible: !$component.isReviewState()"></button>
+                              <button type="button" tabindex="0" class="siebui-icon-deleteselection form-btn-delete" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.delete}, event: {keyup: $component.events.keyup}, attr: {title: tooltipDelete}, click: $component.events.deleteArrayItem, visible: !$component.isReviewState()"></button>
+                          </div>
+                      <!-- /ko -->
+                  <!-- /ko -->
+                  <!-- ko if: ( $component.formState() !== 'review' && (typeof hasAdvancedMode) !== 'undefined' && hasAdvancedMode) -->
+                      <button class="form-btn advanced-toggle" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.toggleAdvanced }, event: {keyup: $component.events.keyup}, visible: expanded(), click: $component.events.toggleCacheAdvanced">
+                          <span><i data-bind="css: {'siebui-icon-radio-checked': ($component[name]()), 'siebui-icon-radio-unchecked': (!$component[name]())}"></i></span>
+                          <span class="form-label" data-bind="text: $component.btnTextToggle[name]"></span>
+                      </button>
+                  <!-- /ko -->
+              </a>
+          </div>
+          <!-- /ko -->
+          <div class="sec-content" role="region" data-bind="visible: (!expandable || expanded()), foreach: attributes">
+              <div class="form-collapsed" data-bind="template: {name: 'controlnew', data: $data}"></div>
+          </div>
+      </div>
+      <!-- /ko -->
+      <!-- ko if: ( type === 'array' && arrayType === 'expand' ) -->
+      <div tabindex="0" class="array-header form-expand" data-bind="attr: {title: label}">
+          <a tabindex="-1" href="javascript:;" class="group-toggle">
+              <span data-bind="text: label"></span>
+          </a>
+          <button type="button" tabindex="0" class="siebui-icon-add form-btn form-btn-add" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.add}, attr: {title: tooltipAdd}, click: $component.events.addNew, visible: !$component.isReviewState()"></button>
+          <ul  data-bind="foreach: value">
+              <li data-bind="template: {name: 'controlnew', data: $data}"></li>
+          </ul>
+      </div>
+      <!-- /ko -->
+      <!-- ko if: ( type === 'array' && arrayType === 'table' ) -->
+      <div tabindex="0" class="array-header form-expand" data-bind="attr: {title: label}">
+          <a data-bind="automation", tabindex="-1" href="javascript:;" class="group-toggle">
+              <span data-bind="text: label"></span>
+          </a>
+          <button type="button" tabindex="0" class="siebui-icon-add form-btn form-btn-add" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.add}, attr: {title: tooltipAdd}, click: $component.events.addNew, visible: !$component.isReviewState()"></button>
+          <table class="listview-table table table-condensed" data-bind="visible: !value().length == 0">
+              <thead>
+                  <tr>
+                      <!-- ko foreach: itemTemplate.attributes -->
+                      <th class="listview-column-data param-column"><span data-bind="text: label"></span><span class="required-mark" data-bind="visible: required">*</span></th>
+                      <!-- /ko -->
+                      <th class="listview-column-data action-column"></th>
+                  </tr>
+              </thead>
+              <tbody data-bind="foreach: value">
+                  <tr role="row">
+                      <!-- ko foreach: attributes -->
+                      <td>
+                          <input data-bind="automation, attr: {type: type, name: name, readonly: ( disabled ), title: ( typeof tooltip !== 'undefined')  ? tooltip : label}, value: value, valueUpdate: 'afterkeyup'">
+                      </td>
+                      <!-- /ko -->
+                      <td style="vertical-align: middle">
+                          <button type="button" tabindex="0" class="siebui-icon-deleteselection form-btn-delete" data-bind="automation: {ot: $component.automation.ot.button, rn: rn + '_' + $component.automation.rn.delete}, event: {keyup: $component.events.keyup}, attr: {title: tooltipDelete}, click: $component.events.deleteArrayItem, visible: !$component.isReviewState()"></button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <!-- /ko -->
+    </script>
+    <script id="template-breadcrumb" type="text/html">
+      <div class="breadcrumb-area" data-bind="automation: automation">
+          <ol class="breadcrumb-list" data-bind="foreach: resourceArr" role="menubar" aria-orientation="horizontal">
+              <li class="breadcrumb-item" data-bind="focusIn: {showMenu: true}, visible: (type || parent && subtypes && subtypes.length > 0), attr: {'aria-haspopup': subtypes.length > 0 ? 'true' : null}">
+                  <div class="breadcrumb-item-content" role="menuitem" data-bind="event: {touchstart: $component.events.touchBreadcrumb, click: $component.events.clickBreadcrumb}, attr: {tabindex: $index()===0 ? '0' : '-1', 'aria-label': type ? null : name}, automation">
+                      <!-- ko if: type -->
+                      <span class="breadcrumb-item-type" data-bind="text: name"></span>
+                      <!-- /ko -->
+                      <!-- ko if: selection -->
+                      <span class="breadcrumb-item-selection" data-bind="text: selection"></span>
+                      <!-- /ko -->
+                  </div>
+                  <!-- ko if: ((subtypes && subtypes.length > 0) || (list && list.lenght > 0 )) -->
+                  <div class="breadcrumb-dropdown-menu" role="menu" aria-orientation="vertical">
+                      <ul data-bind="foreach: subtypes">
+                          <!-- ko withProperties: {hasList: $index() === $parent.subtypes.length -1 && $parent.list().length > 0 && $parentContext.$index() < $component.resourceArr().length-2, subtypeCount: $parent.subtypes.length, disableMenu: $parentContext.$index() === $component.resourceArr().length-2 && $index() === $parent.subtypes.length -1} -->
+                          <li class="breadcrumb-dropdown-menu-item" data-bind="focusIn: {showSubMenu: hasList}, css: {haschild: hasList}, attr: {'aria-haspopup': hasList ? 'true' : null, 'aria-disabled': disableMenu ? 'true' : null}">
+                              <a herf="javascript:;" role="menuitem" data-bind="click: $component.events.clickSubtype.bind($data, $parent), attr: {title: name, tabindex: ($index() === 0 && subtypeCount !== 1) ? '0' : '-1'}, automation">
+                                  <span data-bind="text: name"><span>
+                              </a>
+                              <!-- ko if: hasList-->
+                              <div class="breadcrumb-dropdown-menu-list" role="menu">
+                                  <div class="dropdown-menu-title">
+                                      <table>
+                                          <tbody>
+                                              <tr>
+                                                  <td><span data-bind="text: $parent.name"></span></td>
+                                                  <td class="dropdown-menu-filter">
+                                                      <input type="text" name="Filter" placeholder="Filter" tabindex="0" data-bind="event: {input: $component.events.changeFilter.bind($data, $parent)}, automation: {'ot': 'JInput', 'rn': 'filter'}">
+                                                  </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="dropdown-menu-table">
+                                      <table>
+                                          <tbody data-bind="foreach: $parent.list">
+                                              <tr data-bind="foreach: $data">
+                                                  <td>
+                                                      <a herf="javascript:;" role="menuitem" data-bind="click: $component.events.clickList.bind($data, $parents[2]), attr: {title: name, 'aria-disabled': ($parentContext.$index() === 0 && $index() === 0) ? 'true' : null}, automation" tabindex="-1">
+                                                          <span data-bind="text: name"><span>
+                                                      </a>
+                                                  </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                              <!-- /ko -->
+                          </li>
+                          <!-- /ko -->
+                      </ul>
+                  </div>
+                  <!-- /ko -->
+              </li>
+          </ol>
+      </div>
+    </script>
+    <script>
+      window.require = {
+        waitSeconds: 0
+      }
+    </script>
+    <script
+      src="../scripts/3rdParty/require.js?v=0.0.1"
+      data-main="js/app.js?v=3ce597e6be"
+    ></script>
+  </body>
+</html>

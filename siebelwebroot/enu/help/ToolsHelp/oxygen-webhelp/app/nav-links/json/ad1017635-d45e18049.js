@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Text Style (H)","href":"OTR\/topicrefs\/c_Properties_of_the_Text_Style_ad1017872.html","attributes": {"data-id":"ad1017872",},"menu": {"hasChildren":false,},"tocID":"ad1017872-d45e18067","topics":[]}]});

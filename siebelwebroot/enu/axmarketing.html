@@ -1,0 +1,50 @@
+<html>
+<body >
+
+<!-- Note that you must edit the value IP_ADDRESS below according to your configuration -->
+
+<OBJECT ID="HiOpt" WIDTH=1 HEIGHT=1 CLASSID="CLSID:8F5194C4-5FEB-42D7-ACCE-DB249CE255F5" 
+        CODEBASE="opt.cab#version=1,0,0,1" >
+</OBJECT>
+
+<SCRIPT language="javascript" >
+  var nCount = 0;
+  function callAx()  
+  {
+    try 
+    {
+       HiOpt.SetOptions() ;
+    }
+    catch (e)
+    {
+       if (nCount < 10)
+       {  
+          nCount++;
+          setTimeout ("callAx ()", 1000);
+       }
+    }
+  }
+</SCRIPT>
+
+<SCRIPT>
+callAx ();
+
+try 
+{
+   HiOpt.SetOptions() ;
+}
+catch (e)
+{
+   alert ("You have chosen not to download the Siebel Web Client Optimizer designed to address known browser limitations.");
+}
+
+// navigate directly to siebel home page
+// Important: you MUST specify the IP address (number), 
+// NOT the host name in the line below
+// For example substitute IP_ADDRESS by 10.20.30.40
+window.navigate ("http://$(SWE_ADDRESS1)/marketing/default.htm");
+
+</SCRIPT>
+
+</body>
+</html>

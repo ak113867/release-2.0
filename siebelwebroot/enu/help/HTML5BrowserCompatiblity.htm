@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <title>HTML5 Browser Compatibility</title>
+</head>
+
+<body style="font-family: Calibri">
+    <h1>HTML5 Browser Compatibility</h1>
+    <hr>
+
+    <p>
+        This page describes HTML5 features used in Siebel Open UI.<br />
+        Additionally, this page describes the limitations in cases where your browser does not support a feature.
+    </p>
+
+    <h3>Features</h3>
+    <a href="#xhr2" title="XHR2">XHR2</a><br />
+    <a href="#placeholdertext" title="Placeholder Text">Placeholder Text</a><br />
+    <a href="#history" title="History">History</a><br />
+    <a href="#datatransfer" title="DataTransfer">DataTransfer</a><br />
+    <a href="#formvalidation" title="Form Validation">Form Validation</a><br />
+    <a href="#video" title="Video">Video</a><br />
+    <a href="#animation" title="CSS3 Animation">CSS3 Animation</a><br />
+    <a href="#touch" title="Touch">Touch</a><br />
+    <a href="#localstorage" title="Local Storage">Local Storage</a><br />
+    <a href="#applicationcache" title="Application Cache">Application Cache</a><br />
+    <a href="#websqldatabase" title="Web SQL Database">Web SQL Database</a><br />
+    <a href="#jre" title="Java Runtime Environment">Java Runtime Environment</a><br />
+    <a href="#websocket" title="WebSocket">WebSocket</a><br />
+    <a href="#webnotifications" title="Web Notifications">Web Notifications</a><br />
+    <br />
+    <hr>
+
+    <h3><a id="xhr2">XHR2</a></h3>
+    <ul>
+        <li>The XMLHttpRequest Level 2 object facilitates control of the way JavaScript communicates with the server for data exchange.</li>
+        <li>Siebel Open UI uses certain functionalities provided by this object to establish and maintain its connection with the Siebel Server.</li>
+        <li>If your browser does not support this object, then you might encounter problems with login, logout, and session timeouts, particularly when using single sign-on.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="placeholdertext">Placeholder Text</a></h3>
+    <ul>
+        <li>The HTML5 Placeholder attribute is a hint (a word or short phrase) intended to assist users with data entry.</li>
+        <li>Siebel Open UI uses this attribute for placing informative text inside input fields.</li>
+        <li>If your browser does not support this attribute, then you might not see hints such as &lt;Case Sensitive&gt; when using Query Mode in an applet.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="history">History</a></h3>
+    <ul>
+        <li>The HTML5 history API facilitates granular control and manipulation of entries made in a browser's history cache using JavaScript.</li>
+        <li>Siebel Open UI uses this API to manage the browser history as the user navigates across views and records and then uses the browser's navigation back and forward buttons. Also, the API is used to provide users with URLs that can be bookmarked in the browser's address bar.</li>
+        <li>If your browser does not support this feature, then the back and forward buttons might not work as expected, application wide. Also, you will not be able to use the browser's bookmark feature to store navigation references in the Siebel Open UI client.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="datatransfer">DataTransfer</a></h3>
+    <ul>
+        <li>The HTML5 dataTransfer property facilitates information exchange during certain drag and drop operations.</li>
+        <li>Siebel Open UI uses this property to facilitate drag and drop from Microsoft Office Excel into the Siebel Calendar, and for file attachment.</li>
+        <li>If your browser does not support this feature, then drag and drop from external applications into the Siebel Calendar, and attaching files via drag-and-drop, will not be available. Other drag-and-drop data exchanges from external sources might also be affected.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="formvalidation">Form Validation</a></h3>
+    <ul>
+        <li>Form validation in HTML5 includes various validation properties on form elements that verify the accuracy of data entered by users.</li>
+        <li>Siebel Open UI uses some of these properties to validate fields with a large character length: for example, description fields.</li>
+        <li>If your browser does not support this feature, then the text field length cannot be controlled, potentially resulting in data loss when saving field values.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="video">Video</a></h3>
+    <ul>
+        <li>The HTML5 Video tag provides a standard way to embed videos into web content.</li>
+        <li>Siebel Open UI uses this tag to play MP4 formatted videos in specific applets.</li>
+        <li>If your browser does not support this feature, then you will not be able to view this type of video content.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="animation">CSS3 Animation</a></h3>
+    <ul>
+        <li>The CSS3 stylesheet permits the use of animations that replace JavaScript-driven animations and animated images.</li>
+        <li>Siebel Open UI uses CSS3 driven animation for the Chat functionality.</li>
+        <li>If your browser does not support this feature, then animated Chat notification for multiple Chat window sessions will not be available.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="touch">Touch</a></h3>
+    <ul>
+        <li>Touch-based event handling in HTML5 enables the translation of touch interactions in mobile devices and tablets into usable JavaScript programming.</li>
+        <li>Siebel Open UI manages application-wide touch handling and event triggering using this feature on mobile devices and tablets.</li>
+        <li>If your browser does not support this feature, then multiple features across the application, such as list scrolling, map navigation, date and dropdown control usage, among others, might be affected.</li>
+        <li><b>Note:</b> This feature is not applicable for clients that are not touch-enabled.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="localstorage">Local Storage</a></h3>
+    <ul>
+        <li>The HTML5 Local Storage feature is a secure and faster alternative to cookies.</li>
+        <li>This feature is used by Siebel disconnected mobility applications, to store relevant data across user sessions.</li>
+        <li>If your browser does not support Local Storage, and supports use while disconnected from the network, then the disconnected mode will be unavailable.</li>
+        <li><b>Note:</b> This feature is required for Siebel disconnected mobility applications only.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="applicationcache">Application Cache</a></h3>
+    <ul>
+        <li>The Application Cache feature stores the resources that are listed in the cache.manifest file. Resources requested while the application is disconnected (offline) are picked up from the application cache and served to the web page. The cache.manifest file is a text file that lists the resources the browser should cache for disconnected access.</li>
+        <li>Siebel disconnected mobility applications use this feature to download all application artifacts, such as images, JavaScript, CSS files, and so on, that will be needed to load the application in disconnected mode.</li>
+        <li>If your browser does not support this feature, then disconnected mode will be unavailable.</li>
+        <li><b>Note:</b> This feature is required for Siebel disconnected mobility applications only.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="websqldatabase">Web SQL Database</a></h3>
+    <ul>
+        <li>HTML5 provides client-side database support to store user data. JavaScript APIs can be used to query this data, using a SQL variant.</li>
+        <li>Siebel disconnected mobility applications use this feature to store Siebel data and metadata for offline use.</li>
+        <li>If your browser does not support this feature, then disconnected mode will be unavailable.</li>
+        <li><b>Note:</b> This feature is required for Siebel disconnected mobility applications only.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="jre">Java Runtime Environment</a></h3>
+    <ul>
+        <li>The browser check has not tested whether Java is present or enabled on your computer or device. Oracle recommends use of latest versions of Java for security.</li>
+        <li>Siebel Open UI uses Java in various views to provide a richer and more flexible user interface.</li>
+        <li>If Java is not present or is disabled on your browser, then file attachments cannot be edited and saved back to the system without intermediate storage on your local computer. Also, the CTI Hoteling functionalities of the Communications Toolbar will be affected.</li>
+        <li><b>Note:</b> Usage of Java is optional.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="websocket">WebSocket</a></h3>
+    <ul>
+        <li>The HTML5 WebSocket API enables web applications to use the WebSocket protocol, which provides a full-duplex and bidirectional communication over a single TCP connection.</li>
+        <li>Siebel Open UI uses WebSocket APIs to establish connection and communicate with Desktop Integration Siebel Agent (DISA) on desktop platforms.</li>
+        <li>If your browser does not support WebSocket, then advanced features provided by DISA will be unavailable.</li>
+        <li><b>Note:</b> WebSocket is required for DISA related features only, please refer to Siebel documents for feature details.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <h3><a id="webnotifications">Web Notifications</a></h3>
+    <ul>
+        <li>Web Notifications defines an API for end-user notifications. A notification allows alerting the user outside the context of a web page of any new activities.</li>
+        <li>Siebel Open UI uses Web Notifications to alert the user under certain circumstances when Siebel is running in background and requires user's attention, like incoming calls and incoming chat requests.</li>
+        <li>If your browser does not support this feature, Web Notifications will not work.</li>
+        <li><b>Note:</b> This feature is required for Siebel CTI only. Users need to turn on Web Notifications setting in their browsers to enable this feature.</li>
+    </ul>
+    <br>
+    <p class="BacktoTop">
+        <a href="#top">
+            <img src="top.gif" border="0" alt="Back to top" title="Back to top"></a>
+    </p>
+    <hr>
+
+    <p>Copyright ©2008,2024, Oracle. All rights reserved.</p>
+
+</body>
+</html>

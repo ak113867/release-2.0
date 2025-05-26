@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"How <span class=\"ph\">Siebel CRM</span> Uses Denormalized Columns","href":"ConfigApps\/topicrefs\/c_How__au1109045.html","attributes": {"data-id":"au1109045",},"menu": {"hasChildren":false,},"tocID":"au1109045-d45e53826","topics":[]}]});

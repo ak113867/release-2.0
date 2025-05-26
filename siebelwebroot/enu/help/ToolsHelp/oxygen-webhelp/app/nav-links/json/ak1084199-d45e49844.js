@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Qualities of the Applet Mode","href":"ConfigApps\/topicrefs\/c_Qualities_of_the_Applet_Mode_ak1084254.html","attributes": {"data-id":"ak1084254",},"menu": {"hasChildren":false,},"tocID":"ak1084254-d45e49862","topics":[]}]});

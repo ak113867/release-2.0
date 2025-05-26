@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Examples of Using the Conditional Operator","href":"eScript\/topicrefs\/c_Examples_of_Using_the_Conditional_Operator_ad1076622.html","attributes": {"data-id":"ad1076622",},"menu": {"hasChildren":false,},"tocID":"ad1076622-d45e27639","topics":[]}]});

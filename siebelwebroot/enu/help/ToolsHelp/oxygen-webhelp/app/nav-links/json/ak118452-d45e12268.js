@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Wildcard Characters You Can Use with the LIKE Operator","href":"ToolsDevRef\/topicrefs\/c_Wildcard_Characters_You_Can_Use_with_the_LIKE_Operator_ak138409.html","attributes": {"data-id":"ak138409",},"menu": {"hasChildren":false,},"tocID":"ak138409-d45e12286","topics":[]}]});

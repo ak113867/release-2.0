@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Naming a View","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Naming_a_View_am1060934.html","attributes": {"data-id":"am1060934",},"menu": {"hasChildren":false,},"tocID":"am1060934-d45e50415","topics":[]}]});

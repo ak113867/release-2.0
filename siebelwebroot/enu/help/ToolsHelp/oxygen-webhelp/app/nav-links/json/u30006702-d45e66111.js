@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Errors That the Validate Tool Detects","href":"BusProcFramework\/topicrefs\/c_Errors_That_the_Validate_Tool_Detects_ai1035905.html","attributes": {"data-id":"u30216990",},"menu": {"hasChildren":false,},"tocID":"u30216990-d45e66129","topics":[]}]});

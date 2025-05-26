@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Overview of Business Components","href":"ConfigApps\/topicrefs\/c_Overview_of_Business_Components_ap1081177.html","attributes": {"data-id":"ap1081177",},"menu": {"hasChildren":false,},"tocID":"ap1081177-d45e48566","next":"ap1081177-d45e48566",}]});

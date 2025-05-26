@@ -1,0 +1,179 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="The following procedure shows how to import an archive (SIF file) using siebdev from the command line. You can also use the command line to do other work. To import an archive using the siebdev ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Importing_Objects_from_an_Archive_ai1063473.html" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Import_Wizard_Review_Conflicts_and_Actions.html" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Using_the_Application_Deployment_Manager_ai1071237.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ai1065164" /><meta name="DC.Language" content="en" /><title>Using the Command Line to Import an Archive</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ai1065164-d45e44894" /><meta name="wh-source-relpath" content="UsingTools/topicrefs/c_Using_the_Command_Line_to_Import_an_Archive_ai1065164.dita" /><meta name="wh-out-relpath" content="UsingTools/topicrefs/c_Using_the_Command_Line_to_Import_an_Archive_ai1065164.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ai1065164" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html">Using Siebel Tools</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_archiving_objects.html">Archiving Objects</a></span></span></li><li><span class="topicref" data-id="ai1063473"><span class="title"><a href="../../UsingTools/topicrefs/c_Importing_Objects_from_an_Archive_ai1063473.html">Importing Objects From an Archive File</a></span></span></li><li class="active"><span class="topicref" data-id="ai1065164"><span class="title"><a href="../../UsingTools/topicrefs/c_Using_the_Command_Line_to_Import_an_Archive_ai1065164.html">Using the Command Line to Import an Archive</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_Import_Wizard_Review_Conflicts_and_Actions.html" title="Import Wizard - Review Conflicts and Actions Page" aria-label="Previous topic: Import Wizard - Review Conflicts and Actions Page" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_Using_the_Application_Deployment_Manager_ai1071237.html" title="Using the Application Deployment Manager" aria-label="Next topic: Using the Application Deployment Manager" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e40108" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40109" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40109-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40109-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40130" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40130-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Web_Tools_Setup.html" id="tocId-d45e40130-link">Web Tools Setup</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40330" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40330-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_getting_started.html" id="tocId-d45e40330-link">Getting Started With Your Application</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41020" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41020-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_workspaces.html" id="tocId-d45e41020-link">Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41814" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41814-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_parallel_development_using_workspaces.html" id="tocId-d45e41814-link">Parallel Development Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e42068" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e42068-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_script_editors.html" id="tocId-d45e42068-link">Using Siebel Script Editors</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e42903" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e42903-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_customizing_objects.html" id="tocId-d45e42903-link">Customizing Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e43390" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e43390-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_managing_repositories.html" id="tocId-d45e43390-link">Managing Repositories</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e43734" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e43734-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_localizing_strings_and_locale.html" id="tocId-d45e43734-link">Localizing Strings and Locale Data</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44567" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44567-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_compile_test_trouble.html" id="tocId-d45e44567-link">Testing and Troubleshooting Your Customizations</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e44640" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e44640-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_archiving_objects.html" id="tocId-d45e44640-link">Archiving Objects</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="archiving_objects-d45e44641" class="topicref" data-id="archiving_objects" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_archiving_objects.html" id="archiving_objects-d45e44641-link">Archiving Objects</a></span></span></li><li role="treeitem"><span data-tocid="ai1049089-d45e44659" class="topicref" data-id="ai1049089" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Overview_of_Archiving_Objects_ai1049089.html" id="ai1049089-d45e44659-link">Overview of Archiving Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="Export_Obj_to_Archive_File-d45e44678" class="topicref" data-id="Export_Obj_to_Archive_File" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action Export_Obj_to_Archive_File-d45e44678-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Exporting_Objects_to_an_Archive_File.html" id="Export_Obj_to_Archive_File-d45e44678-link">Exporting Objects to an Archive File</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ai1063473-d45e44786" class="topicref" data-id="ai1063473" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ai1063473-d45e44786-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Importing_Objects_from_an_Archive_ai1063473.html" id="ai1063473-d45e44786-link">Importing Objects From an Archive File</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ai1065247-d45e44804" class="topicref" data-id="ai1065247" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Preparing_the_Siebel_Tools_Environment_to_Import_Objects_from_an_Archive_ai1065247.html" id="ai1065247-d45e44804-link">Preparing Your Environment to Import Objects From Archive</a></span></span></li><li role="treeitem"><span data-tocid="ai1083196-d45e44822" class="topicref" data-id="ai1083196" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Locking_Projects_Before_You_Import_an_Archive_ai1083196.html" id="ai1083196-d45e44822-link">Locking Projects Before You Import an Archive</a></span></span></li><li role="treeitem"><span data-tocid="ai1065333-d45e44840" class="topicref" data-id="ai1065333" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Importing_Objects_From_an_Archive.html" id="ai1065333-d45e44840-link">Importing Objects From an Archive</a></span></span></li><li role="treeitem"><span data-tocid="ai1066366-d45e44858" class="topicref" data-id="ai1066366" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Options_to_Resolve_a_Conflict.html" id="ai1066366-d45e44858-link">Options to Resolve a Conflict</a></span></span></li><li role="treeitem"><span data-tocid="ai1071888-d45e44876" class="topicref" data-id="ai1071888" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Import_Wizard_Review_Conflicts_and_Actions.html" id="ai1071888-d45e44876-link">Import Wizard - Review Conflicts and Actions Page</a></span></span></li><li role="treeitem" class="active"><span data-tocid="ai1065164-d45e44894" class="topicref" data-id="ai1065164" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Using_the_Command_Line_to_Import_an_Archive_ai1065164.html" id="ai1065164-d45e44894-link">Using the Command Line to Import an Archive</a></span></span></li></ul></li><li role="treeitem"><span data-tocid="ai1071237-d45e44912" class="topicref" data-id="ai1071237" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Using_the_Application_Deployment_Manager_ai1071237.html" id="ai1071237-d45e44912-link">Using the Application Deployment Manager</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44931" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44931-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_appendix_a.html" id="tocId-d45e44931-link">Siebel Tools Reference Information</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e45454" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e45454-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/g_Advanced_Compile_ao1019447.html" id="tocId-d45e45454-link">Glossary</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Using the Command Line to Import an Archive</h1>
+<div class="- topic/body concept/conbody body conbody">
+                <p class="- topic/p p">The following procedure shows how to import an archive (SIF file) using siebdev
+                        from the command line. You can also use the command line to do other
+                        work.</p>
+<section class="- topic/section section" id="ai1065164__ai1066225"><h2 class="- topic/title title sectiontitle">To import an archive using the siebdev command</h2>  <ol class="- topic/ol ol">
+<li class="- topic/li li"><p class="- topic/p p">If the archive file contains non-Workspace enabled objects, such as Table objects, then lock the
+                                                projects for these objects. It is not possible to
+                                                lock projects from the command line.
+                                                </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Use the following command to run siebdev.exe:</p>
+                                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="ai1065164__codeblock_v3q_tlj_lrb"><code>siebdev.exe /c tools.cfg /d Datasource /u user /p password /ws Workspace 
+/batchimport repository_name import_mode sif_files log_file</code></pre><p class="- topic/p p">Where: </p><ul class="- topic/ul ul">
+                                                <li class="- topic/li li">
+                                                  <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">/ws</code> refers to the Workspace
+                                                  name and this Workspace needs to be in an editable
+                                                  state for import to be successful. </p>
+                                                </li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">import_mode</code> determines how to handle a conflict. You can use one of the
+                                                  following values with it: overwrite, merge, or
+                                                  skip. If you use <code class="+ topic/ph pr-d/codeph ph codeph">skip</code> and if a
+                                                  corresponding object does not exist in the
+                                                  repository, then there is no conflict and the
+                                                  utility imports the record. For more information,
+                                                  see <a class="- topic/xref xref" href="c_Options_to_Resolve_a_Conflict.html">Options to Resolve a Conflict</a>. </p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">sif_files</code> specifies the name of one or more SIF files (for example:
+                                                  <code class="+ topic/ph pr-d/codeph ph codeph">sif_file1</code>,
+                                                  <code class="+ topic/ph pr-d/codeph ph codeph">sif_file2</code>,
+                                                  <code class="+ topic/ph pr-d/codeph ph codeph">sif_file_n</code>) that contains the
+                                                  objects that <code class="+ topic/ph pr-d/codeph ph codeph">batchimport</code> imports
+                                                  or the path to a folder that includes .sif
+                                                  files.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">log_file</code> specifies the name of the file that siebdev uses to log
+        information.</p>
+                                                  <p class="- topic/p p">You can use the full path or the relative path
+                                                  to the current folder to specify the SIF file and
+                                                  the log file.</p></li>
+</ul></li>
+</ol></section>
+                <section class="- topic/section section" id="ai1065164__section_yf4_nzt_tqb"><h2 class="- topic/title title sectiontitle">Examples of Using the Command Line to Import an Archive</h2>
+                        
+                        <p class="- topic/p p">The following example imports an archive. It uses the overwrite option
+                                for conflict resolution and it logs the results to the import.log
+                                file. For more information, see <a class="- topic/xref xref" href="c_Options_to_Resolve_a_Conflict.html">Options to Resolve a Conflict</a>. </p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="ai1065164__codeblock_f3s_4zt_tqb"><code>siebdev.exe /c tools.cfg /d ServerDataSrc /u SADMIN /p ******** /ws dev_sadmin_m6 /
+batchimport "Siebel Repository" overwrite import1.sif,import2.sif" import.log</code></pre>
+                        <p class="- topic/p p">The following example imports all files to the
+                                        <code class="+ topic/ph pr-d/codeph ph codeph">$TOOLS_HOME\objects</code> folder. It uses the
+                                merge option for conflict resolution and logs the results to the
+                                        <code class="+ topic/ph pr-d/codeph ph codeph">import.log</code> file. </p>
+                        <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="ai1065164__codeblock_eb4_1my_cpb"><code>siebdev.exe /c tools.cfg /d ServerDataSrc /u SADMIN /p ******** /ws dev_sadmin_m4 /
+batchimport "Siebel Repository" merge $TOOLS_HOME\objects import.log</code></pre>
+                        
+                </section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

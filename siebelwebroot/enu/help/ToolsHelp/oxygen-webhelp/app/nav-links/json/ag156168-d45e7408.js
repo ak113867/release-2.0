@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Example of Mapping Siebel Objects to OD","href":"ToolsDevRef\/topicrefs\/c_Example_of_Mapping_Siebel_Objects_to_OD_ag156174.html","attributes": {"data-id":"ag156174",},"menu": {"hasChildren":false,},"tocID":"ag156174-d45e7426","topics":[]}]});

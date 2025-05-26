@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Determining the Current Value of the Iterator","href":"ConfigApps\/topicrefs\/c_Determining_the_Current_Value_of_the_Iterator_ai1062372.html","attributes": {"data-id":"ai1062372",},"menu": {"hasChildren":false,},"tocID":"ai1062372-d45e51465","topics":[]}]});

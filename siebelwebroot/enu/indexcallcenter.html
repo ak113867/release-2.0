@@ -1,0 +1,53 @@
+<html>
+<body>
+
+<!-- Note that you must edit the values WEB_SITE_NAME and IP_ADDRESS according to your configuration -->
+
+<!-- Include file to "sniff" OS and browser type -->
+<SCRIPT LANGUAGE="javascript" src="sniffer.js">
+</SCRIPT>
+
+<SCRIPT language="javascript">
+function hiModeOpt ()
+{
+   // Need to load Active X control to enable optimization
+
+   // Important: you MUST specify the host name NOT the IP address (number)
+   // For example substitute WEB_SITE_NAME by ebiz.siebel.com
+   window.navigate ("http://$(SWE_ADDRESS2)/callcenter/axcallcenter.html");
+}
+
+function noOpt (browser_type)
+{
+   // navigate directly to siebel home page
+   // Important: you MUST specify the IP address (number), 
+   // NOT the host name in the line below
+   // For example substitute IP_ADDRESS by 10.20.30.40
+   var url = "http://$(SWE_ADDRESS1)/callcenter/default.htm";
+   if ( browser_type == 2 ) // IE 6.0 or greater on Win NT ,2K or XP
+	   window.navigate (url);
+   else // 3 - Netscape/Gecko on Win,Sol,OS2
+	   window.location = url;
+}
+</SCRIPT>
+
+
+
+<SCRIPT language="javascript">
+  var ret = start_sniffer ();
+
+  if (ret == 1)
+  {
+     // OS is Win95/98/Me or Browser is not WinHTTP enabled
+     hiModeOpt ();
+  }
+  else
+  {
+     // WinHTTP enabled
+     noOpt (ret);
+  }
+</SCRIPT>
+
+</body>
+</html>
+

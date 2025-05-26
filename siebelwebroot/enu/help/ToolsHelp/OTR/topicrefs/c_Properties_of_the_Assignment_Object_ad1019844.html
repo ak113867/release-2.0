@@ -1,0 +1,829 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="An assignment object does the following: Specifies how to assign a business entity to a candidate Specifies how to update Siebel CRM data to complete an assignment Specifies other assignment arguments ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ad1019844" /><meta name="DC.Language" content="en" /><title>Assignment Object</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ad1019844-d45e18627" /><meta name="wh-source-relpath" content="OTR/topicrefs/c_Properties_of_the_Assignment_Object_ad1019844.dita" /><meta name="wh-out-relpath" content="OTR/topicrefs/c_Properties_of_the_Assignment_Object_ad1019844.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ad1019844" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html">Siebel Object Types Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html">Siebel Object Types Reference</a></span></span></li><li><span class="topicref" data-id="ad1019535"><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html">Workflow Policy Object Types</a></span></span></li><li class="active"><span class="topicref" data-id="ad1019844"><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Assignment_Object_ad1019844.html">Assignment Object</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html" title="Workflow Policy Object Types" aria-label="Previous topic: Workflow Policy Object Types" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../OTR/topicrefs/c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html" title="How Siebel Tools Uses Different Labels for Assignment Object Properties" aria-label="Next topic: How Siebel Tools Uses Different Labels for Assignment Object Properties" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e12757" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12758" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12758-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12758-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12796" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12796-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTR_overview.html" id="tocId-d45e12796-link">Overview of Using Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e13051" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e13051-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html" id="tocId-d45e13051-link">Siebel Object Types Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="otrobjtypeslist-d45e13052" class="topicref" data-id="otrobjtypeslist" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html" id="otrobjtypeslist-d45e13052-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1026234-d45e13070" class="topicref" data-id="ad1026234" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1026234-d45e13070-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Applet_Object_Types_ad1026234.html" id="ad1026234-d45e13070-link">Applet Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1032930-d45e13876" class="topicref" data-id="ad1032930" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1032930-d45e13876-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Application_Object_Types_ad1032930.html" id="ad1032930-d45e13876-link">Application Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033003-d45e14159" class="topicref" data-id="ad1033003" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033003-d45e14159-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_Attribute_Object_Types_ad1033003.html" id="ad1033003-d45e14159-link">Assignment Attribute Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1003537-d45e14233" class="topicref" data-id="ad1003537" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1003537-d45e14233-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_Criteria_Object_Types_ad1003537.html" id="ad1003537-d45e14233-link">Assignment Criteria Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033057-d45e14326" class="topicref" data-id="ad1033057" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033057-d45e14326-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Bitmap_Category_Object_Types_ad1033057.html" id="ad1033057-d45e14326-link">Bitmap Category Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1004050-d45e14401" class="topicref" data-id="ad1004050" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1004050-d45e14401-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Component_Object_Types_ad1004050.html" id="ad1004050-d45e14401-link">Business Component Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007103-d45e14960" class="topicref" data-id="ad1007103" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007103-d45e14960-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Object_Types_ad1007103.html" id="ad1007103-d45e14960-link">Business Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007246-d45e15016" class="topicref" data-id="ad1007246" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007246-d45e15016-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Service_Object_Types_ad1007246.html" id="ad1007246-d45e15016-link">Business Service Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007869-d45e15243" class="topicref" data-id="ad1007869" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007869-d45e15243-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Class_Object_Types_ad1007869.html" id="ad1007869-d45e15243-link">Class Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008317-d45e15375" class="topicref" data-id="ad1008317" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008317-d45e15375-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Command_Object_Types_ad1008317.html" id="ad1008317-d45e15375-link">Command Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008670-d45e15469" class="topicref" data-id="ad1008670" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008670-d45e15469-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Content_Object_Types_ad1008670.html" id="ad1008670-d45e15469-link">Content Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008812-d45e15525" class="topicref" data-id="ad1008812" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008812-d45e15525-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_DLL_Object_Type_ad1008812.html" id="ad1008812-d45e15525-link">DLL Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008896-d45e15562" class="topicref" data-id="ad1008896" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008896-d45e15562-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Dock_Object_Types_ad1008896.html" id="ad1008896-d45e15562-link">Dock Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1009352-d45e15656" class="topicref" data-id="ad1009352" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1009352-d45e15656-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_EIM_Interface_Table_Object_Types_ad1009352.html" id="ad1009352-d45e15656-link">EIM Interface Table Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010216-d45e15826" class="topicref" data-id="ad1010216" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010216-d45e15826-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Entity_Relationship_Diagram_Object_Types_ad1010216.html" id="ad1010216-d45e15826-link">Entity Relationship Diagram Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010536-d45e15934" class="topicref" data-id="ad1010536" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010536-d45e15934-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_External_Search_Engine_Object_Type_ad1010536.html" id="ad1010536-d45e15934-link">External Search Engine Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010746-d45e15971" class="topicref" data-id="ad1010746" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010746-d45e15971-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Find_Object_Types_ad1010746.html" id="ad1010746-d45e15971-link">Find Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011160-d45e16139" class="topicref" data-id="ad1011160" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011160-d45e16139-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Help_ID_Object_Type_ad1011160.html" id="ad1011160-d45e16139-link">Help Id Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011254-d45e16176" class="topicref" data-id="ad1011254" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011254-d45e16176-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_HTML_Hierarchy_Bitmap_Object_Type_ad1011254.html" id="ad1011254-d45e16176-link">HTML Hierarchy Bitmap Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011401-d45e16213" class="topicref" data-id="ad1011401" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011401-d45e16213-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Icon_Map_Object_Types_ad1011401.html" id="ad1011401-d45e16213-link">Icon Map Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011506-d45e16269" class="topicref" data-id="ad1011506" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011506-d45e16269-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Import_Object_Types_ad1011506.html" id="ad1011506-d45e16269-link">Import Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011886-d45e16440" class="topicref" data-id="ad1011886" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011886-d45e16440-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Integration_Object_Types_ad1011886.html" id="ad1011886-d45e16440-link">Integration Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012532-d45e16610" class="topicref" data-id="ad1012532" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012532-d45e16610-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Link_Object_Type_ad1012532.html" id="ad1012532-d45e16610-link">Link Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012826-d45e16665" class="topicref" data-id="ad1012826" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012826-d45e16665-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Menu_Object_Types_ad1012826.html" id="ad1012826-d45e16665-link">Menu Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012995-d45e16740" class="topicref" data-id="ad1012995" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012995-d45e16740-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Message_Category_Object_Types_ad1012995.html" id="ad1012995-d45e16740-link">Message Category Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013140-d45e16815" class="topicref" data-id="ad1013140" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013140-d45e16815-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Pager_Object_Type_ad1013140.html" id="ad1013140-d45e16815-link">Pager Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033477-d45e16852" class="topicref" data-id="ad1033477" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033477-d45e16852-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Pick_List_Object_Type_ad1033477.html" id="ad1033477-d45e16852-link">Pick List Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013616-d45e16889" class="topicref" data-id="ad1013616" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013616-d45e16889-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Project_Object_Type_ad1013616.html" id="ad1013616-d45e16889-link">Project Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1038702-d45e16926" class="topicref" data-id="ad1038702" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1038702-d45e16926-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Report_Object_Type_ad1038702.html" id="ad1038702-d45e16926-link">Report Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013411-d45e16962" class="topicref" data-id="ad1013411" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013411-d45e16962-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Repository_Object_Type_ad1013411.html" id="ad1013411-d45e16962-link">Repository Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013638-d45e17000" class="topicref" data-id="ad1013638" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013638-d45e17000-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Schema_Maintenance_Object_Types_ad1013638.html" id="ad1013638-d45e17000-link">Schema Maintenance Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013709-d45e17036" class="topicref" data-id="ad1013709" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013709-d45e17036-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Screen_Object_Types_ad1013709.html" id="ad1013709-d45e17036-link">Screen Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013806-d45e17149" class="topicref" data-id="ad1013806" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013806-d45e17149-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Server_Component_Object_Types_ad1013806.html" id="ad1013806-d45e17149-link">Server Component Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014196-d45e17300" class="topicref" data-id="ad1014196" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014196-d45e17300-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_String_Object_Types_ad1014196.html" id="ad1014196-d45e17300-link">String Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014792-d45e17354" class="topicref" data-id="ad1014792" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014792-d45e17354-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Symbolic_String_Object_Types_ad1014792.html" id="ad1014792-d45e17354-link">Symbolic String Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014845-d45e17408" class="topicref" data-id="ad1014845" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014845-d45e17408-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_System_Activity_Object_Types_ad1014845.html" id="ad1014845-d45e17408-link">System Activity Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1015107-d45e17445" class="topicref" data-id="ad1015107" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1015107-d45e17445-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Table_Object_Types_ad1015107.html" id="ad1015107-d45e17445-link">Table Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1015189-d45e17670" class="topicref" data-id="ad1015189" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1015189-d45e17670-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Task_Object_Types_ad1015189.html" id="ad1015189-d45e17670-link">Task Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1016301-d45e17974" class="topicref" data-id="ad1016301" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1016301-d45e17974-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Task_Group_Object_Types_ad1016301.html" id="ad1016301-d45e17974-link">Task Group Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017635-d45e18049" class="topicref" data-id="ad1017635" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017635-d45e18049-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Text_Style_Object_Types_ad1017635.html" id="ad1017635-d45e18049-link">Text Style Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017828-d45e18086" class="topicref" data-id="ad1017828" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017828-d45e18086-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Toolbar_Object_Types_ad1017828.html" id="ad1017828-d45e18086-link">Toolbar Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017945-d45e18180" class="topicref" data-id="ad1017945" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017945-d45e18180-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Type_Object_Types_ad1017945.html" id="ad1017945-d45e18180-link">Type Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1018447-d45e18235" class="topicref" data-id="ad1018447" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1018447-d45e18235-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_View_Object_Types_ad1018447.html" id="ad1018447-d45e18235-link">View Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1018452-d45e18442" class="topicref" data-id="ad1018452" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1018452-d45e18442-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Web_Page_Object_Types_ad1018452.html" id="ad1018452-d45e18442-link">Web Page Object Types</a></span></span></li><li role="treeitem"><span data-tocid="ad1019462-d45e18554" class="topicref" data-id="ad1019462" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_data_nametopicalias_valueHID_APPLET_REPOS_WEB_TEMPLATE_LIST_Web_Template_ad1019462.html" id="ad1019462-d45e18554-link">Web Template</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1040781-d45e18573" class="topicref" data-id="ad1040781" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1040781-d45e18573-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Column_Object_Type_ad1040781.html" id="ad1040781-d45e18573-link">Workflow Policy Column Object Type</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ad1019535-d45e18609" class="topicref" data-id="ad1019535" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ad1019535-d45e18609-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html" id="ad1019535-d45e18609-link">Workflow Policy Object Types</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="true" class="active"><span data-tocid="ad1019844-d45e18627" class="topicref" data-id="ad1019844" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ad1019844-d45e18627-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Assignment_Object_ad1019844.html" id="ad1019844-d45e18627-link">Assignment Object</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ad1020405-d45e18646" class="topicref" data-id="ad1020405" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html" id="ad1020405-d45e18646-link">How Siebel Tools Uses Different Labels for Assignment Object Properties</a></span></span></li></ul></li><li role="treeitem"><span data-tocid="ad1020596-d45e18664" class="topicref" data-id="ad1020596" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_Object_Extension_ad1020596.html" id="ad1020596-d45e18664-link">Assignment Object Extension</a></span></span></li><li role="treeitem"><span data-tocid="ad1020716-d45e18682" class="topicref" data-id="ad1020716" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_User_Prop_ad1020716.html" id="ad1020716-d45e18682-link">Assignment User Prop</a></span></span></li><li role="treeitem"><span data-tocid="ad1020791-d45e18700" class="topicref" data-id="ad1020791" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Candidate_ad1020791.html" id="ad1020791-d45e18700-link">Dynamic Candidate (H)</a></span></span></li><li role="treeitem"><span data-tocid="ad1020870-d45e18719" class="topicref" data-id="ad1020870" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Candidate_Attribute_ad1020870.html" id="ad1020870-d45e18719-link">Dynamic Candidate Attribute (H) </a></span></span></li><li role="treeitem"><span data-tocid="ad1020914-d45e18738" class="topicref" data-id="ad1020914" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Candidate_Component_ad1020914.html" id="ad1020914-d45e18738-link">Dynamic Candidate Component (H)</a></span></span></li><li role="treeitem"><span data-tocid="ad1020984-d45e18757" class="topicref" data-id="ad1020984" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Candidate_Component_Col_ad1020984.html" id="ad1020984-d45e18757-link">Dynamic Candidate Component Col (H)</a></span></span></li><li role="treeitem"><span data-tocid="ad1021038-d45e18776" class="topicref" data-id="ad1021038" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Candidate_Locale_ad1021038.html" id="ad1021038-d45e18776-link">Dynamic Candidate Locale (H)</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1021074-d45e18795" class="topicref" data-id="ad1021074" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1021074-d45e18795-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Dynamic_Drilldown_Destination_ad1021074.html" id="ad1021074-d45e18795-link">Dynamic Drilldown Destination</a></span></span></li><li role="treeitem"><span data-tocid="ad1021161-d45e18832" class="topicref" data-id="ad1021161" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Component_ad1021161.html" id="ad1021161-d45e18832-link">Workflow Policy Component</a></span></span></li><li role="treeitem"><span data-tocid="ad1021230-d45e18851" class="topicref" data-id="ad1021230" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Component_Col_ad1021230.html" id="ad1021230-d45e18851-link">Workflow Policy Component Col</a></span></span></li><li role="treeitem"><span data-tocid="ad1021289-d45e18869" class="topicref" data-id="ad1021289" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Object_ad1021289.html" id="ad1021289-d45e18869-link">Workflow Policy Object</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1019659-d45e18887" class="topicref" data-id="ad1019659" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1019659-d45e18887-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Program_Object_Types_ad1019659.html" id="ad1019659-d45e18887-link">Workflow Policy Program Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1021330-d45e19085" class="topicref" data-id="ad1021330" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1021330-d45e19085-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Process_Object_Types_ad1021330.html" id="ad1021330-d45e19085-link">Workflow Process Object Types</a></span></span></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Assignment
+Object</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">An assignment object does the following:</p>
+<ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">Specifies how to assign a business entity to a candidate</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Specifies how to update Siebel CRM data to complete an assignment </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Specifies other assignment arguments </p></li>
+</ul>
+<p class="- topic/p p">A workflow policy object includes column mappings in child workflow
+policy components and grandchild workflow policy component columns.
+An assignment attribute column can specify these mappings. It does
+this to determine if a match exists between a candidate and a business
+entity. It also monitors values that Siebel CRM modifies so that Siebel
+CRM can do a dynamic assignment.</p>
+<p class="- topic/p p">You must check in modifications you make. For more information,
+see <a class="- topic/xref xref" href="c_Checking_In_Assignment_Objects_ad1003431.html">Checking In Assignment Objects</a>.</p>
+<p class="- topic/p p">This object type occurs in the following location in the object
+hierarchy:</p>
+<ul class="- topic/ul ul">
+<li class="- topic/li li" id="ad1019844__ad1019859"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">Siebel Objects &gt; <a class="- topic/xref xref" href="c_Workflow_Policy_Object_ad1021289.html">Workflow Policy Object</a> &gt; Assignment Object </code></p></li>
+</ul>
+<p class="- topic/p p">The following table describes properties that Siebel CRM uses with
+an assignment object. Siebel Tools uses different labels for some
+assignment object properties.It also includes only the label that
+displays in the Properties Window. For more information, see <a class="- topic/xref xref" href="c_How_Siebel_Tools_Uses_Different_Labels_for_Assignment_Object_Properties_ad1020405.html">How Siebel Tools Uses Different Labels for Assignment Object Properties</a>.</p>
+<div class="tablenoborder"><table class="- topic/table table" id="ad1019844__ad1019870"><caption><span class="- topic/desc desc tabledesc"><p class="- topic/p p">The following table describes properties of the Assignment
+Object.</p></span></caption><colgroup><col style="width:144pt" /><col style="width:324pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="ad1019844__ad1019870__entry__1">Property</th>
+<th class="- topic/entry entry rowsep-1" id="ad1019844__ad1019870__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019883">Add Team Members <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager deletes existing team members
+from the teams and existing assignment rules in the assignment rule
+intersection table that no longer qualify.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager never deletes existing team
+members from the assignment object even if they no longer qualify.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019890">Assignment Date Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the datetime stamp Siebel CRM uses
+to indicate the last time it assigned a record. This property can
+contain only the following value:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>ASGN_DT</code></pre></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019896">Assignment Mode <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Determines how Assignment Manager assigns
+an object according to organization or person. You can use one of
+the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Independent.</strong> Assigns any person and organization regardless
+of if a relationship exists between this person and organization.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Person-Oriented.</strong> Assigns a person and then assigns only
+organizations to which this person belongs.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Organization-Oriented.</strong> Assigns an organization and then
+assigns a person who belongs in this organization.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Organization and Person-Oriented.</strong> Identifies all qualified
+people and all qualified organizations. It then assigns a person and
+an organization only if a relationship exists between this person
+and the organization.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019905">Assignment Scoring Mode <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the mode that Siebel CRM uses to
+determine an assignment. You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Person-based.</strong> Set the assignment rule score to the score
+of the highest-scoring candidate. This is the default value.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Organization-based.</strong> Set the assignment rule score to
+the score of the highest-scoring organization.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019913">Auto Reassign <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager automatically reassigns assignment
+objects if assignment attribute values are modified and if policies
+are defined. This is the default value.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does not automatically reassign
+assignment objects.</p></li>
+</ul><p class="- topic/p p" id="ad1019844__ad1019919">If the Generate Triggers server component creates
+triggers for the active assignment policy, and if the Auto Reassign
+property is FALSE, then it does not create any triggers for the update.
+Assignment occurs only one time when Siebel CRM inserts the record.
+If you modify this property after you run a Generate Triggers server
+component job, then you must regenerate triggers. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019923">Calendar Activity Additional
+Fields <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies a string that Siebel CRM uses for
+an activity that it assigns according to availability. This string
+uses the following format:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code><span class="- topic/ph ph">parent field, field 1, value1, field 2, value2</span></code></pre><p class="- topic/p p">For example, you can specify the following fields
+for the Service Request object:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">Activity SR Id</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Type</p></li>
+<li class="- topic/li li"><p class="- topic/p p">ToDo</p></li>
+</ul><p class="- topic/p p">If the user creates a new activity, then Siebel CRM uses these
+field values for this new activity. </p><p class="- topic/p p">For more information about
+assignments that Siebel CRM makes according to availability, see <span class="- topic/ph ph"><cite class="- topic/cite cite">Siebel Assignment Manager Administration
+Guide</cite></span>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019938">Calendar Create Activity <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">If Siebel CRM assigns an object according
+to availability, then you can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager can create an activity in an
+employee calendar.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager cannot create an activity
+in an employee calendar. FALSE is the default value.</p></li>
+</ul><p class="- topic/p p">Siebel CRM assigns an object differently depending on if the
+object is an activity:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">An Activity.</strong> If an assignment rule qualifies an employee,
+and if the Check Employee Calendar property of this assignment rule
+includes a check mark, and if no other employee qualifies for this
+assignment rule, then Siebel CRM reuses the same activity.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Not an activity.</strong> Siebel CRM creates a new activity for
+each employee who qualifies. It sets the parent activity for all activities
+to the original activity Id. </p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019948">Calendar Duration Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the column in the assignment object
+primary table that references the object duration. If Siebel CRM assigns
+an object according to availability, then you must specify this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019953">Calendar Early Start Time
+Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the column in the assignment object
+primary table that references the early start time of the object. </p><p class="- topic/p p">This column contains the earliest date and time that an activity
+can start. The time range from Calendar Early Start Time to Calendar
+Start Time defines the time range that the activity can start.</p><p class="- topic/p p">If you do not specify a value, then the activity can start any
+time before the value that the Calendar Start Time Column property
+contains.</p><p class="- topic/p p">If Siebel CRM assigns an object according to availability,
+then you must specify this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019961">Calendar Start Time Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the column in the assignment object
+primary table that references the start time of the object. </p><p class="- topic/p p">This column contains the latest time that an activity can start.
+The time range from Calendar Early Start Time to Calendar Start Time
+defines the time range that the activity can start.</p><p class="- topic/p p">If Siebel
+CRM assigns an object according to availability, then you must specify
+this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019968">Default Employee <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the login ID of the default employee.</p><p class="- topic/p p">Assignment Manager assigns this employee if a conflict occurs
+and it cannot choose the correct set of employees. A conflict occurs
+if no assignment rules match or if two rules qualify with the same
+score.</p><p class="- topic/p p">If you do not specify this property, then Assignment
+Manager sets the owner Id field in the object row to No Match Row
+Id.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019975">Default Group <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Not used.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019980">Default Org <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the default organization.
+Assignment Manager assigns this organization if a conflict occurs
+and it cannot choose the correct set of organizations. A conflict
+occurs if no assignment rules match or if two rules qualify with the
+same score.</p><p class="- topic/p p">If you do not specify this property, then Assignment
+Manager sets the owner Id field in the object row to No Match Row
+Id.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019986">Default Position <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the default position.
+Assignment Manager assigns this position if a conflict occurs and
+it cannot choose the correct set of positions. A conflict occurs if
+no assignment rules match or if two rules qualify with the same score.</p><p class="- topic/p p">If you do not specify this property, then Assignment Manager sets
+the owner Id field in the object row to No Match Row Id.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019992">Employee Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the column in the employee
+intersection table that references rows in the employee table (S_EMPLOYEE).
+If the Employee Table property is not empty, then this property is
+required.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1019998">Employee Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the employee
+intersection table. This column determines if the Assignment Manager
+can assign an employee in a denormalization program.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020003">Employee Key Column<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p" id="ad1019844__ad1020005">Specifies the name of the
+column that contains the key values of the employees that Siebel CRM
+assigns to the team at runtime. If the UseKeyValue server component
+parameter is True, then the Employee Key Column is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020009">Employee Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the employee
+intersection table. This column determines if a user can manually
+assign an employee.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020014">Employee Primary Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column contains the primary employee on a team or a single-owner
+employee. A <em class="+ topic/ph hi-d/i ph i">single-owner employee</em> is a type of assignment where
+Assignment Manager can assign only one candidate to an object.</p><p class="- topic/p p">If you specify a value in the Employee Primary Column, and if
+you do not specify a value in the Employee Table, then Siebel CRM
+enables the assignment object for employees in the single-owner mode.</p><p class="- topic/p p" id="ad1019844__ad1020019">If the assignment rule is a single-owner rule,
+or if the Set Primary Employee property is TRUE, then the Employee
+Primary Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020023">Employee Primary Column List <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies a comma-separated list of column
+names in the employee intersection table that Assignment Manager must
+copy if Siebel CRM modifies the primary employee. To copy the old
+primary employee to the new primary employee, Assignment Manager copies
+values from these columns.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020028">Employee Primary Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can assign a primary
+employee in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020031">If the assignment
+rule is a single-owner rule, or if the Set Primary Employee property
+is TRUE, then the Employee Primary Denorm Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020035">Employee Primary Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if a user can manually assign a primary
+employee.</p><p class="- topic/p p" id="ad1019844__ad1020038">If the assignment rule is a single-owner
+rule, or if the Set Primary Employee property is TRUE, then the Employee
+Primary Manual Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020042">Employee Primary System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can assign a primary
+employee in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020045">If the assignment
+rule is a single-owner rule, or if the Set Primary Employee property
+is TRUE, then the Employee Primary System Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020049">Employee System Column<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the employee
+intersection table. This column determines if Assignment Manager can
+assign an employee in non-Denormalization mode. </p><p class="- topic/p p" id="ad1019844__ad1020053">If the Employee Table property is not empty, then the Employee System
+Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020056">Employee Table <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the employee intersection
+table. If Assignment Manager can assign the assignment object to multiple
+employees, then this intersection table contains the set of employee
+IDs that it assigns to the assignment object IDs.</p><p class="- topic/p p" id="ad1019844__ad1020059">If Assignment Manager assigns objects according to team, then the
+Employee Table property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020063">Employee Team Score Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the column in the team
+table that contains scores for each member of an employee team. This
+property can reference any column that contains a number.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020068">Exclude Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the lock assignment
+column in the primary table, which is a column in the primary table
+of the assignment object that Siebel CRM can use to prevent Assignment
+Manager from processing some rows.</p><p class="- topic/p p">Most of the assignment object
+tables include an ASGN_USR_EXCLD_FLG column. Siebel CRM displays this
+column in the client as a field named Lock Assignment for some objects.
+If Siebel CRM does not display this column for an assignment object,
+then you can query the Siebel database for the ASGN_USR_EXCLD_FLG
+column in the appropriate table.</p><p class="- topic/p p">You typically set the value
+for this column through a business component, not through Assignment
+Manager. For example, if the user creates a new activity, then Siebel
+CRM automatically adds a check mark in the Lock Assignment checkbox
+for this activity. The user must remove this check mark before Siebel
+CRM can assign this activity.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020075">Group Column <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a row ID column in
+the rule intersection table that references rows in the assignment
+rule table (S_ASGN_GRP).</p><p class="- topic/p p">This column provides a foreign key
+to the assignment rule table. This key uniquely identifies a rule
+for each relationship between an assignment entity and a rule.</p><p class="- topic/p p" id="ad1019844__ad1020080">If the Rule Table property is not empty, then the
+Group Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020083">Group Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the rule
+intersection table. This column determines if Assignment Manager can
+use the assignment rule in denormalization mode.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020088">Group Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the rule
+intersection table. This column determines if a user can manually
+use the assignment rule.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020093">Group Primary Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column contains the primary or single-owner rule.</p><p class="- topic/p p" id="ad1019844__ad1020097">If the Set Primary Rule property is TRUE, then the
+Group Primary Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020100">Group Primary Column List <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies a comma-separated list of column
+names in the rule intersection table that Assignment Manager copies
+if Siebel CRM modifies the primary rule. It copies values from these
+columns from the old primary rule to the new primary rule.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020105">Group Primary Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can use the primary
+rule in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020108">If the assignment
+rule is a single-owner rule, or if the Set Primary Group property
+is TRUE, then the Group Primary Denorm Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020112">Group Primary Manual Column<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if a user can manually use the primary
+rule.</p><p class="- topic/p p" id="ad1019844__ad1020115">If the assignment rule is a single-owner
+rule, or if the Set Primary Group property is TRUE, then the Group
+Primary Manual Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020119">Group Primary System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can assign the
+primary rule in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020122">If the
+assignment rule is a single-owner rule, or if the Set Primary Group
+property is TRUE, then the Group Primary System Column property is
+required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020126">Group System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the rule
+intersection table. This column determines if Assignment Manager can
+assign the rule in denormalization mode.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020131">Group Table <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the rule intersection
+table.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020136">Ignore Assignment Attributes <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager ignores assignment criteria
+that are not relevant to the assignment object. For example, if an
+assignment rule specifies Service Request Priority as a criterion,
+and if Assignment Manager assigns opportunities and accounts, then
+it ignores this criterion. Service Request Priority is an assignment
+attribute that is relevant only to a service request.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager evaluates all assignment criteria.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020144">Keep Creator <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager cannot delete the creator of
+the assignment object from the team.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager can delete the creator.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020152">Keep Man Asgn Primary Employee <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">If Assignment Manager assigns an object according
+to team, then you can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> If the user explicitly sets the primary employee
+of a team, then Assignment Manager does not set this employee. Instead,
+it adds a check mark to the Primary Person Manual property of the
+primary table that the assignment object references.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager sets the primary employee
+of a team.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020159">Keep Man Asgn Primary Group<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">If Assignment Manager assigns an object according
+to team, then you can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> If the user explicitly sets the primary assignment
+rule for a team, then Assignment Manager does not set this rule. Instead,
+it adds a check mark to the Primary Assignment Rule Manual property
+of the primary table that the assignment object references.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager sets the primary assignment
+rule even if the user already manually assigned it.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020166">Keep Man Asgn Primary Org <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> If you define the Org Primary Manual Column property
+for an assignment object, and if the value in the column that this
+property references contains a Y, then Assignment Manager does not
+reassign the primary organization.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does examine the Org Primary
+Manual Column property.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020173">Keep Man Asgn Primary Position <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">If Assignment Manager assigns an object according
+to team, then you can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> If the user explicitly sets the primary position
+for a team, then Assignment Manager does not set this position. Instead,
+it adds a check mark to the Primary Person Manual property of the
+primary table that the assignment object references.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager sets the primary position.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020180">Keep User Assigned<strong class="+ topic/ph hi-d/b ph b"> (R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">If Assignment Manager assigns an object according
+to a team, then you can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager keeps manually assigned employees,
+positions, and assignment rules. In this situation, a position that
+a user adds to an account sales team is an example of a person. A
+territory that a user adds to a territory list for an opportunity
+is an example of an assignment rule.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> An automatic assignment operation can replace
+a manually assigned employee, position, or assignment rule.</p></li>
+</ul><p class="- topic/p p">To determine if a user manually assigned an object, Assignment
+Manager examines the value of the Team Manual Column property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020189">Max Number Per Role <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Not used.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020194">Name <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the assignment object.
+This property uniquely identifies the assignment object in the repository.
+It provides the name that Siebel CRM displays in the picklist and
+multivalue group applet for assignment rules in administration views.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020199">Org Column <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the column in the organization
+intersection table that references rows in the organization table.</p><p class="- topic/p p" id="ad1019844__ad1020203">If the Org Table property is not empty, then the
+Org Column is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020206">Org Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the organization
+intersection table. This column determines if Assignment Manager can
+assign an organization in denormalization mode.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020211">Org Key Column </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column. This column
+contains the key values of the organizations that Assignment Manager
+assigns to the team at runtime.</p><p class="- topic/p p" id="ad1019844__ad1020214">If the UseKeyValue
+server component parameter is True, then the Org Key Column property
+is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020218">Org Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the organization
+intersection table. This column specifies if the user can manually
+assign an organization.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020223">Org Primary Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column contains the primary organization for a team or
+a single-owner organization.</p><p class="- topic/p p">If you specify a value in the Org
+Primary Column property, and if you do not specify a value in the
+Org Table property, then Siebel CRM enables the assignment object
+for organizations that Assignment Manager assigns in single-owner
+mode.</p><p class="- topic/p p" id="ad1019844__ad1020228">If the assignment rule is a single-owner
+rule, or if the Set Primary Org property is TRUE, then the Org Primary
+Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020232">Org Primary Column List <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies a comma-separated list of column
+names in the organization intersection table. If Siebel CRM modifies
+the primary organization, then Assignment Manager copies values from
+these columns from the old primary organization to the new primary
+organization.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020237">Org Primary Denorm Column<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can assign the
+primary organization in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020240">If the assignment rule is a single-owner rule, or if the Set Primary
+Org property is TRUE, then the Org Primary Denorm Column property
+is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020244">Org Primary Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if the user can manually assign the
+primary organization.</p><p class="- topic/p p" id="ad1019844__ad1020247">If the assignment rule
+is a single-owner rule, or if the Set Primary Org property is TRUE,
+then the Org Primary Manual Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020251">Org Primary System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Assignment Manager can assign the
+primary organization in denormalization mode.</p><p class="- topic/p p" id="ad1019844__ad1020255">If the assignment rule is a single-owner rule, or if the Org Primary
+System Column property is TRUE, then the Org Primary Manual Column
+property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020259">Org System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the organization
+intersection table. This column determines if a user can manually
+assign an organization.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020264">Org Table<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the organization intersection
+table. If Assignment Manager can assign the assignment object to multiple
+organizations, then this intersection table contains the set of organization
+IDs that it assigns to assignment object IDs.</p><p class="- topic/p p">If Assignment
+Manager assigns objects according to team, then the Org Table property
+is required.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020270">Org Team Score Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the team
+table. This column contains scores for each member of an organization
+team. This property can reference any column that can contain a number.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020275">Position Column <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the position
+intersection table. This column references rows in the position table
+(S_POSTN).</p><p class="- topic/p p" id="ad1019844__ad1020279">If the Position Table property is
+not empty, then the Position Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020282">Position Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the position
+intersection table. This column determines if the denorm program can
+assign a position. </p><p class="- topic/p p" id="ad1019844__ad1020286">If the Position Table property
+is not empty, then the Position Denorm Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020289">Position Key Column </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column. This column
+contains the key values of the employees that Assignment Manager assigns
+to the team at runtime.</p><p class="- topic/p p" id="ad1019844__ad1020292">If the UseKeyValue server
+component parameter is True, then the Position Key Column property
+is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020296">Position Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the position
+intersection table. This column determines if the user can manually
+assign a position.</p><p class="- topic/p p" id="ad1019844__ad1020300">If the Position Table property
+is not empty, then the Position Manual Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020303">Position Primary Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column contains the primary position for teams or it contains
+a single-owner position.</p><p class="- topic/p p" id="ad1019844__ad1020307">If the assignment rule
+is a single-position rule, or if the Set Primary Position property
+is TRUE, then the Position Primary Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020311">Position Primary Column List <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies a comma-separated list of column
+names in the position intersection table. If Siebel CRM modifies the
+primary position, then Assignment Manager copies values from these
+columns from the old primary position to the new primary position. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020316">Position Primary Denorm Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if the denorm program assigns the primary
+position.</p><p class="- topic/p p" id="ad1019844__ad1020319">If the assignment rule is a single-position
+rule, or if the Set Primary Position property is TRUE, then the Position
+Primary Denorm Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020323">Position Primary Manual Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if the user can manually assign a primary
+position.</p><p class="- topic/p p" id="ad1019844__ad1020326">If the assignment rule is a single-position
+rule, or if the Set Primary Position property is TRUE, then the Position
+Primary Manual Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020330">Position Primary System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the primary
+table. This column determines if Siebel CRM assigns the primary position.</p><p class="- topic/p p" id="ad1019844__ad1020333">If the assignment rule is a single-position rule,
+or if the Set Primary Position property is TRUE, then the Position
+Primary System Column property is required. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020337">Position System Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the position
+intersection table. This column determines if Siebel CRM assigns a
+position.</p><p class="- topic/p p">This property is required if the Position Table property
+is not empty.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020343">Position Table<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the position intersection
+table. If Assignment Manager can assign the assignment object to multiple
+positions, then this intersection table column contains the set of
+position IDs that it assigns to the assignment object IDs.</p><p class="- topic/p p">If
+Assignment Manager assigns objects according to a team, then the Position
+Table property is required.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020349">Position Team Score Column <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a column in the team
+table. This column contains scores for each member of a position team.
+This property can reference any column that can contain a number.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020354">Primary Table <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of a primary table. The
+business component references this table. For example, S_ORG_EXT is
+the primary table for the Account assignment object.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020359">Set Primary Employee <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the primary employee. This employee
+is typically the employee who possesses the highest score in the assignment
+rule that possesses the highest score. You can use one of the following
+values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager chooses and sets the primary
+employee.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does not choose and set the
+primary employee.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020366">Set Primary Group <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the primary assignment rule. This
+rule is typically the rule that possesses the highest score in the
+assignment rule. You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager chooses and sets the primary
+position.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does not choose or set the
+primary position.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020373">Set Primary Org <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the primary organization rule.
+This organization is typically the organization that possesses the
+highest score in the assignment rule. You can use one of the following
+values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager chooses and sets the primary
+organization.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does not choose or set the
+primary organization.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020380">Set Primary Position <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the primary position. This position
+is typically the position that possesses the highest score in the
+assignment rule. You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Assignment Manager chooses and sets the primary
+position.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Assignment Manager does not choose or set the
+primary position.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020387">Skill Item Table <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the skill item table
+that contains skills for the assignment object. This table must be
+a child table of the table that the Skill Table property specifies.
+The Skill Id column is a foreign key column to the skill table.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020392">Skill Table <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">Specifies the name of the table that contains
+skills for an assignment object.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__1 "><p class="- topic/p p" id="ad1019844__ad1020397">Team </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1019844__ad1019870__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> To determine the assignment criterion, Siebel
+CRM uses a column in the team table.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> To determine the assignment criterion, Siebel
+CRM does not use a column in the team table.</p></li>
+</ul><p class="- topic/p p">Siebel CRM uses this property for dynamic candidates.</p></td>
+</tr>
+</tbody></table></div>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

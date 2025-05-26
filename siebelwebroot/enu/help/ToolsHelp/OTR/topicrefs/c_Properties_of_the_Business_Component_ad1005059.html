@@ -1,0 +1,497 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="A business component defines a logical entity that organizes columns from one or more tables into a single entity. It provides a foundation that controls how Siebel CRM chooses, inserts, and updates ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Business_Component_Object_Types_ad1004050.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Properties_of_the_Bus_Comp_View_Mode_ad1004559.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Restrictions_on_Inserts_Updates_and_Deletes_ad1004932.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Restrictions_on_Inserts_Updates_and_Deletes_ad1004932.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_How_Siebel_CRM_Persists_a_Business_Component_Instance_ad1004935.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Configuring_the_Cache_Data_Property_of_a_Business_Component_ad1004938.html" /><meta name="DC.Relation" scheme="URI" content="../../OTR/topicrefs/c_Configuring_a_Multivalue_Group_Business_Component_ad1004945.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ad1005059" /><meta name="DC.Language" content="en" /><title>Business Component</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ad1005059-d45e14476" /><meta name="wh-source-relpath" content="OTR/topicrefs/c_Properties_of_the_Business_Component_ad1005059.dita" /><meta name="wh-out-relpath" content="OTR/topicrefs/c_Properties_of_the_Business_Component_ad1005059.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ad1005059" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html">Siebel Object Types Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html">Siebel Object Types Reference</a></span></span></li><li><span class="topicref" data-id="ad1004050"><span class="title"><a href="../../OTR/topicrefs/c_Business_Component_Object_Types_ad1004050.html">Business Component Object Types</a></span></span></li><li class="active"><span class="topicref" data-id="ad1005059"><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Business_Component_ad1005059.html">Business Component</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../OTR/topicrefs/c_Properties_of_the_Bus_Comp_View_Mode_ad1004559.html" title="BusComp View Mode" aria-label="Previous topic: BusComp View Mode" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../OTR/topicrefs/c_Restrictions_on_Inserts_Updates_and_Deletes_ad1004932.html" title="Restrictions on Inserts, Updates, and Deletes" aria-label="Next topic: Restrictions on Inserts, Updates, and Deletes" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e12757" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12758" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12758-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12758-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12796" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12796-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTR_overview.html" id="tocId-d45e12796-link">Overview of Using Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e13051" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e13051-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html" id="tocId-d45e13051-link">Siebel Object Types Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="otrobjtypeslist-d45e13052" class="topicref" data-id="otrobjtypeslist" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_OTRObjTypesList.html" id="otrobjtypeslist-d45e13052-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1026234-d45e13070" class="topicref" data-id="ad1026234" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1026234-d45e13070-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Applet_Object_Types_ad1026234.html" id="ad1026234-d45e13070-link">Applet Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1032930-d45e13876" class="topicref" data-id="ad1032930" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1032930-d45e13876-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Application_Object_Types_ad1032930.html" id="ad1032930-d45e13876-link">Application Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033003-d45e14159" class="topicref" data-id="ad1033003" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033003-d45e14159-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_Attribute_Object_Types_ad1033003.html" id="ad1033003-d45e14159-link">Assignment Attribute Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1003537-d45e14233" class="topicref" data-id="ad1003537" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1003537-d45e14233-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Assignment_Criteria_Object_Types_ad1003537.html" id="ad1003537-d45e14233-link">Assignment Criteria Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033057-d45e14326" class="topicref" data-id="ad1033057" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033057-d45e14326-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Bitmap_Category_Object_Types_ad1033057.html" id="ad1033057-d45e14326-link">Bitmap Category Object Types</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ad1004050-d45e14401" class="topicref" data-id="ad1004050" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ad1004050-d45e14401-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Component_Object_Types_ad1004050.html" id="ad1004050-d45e14401-link">Business Component Object Types</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ad1004496-d45e14419" class="topicref" data-id="ad1004496" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Bus_Comp_Browser_Script_ad1004496.html" id="ad1004496-d45e14419-link">BusComp Browser Script</a></span></span></li><li role="treeitem"><span data-tocid="ad1004541-d45e14438" class="topicref" data-id="ad1004541" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_BusComp_Server_Script_ad1004541.html" id="ad1004541-d45e14438-link">BusComp Server Script</a></span></span></li><li role="treeitem"><span data-tocid="ad1004559-d45e14457" class="topicref" data-id="ad1004559" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Bus_Comp_View_Mode_ad1004559.html" id="ad1004559-d45e14457-link">BusComp View Mode</a></span></span></li><li role="treeitem" aria-expanded="true" class="active"><span data-tocid="ad1005059-d45e14476" class="topicref" data-id="ad1005059" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ad1005059-d45e14476-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Business_Component_ad1005059.html" id="ad1005059-d45e14476-link">Business Component</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ad1004932-d45e14495" class="topicref" data-id="ad1004932" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Restrictions_on_Inserts_Updates_and_Deletes_ad1004932.html" id="ad1004932-d45e14495-link">Restrictions on Inserts, Updates, and Deletes</a></span></span></li><li role="treeitem"><span data-tocid="ad1004935-d45e14513" class="topicref" data-id="ad1004935" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_How_Siebel_CRM_Persists_a_Business_Component_Instance_ad1004935.html" id="ad1004935-d45e14513-link">How Siebel CRM Persists a Business Component Instance</a></span></span></li><li role="treeitem"><span data-tocid="ad1004938-d45e14531" class="topicref" data-id="ad1004938" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Configuring_the_Cache_Data_Property_of_a_Business_Component_ad1004938.html" id="ad1004938-d45e14531-link">Configuring the Cache Data Property of a Business Component</a></span></span></li><li role="treeitem"><span data-tocid="ad1004945-d45e14549" class="topicref" data-id="ad1004945" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Configuring_a_Multivalue_Group_Business_Component_ad1004945.html" id="ad1004945-d45e14549-link">Configuring a Multivalue Group Business Component</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1004953-d45e14567" class="topicref" data-id="ad1004953" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1004953-d45e14567-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Business_Component_User_Prop_ad1004953.html" id="ad1004953-d45e14567-link">Business Component User Prop</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1005131-d45e14604" class="topicref" data-id="ad1005131" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1005131-d45e14604-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_data_nametopicalias_valueHID_APPLET_REPOS_FIELD_LIST_Field_ad1005131.html" id="ad1005131-d45e14604-link">Field</a></span></span></li><li role="treeitem"><span data-tocid="ad1005591-d45e14677" class="topicref" data-id="ad1005591" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Field_Locale_ad1005591.html" id="ad1005591-d45e14677-link">Field Locale</a></span></span></li><li role="treeitem"><span data-tocid="ad1005625-d45e14695" class="topicref" data-id="ad1005625" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Field_User_Prop_ad1005625.html" id="ad1005625-d45e14695-link">Field User Prop</a></span></span></li><li role="treeitem"><span data-tocid="ad1006102-d45e14714" class="topicref" data-id="ad1006102" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_data_nametopicalias_valueHID_APPLET_REPOS_JOIN_LIST_Join_ad1006102.html" id="ad1006102-d45e14714-link">Join</a></span></span></li><li role="treeitem"><span data-tocid="ad1006144-d45e14733" class="topicref" data-id="ad1006144" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Join_Constraint_ad1006144.html" id="ad1006144-d45e14733-link">Join Constraint</a></span></span></li><li role="treeitem"><span data-tocid="ad1006191-d45e14753" class="topicref" data-id="ad1006191" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Join_Specification_ad1006191.html" id="ad1006191-d45e14753-link">Join Specification</a></span></span></li><li role="treeitem"><span data-tocid="ad1006259-d45e14772" class="topicref" data-id="ad1006259" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Multi_Value_Field_ad1006259.html" id="ad1006259-d45e14772-link">Multi Value Field</a></span></span></li><li role="treeitem"><span data-tocid="ad1006349-d45e14791" class="topicref" data-id="ad1006349" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Multi_Value_Link_ad1006349.html" id="ad1006349-d45e14791-link">Multi Value Link</a></span></span></li><li role="treeitem"><span data-tocid="ad1006484-d45e14810" class="topicref" data-id="ad1006484" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_MVF_Pick_Map_ad1006484.html" id="ad1006484-d45e14810-link">MVF Pick Map</a></span></span></li><li role="treeitem"><span data-tocid="ad1006543-d45e14829" class="topicref" data-id="ad1006543" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_MVF_Pick_Map_UpdOnlyIfNull_ad1006543.html" id="ad1006543-d45e14829-link">MVF Pick Map UpdOnlyIfNull</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1005961-d45e14848" class="topicref" data-id="ad1005961" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1005961-d45e14848-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_data_nametopicalias_valueHID_APPLET_REPOS_PICK_MAP_LIST_Pick_Map_ad1005961.html" id="ad1005961-d45e14848-link">Pick Map</a></span></span></li><li role="treeitem"><span data-tocid="ad1006030-d45e14885" class="topicref" data-id="ad1006030" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_Pick_Map_UpdOnlyIfNull_ad1006030.html" id="ad1006030-d45e14885-link">Pick Map UpdOnlyIfNull</a></span></span></li><li role="treeitem"><span data-tocid="ad1006737-d45e14904" class="topicref" data-id="ad1006737" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Single_Value_Field_ad1006737.html" id="ad1006737-d45e14904-link">Single Value Field</a></span></span></li><li role="treeitem"><span data-tocid="ad1006926-d45e14922" class="topicref" data-id="ad1006926" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_SVF_Pick_Map_ad1006926.html" id="ad1006926-d45e14922-link">SVF Pick Map</a></span></span></li><li role="treeitem"><span data-tocid="ad1006982-d45e14941" class="topicref" data-id="ad1006982" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Properties_of_the_SVF_Pick_Map_UpdOnlyIfNull_ad1006982.html" id="ad1006982-d45e14941-link">SVF Pick Map UpdOnlyIfNull</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007103-d45e14960" class="topicref" data-id="ad1007103" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007103-d45e14960-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Object_Types_ad1007103.html" id="ad1007103-d45e14960-link">Business Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007246-d45e15016" class="topicref" data-id="ad1007246" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007246-d45e15016-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Business_Service_Object_Types_ad1007246.html" id="ad1007246-d45e15016-link">Business Service Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1007869-d45e15243" class="topicref" data-id="ad1007869" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1007869-d45e15243-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Class_Object_Types_ad1007869.html" id="ad1007869-d45e15243-link">Class Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008317-d45e15375" class="topicref" data-id="ad1008317" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008317-d45e15375-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Command_Object_Types_ad1008317.html" id="ad1008317-d45e15375-link">Command Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008670-d45e15469" class="topicref" data-id="ad1008670" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008670-d45e15469-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Content_Object_Types_ad1008670.html" id="ad1008670-d45e15469-link">Content Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008812-d45e15525" class="topicref" data-id="ad1008812" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008812-d45e15525-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_DLL_Object_Type_ad1008812.html" id="ad1008812-d45e15525-link">DLL Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1008896-d45e15562" class="topicref" data-id="ad1008896" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1008896-d45e15562-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Dock_Object_Types_ad1008896.html" id="ad1008896-d45e15562-link">Dock Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1009352-d45e15656" class="topicref" data-id="ad1009352" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1009352-d45e15656-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_EIM_Interface_Table_Object_Types_ad1009352.html" id="ad1009352-d45e15656-link">EIM Interface Table Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010216-d45e15826" class="topicref" data-id="ad1010216" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010216-d45e15826-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Entity_Relationship_Diagram_Object_Types_ad1010216.html" id="ad1010216-d45e15826-link">Entity Relationship Diagram Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010536-d45e15934" class="topicref" data-id="ad1010536" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010536-d45e15934-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_External_Search_Engine_Object_Type_ad1010536.html" id="ad1010536-d45e15934-link">External Search Engine Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1010746-d45e15971" class="topicref" data-id="ad1010746" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1010746-d45e15971-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Find_Object_Types_ad1010746.html" id="ad1010746-d45e15971-link">Find Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011160-d45e16139" class="topicref" data-id="ad1011160" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011160-d45e16139-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Help_ID_Object_Type_ad1011160.html" id="ad1011160-d45e16139-link">Help Id Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011254-d45e16176" class="topicref" data-id="ad1011254" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011254-d45e16176-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_HTML_Hierarchy_Bitmap_Object_Type_ad1011254.html" id="ad1011254-d45e16176-link">HTML Hierarchy Bitmap Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011401-d45e16213" class="topicref" data-id="ad1011401" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011401-d45e16213-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Icon_Map_Object_Types_ad1011401.html" id="ad1011401-d45e16213-link">Icon Map Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011506-d45e16269" class="topicref" data-id="ad1011506" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011506-d45e16269-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Import_Object_Types_ad1011506.html" id="ad1011506-d45e16269-link">Import Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1011886-d45e16440" class="topicref" data-id="ad1011886" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1011886-d45e16440-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Integration_Object_Types_ad1011886.html" id="ad1011886-d45e16440-link">Integration Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012532-d45e16610" class="topicref" data-id="ad1012532" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012532-d45e16610-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Link_Object_Type_ad1012532.html" id="ad1012532-d45e16610-link">Link Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012826-d45e16665" class="topicref" data-id="ad1012826" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012826-d45e16665-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Menu_Object_Types_ad1012826.html" id="ad1012826-d45e16665-link">Menu Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1012995-d45e16740" class="topicref" data-id="ad1012995" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1012995-d45e16740-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Message_Category_Object_Types_ad1012995.html" id="ad1012995-d45e16740-link">Message Category Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013140-d45e16815" class="topicref" data-id="ad1013140" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013140-d45e16815-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Pager_Object_Type_ad1013140.html" id="ad1013140-d45e16815-link">Pager Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1033477-d45e16852" class="topicref" data-id="ad1033477" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1033477-d45e16852-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Pick_List_Object_Type_ad1033477.html" id="ad1033477-d45e16852-link">Pick List Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013616-d45e16889" class="topicref" data-id="ad1013616" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013616-d45e16889-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Project_Object_Type_ad1013616.html" id="ad1013616-d45e16889-link">Project Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1038702-d45e16926" class="topicref" data-id="ad1038702" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1038702-d45e16926-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Report_Object_Type_ad1038702.html" id="ad1038702-d45e16926-link">Report Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013411-d45e16962" class="topicref" data-id="ad1013411" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013411-d45e16962-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Repository_Object_Type_ad1013411.html" id="ad1013411-d45e16962-link">Repository Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013638-d45e17000" class="topicref" data-id="ad1013638" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013638-d45e17000-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Schema_Maintenance_Object_Types_ad1013638.html" id="ad1013638-d45e17000-link">Schema Maintenance Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013709-d45e17036" class="topicref" data-id="ad1013709" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013709-d45e17036-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Screen_Object_Types_ad1013709.html" id="ad1013709-d45e17036-link">Screen Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1013806-d45e17149" class="topicref" data-id="ad1013806" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1013806-d45e17149-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Server_Component_Object_Types_ad1013806.html" id="ad1013806-d45e17149-link">Server Component Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014196-d45e17300" class="topicref" data-id="ad1014196" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014196-d45e17300-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_String_Object_Types_ad1014196.html" id="ad1014196-d45e17300-link">String Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014792-d45e17354" class="topicref" data-id="ad1014792" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014792-d45e17354-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Symbolic_String_Object_Types_ad1014792.html" id="ad1014792-d45e17354-link">Symbolic String Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1014845-d45e17408" class="topicref" data-id="ad1014845" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1014845-d45e17408-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_System_Activity_Object_Types_ad1014845.html" id="ad1014845-d45e17408-link">System Activity Object Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1015107-d45e17445" class="topicref" data-id="ad1015107" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1015107-d45e17445-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Table_Object_Types_ad1015107.html" id="ad1015107-d45e17445-link">Table Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1015189-d45e17670" class="topicref" data-id="ad1015189" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1015189-d45e17670-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Task_Object_Types_ad1015189.html" id="ad1015189-d45e17670-link">Task Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1016301-d45e17974" class="topicref" data-id="ad1016301" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1016301-d45e17974-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Task_Group_Object_Types_ad1016301.html" id="ad1016301-d45e17974-link">Task Group Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017635-d45e18049" class="topicref" data-id="ad1017635" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017635-d45e18049-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Text_Style_Object_Types_ad1017635.html" id="ad1017635-d45e18049-link">Text Style Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017828-d45e18086" class="topicref" data-id="ad1017828" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017828-d45e18086-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Toolbar_Object_Types_ad1017828.html" id="ad1017828-d45e18086-link">Toolbar Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1017945-d45e18180" class="topicref" data-id="ad1017945" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1017945-d45e18180-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Type_Object_Types_ad1017945.html" id="ad1017945-d45e18180-link">Type Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1018447-d45e18235" class="topicref" data-id="ad1018447" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1018447-d45e18235-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_View_Object_Types_ad1018447.html" id="ad1018447-d45e18235-link">View Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1018452-d45e18442" class="topicref" data-id="ad1018452" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1018452-d45e18442-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Web_Page_Object_Types_ad1018452.html" id="ad1018452-d45e18442-link">Web Page Object Types</a></span></span></li><li role="treeitem"><span data-tocid="ad1019462-d45e18554" class="topicref" data-id="ad1019462" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_data_nametopicalias_valueHID_APPLET_REPOS_WEB_TEMPLATE_LIST_Web_Template_ad1019462.html" id="ad1019462-d45e18554-link">Web Template</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1040781-d45e18573" class="topicref" data-id="ad1040781" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1040781-d45e18573-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Column_Object_Type_ad1040781.html" id="ad1040781-d45e18573-link">Workflow Policy Column Object Type</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1019535-d45e18609" class="topicref" data-id="ad1019535" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1019535-d45e18609-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Object_Types_ad1019535.html" id="ad1019535-d45e18609-link">Workflow Policy Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1019659-d45e18887" class="topicref" data-id="ad1019659" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1019659-d45e18887-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Policy_Program_Object_Types_ad1019659.html" id="ad1019659-d45e18887-link">Workflow Policy Program Object Types</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ad1021330-d45e19085" class="topicref" data-id="ad1021330" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ad1021330-d45e19085-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Workflow_Process_Object_Types_ad1021330.html" id="ad1021330-d45e19085-link">Workflow Process Object Types</a></span></span></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Business Component</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">A business component defines a logical entity that organizes columns
+from one or more tables into a single entity. It provides a foundation
+that controls how Siebel CRM chooses, inserts, and updates data in
+underlying tables. This data is typically specific to a functional
+area, such as a product, a contact, or an account. An applet references
+a business component. It does not directly reference the tables. This
+configuration allows you to reference data according to functional
+area. It might also separate work that a developer performs from work
+that an administrator performs.</p>
+<p class="- topic/p p">A virtual business component defines external data. For more information,
+see <a class="- topic/xref xref" href="c_Properties_of_the_Field_Object_Type_That_Siebel_CRM_Supports_for_a_Virtual_Business_Component_ad1005540.html">Properties of the Field Object Type That Siebel CRM Supports for a Virtual Business Component</a>.</p>
+<p class="- topic/p p">This object type occurs in the following location in the object
+hierarchy:</p>
+<ul class="- topic/ul ul">
+<li class="- topic/li li" id="ad1005059__ad1004632"><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph">Siebel Objects &gt; Business Component </code></p></li>
+</ul>
+<p class="- topic/p p">The following table describes properties that Siebel CRM uses with
+a business component.</p>
+<div class="tablenoborder"><table class="- topic/table table" id="ad1005059__ad1004637"><caption><span class="- topic/desc desc tabledesc"><p class="- topic/p p">The following table describes properties of the Business
+Component.</p></span></caption><colgroup><col style="width:144pt" /><col style="width:324pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="ad1005059__ad1004637__entry__1">Property</th>
+<th class="- topic/entry entry rowsep-1" id="ad1005059__ad1004637__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004649">Browser Class <strong class="+ topic/ph hi-d/b ph b">(O)(H)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Not used.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004654">Cache Data <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM does the following:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">If a query runs more than one time on a business component,
+and if each query uses the same search specification, the Siebel CRM
+reads business component data only one time for all of these queries.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">If a query runs more than one time on a business component,
+and if each query uses a different search specification, then Siebel
+CRM reads data for each query.</p></li>
+</ul> </li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM reads business component data for
+each query.</p></li>
+</ul><p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_Configuring_the_Cache_Data_Property_of_a_Business_Component_ad1004938.html">Configuring the Cache Data Property of a Business Component</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004667">Class <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the name of the class that determines
+the configuration of the business component. For example, you can
+use the following value:</p><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>CSSBcVAbsResult
+</code></pre></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004673">Data Source <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Allows a business component to use a different
+name for the configuration file that identifies the data source. This
+name is different from the name that the Siebel CRM application currently
+uses. Server or Local are examples of a data source. This configuration
+allows a business component to get data from a database other than
+the typical SQL database.</p><p class="- topic/p p">If a business component specifies
+a data source, then all the tables it implicitly and explicitly joins
+must reside in the same data source. </p><p class="- topic/p p" id="ad1005059__ad1004678">If the
+Data Source property is empty, then Siebel CRM uses the same data
+source that it uses to start the Siebel CRM application. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004681">Dirty Reads <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> The business component supports database dirty
+reads.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> The business component does not support database
+dirty reads.</p></li>
+</ul><p class="- topic/p p">Siebel CRM uses this property only if it use a Sybase database.
+If Siebel CRM does not use a Sybase database, then it ignores this
+property. It is recommended that you modify the default setting of
+TRUE for this property only to support workflow processes or Enterprise
+Application Integration (EAI). </p><p class="- topic/p p">If TRUE, then the user can read
+data that can be modified without their knowledge. This configuration
+might be desirable in a situation where the data is available for
+reading and anybody can update it. If dirty reads are not allowed,
+then nobody can update the data until everybody finishes displaying
+this data.</p><p class="- topic/p p">If dirty reads are allowed, and if another user does
+not modify the same record since Siebel CRM last queried this record,
+then it updates data immediately. For example, if user A updates a
+record, and if user B is not aware of this update and then attempts
+to update the same record, then Siebel CRM displays a message to user
+B that states that the data was updated and the user must requery.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004691">Distinct <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM suppresses system fields. Allows the
+equivalent of a distinct query because it suppresses system fields,
+such as Created, Updated, Id, and so. </p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong>Siebel CRM does not suppress system fields.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004698">Enclosure Id Field <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the ID of a recipient of literature,
+typically the contact ID.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004703">Extension Type <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">JOIN.</strong> Siebel CRM joins the extension table and gets
+the extended data and the other data that it requires. </p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">LINK.</strong> Siebel CRM uses a separate SQL statement that
+gets extended data. It uses this property with a Sybase database server
+because Sybase uses a 2 KB record length limit.</p></li>
+</ul><p class="- topic/p p" id="ad1005059__ad1004709">If the Extension Type property is empty, and
+if Siebel CRM: </p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Uses Sybase.</strong> This property defaults to LINK.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Does not use Sybase.</strong> This property defaults to JOIN.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004714">Force Active <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM gets all fields from the server database.
+This configuration degrades business component performance. It is
+not recommended.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM gets only the fields that the client
+registers or that a specialized business component requests. This
+configuration improves performance.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004721">GenReassignAct <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> If the business component uses a multivalue group
+for visibility, and if Siebel CRM modifies the primary team member,
+then it creates an activity.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM does not create an activity.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004728">Hierarchy Parent Field<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the field that contains the parent
+data in a hierarchy. It allows Siebel CRM to display nesting in a
+hierarchical list applet.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004733">Insert Update All Columns <strong class="+ topic/ph hi-d/b ph b">(S)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Used internally to make each SQL INSERT or
+UPDATE statement include a column. This configuration allows Siebel
+CRM to reuse parsed statements more effectively during batch processing.</p><p class="- topic/p p">You must not modify this value.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004739">Log Changes <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM enables logging.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM disables logging.</p></li>
+</ul><div class="- topic/note note caution note_caution"><span class="cautiontitle">CAUTION:</span> Siebel CRM sets this property to TRUE, by
+default. You must not modify it. Any modification you make might adversely
+affect data integrity.</div></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004747">Maximum Cursor Size <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the maximum number of records that
+Siebel CRM can get from the server database. It applies only to an
+Oracle or DB2 UDB database. You can use one of the following numbers:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">- 1.</strong> Siebel CRM gets records until it encounters an
+EOF (end of file) record. </p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">A number greater than 0.</strong> Siebel CRM gets the number
+of records that you specify.</p></li>
+</ul><p class="- topic/p p" id="ad1005059__ad1004753">If the Maximum Cursor Size property contains
+a value, then this value overrides the MaxCursorSize parameter in
+the configuration file. </p><p class="- topic/p p">You can also use this property with
+a multivalue group business component. For more information, see <a class="- topic/xref xref" href="c_Configuring_a_Multivalue_Group_Business_Component_ad1004945.html">Configuring a Multivalue Group Business Component</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004760">Multi Recipient Select <strong class="+ topic/ph hi-d/b ph b">(S)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM allows the user to choose multiple
+recipients.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM does not allow the user to choose
+multiple recipients.</p></li>
+</ul><p class="- topic/p p">The Service Request business component sets this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004768">Name <strong class="+ topic/ph hi-d/b ph b">(R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the name for the business component.
+This name must be unique among business components. It can include
+spaces. It cannot include special characters.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004773">No Delete <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM does not allow the user to delete a
+record in an applet that references this business component.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM allows the user to delete a record
+in an applet that references this business component.</p></li>
+</ul><p class="- topic/p p">If the Admin Mode Flag property of the current view is TRUE,
+then Siebel CRM ignores this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004781">No Insert<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM does not allow the user to insert a
+record in an applet that references this business component.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM allows the user to insert a record
+in an applet that references this business component.</p></li>
+</ul><p class="- topic/p p">If the Admin Mode Flag property of the current view is TRUE,
+then Siebel CRM ignores this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004789">No Merge <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM does not allow the user to merge two
+existing records into a single record in an applet that references
+this business component.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM allows the user to merge two existing
+records into a single record in an applet that references this business
+component. You must also set the No Delete property to FALSE because
+merging requires Siebel CRM to delete one of the records that it merges.</p></li>
+</ul><p class="- topic/p p">If the Admin Mode Flag property of the current view is TRUE,
+then Siebel CRM ignores this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004797">No Update <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Siebel CRM does not allow the user to update a
+record in an applet that references this business component.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Siebel CRM allows the user to update a record
+in an applet that references this business component.</p></li>
+</ul><p class="- topic/p p">If the Admin Mode Flag property of the current view is TRUE,
+then Siebel CRM ignores this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004805">Owner Delete <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Only the owner can delete a record.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> Anyone can delete a record.</p></li>
+</ul><p class="- topic/p p">The following visibility determines the owner:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Team visibility</strong>. The owner is the primary position on
+the sales team. Team visibility occurs if the Visibility MVLink property
+and the Visibility MVField property of the BusComp View Mode each
+includes a value.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Position visibility.</strong> The owner is the position that
+the visibility field contains. The Visibility Field property of the
+BusComp View Mode specifies this field.</p></li>
+</ul><p class="- topic/p p">If a view uses Admin mode, then Siebel CRM disables the Owner
+Delete property and any user who can access the view can delete the
+record.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004816">Placeholder <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Not used.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004821">Popup Visibility Auto All<strong class="+ topic/ph hi-d/b ph b"> (O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Pop-up visibility is All.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> The Popup Visibility Type property determines
+pop-up visibility.</p></li>
+</ul></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004828">Popup Visibility Type <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p" id="ad1005059__ad1004830">Specifies the type of pop-up
+visibility. To view the values you can use, click the Popup Visibility
+Type property in Siebel Tools. If this property is empty, then Siebel
+CRM uses the Sales Rep default value. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004834">PreFetch Size <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the number of records that Siebel
+CRM gets from the server database for a business component. If this
+property includes a value, then it overrides the MaxCursorSize parameter
+in the configuration file.</p><p class="- topic/p p" id="ad1005059__ad1004838">If you set the PreFetch
+Size property to the same value that the Maximum Cursor Size property
+contains, then Siebel CRM does the following: </p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">Reads the number of records that you specify in the PreFetch
+Size parameter. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Resets the Siebel database cursor so that Siebel CRM can use
+it for a subsequent query.</p></li>
+</ul><p class="- topic/p p">You can use this property with the Maximum Cursor Size property
+only with a DB2 UDB database.</p><p class="- topic/p p">You can use this property with
+a multivalue group business component. For more information, see <a class="- topic/xref xref" href="c_Configuring_a_Multivalue_Group_Business_Component_ad1004945.html">Configuring a Multivalue Group Business Component</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004848">Recipient Id Field <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the field that references the recipient
+IDs. This ID is typically the Contact ID. This property specifies
+the field that references the ID. It does not specify the ID.</p><p class="- topic/p p">If the user uses CTRL+L in the Service Request screen to create recipients,
+and if the Recipient Id Field property of the Service Request business
+component is empty, then Siebel CRM does not create any recipients. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004854">Reverse Fill Threshold <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the maximum number of records that
+Siebel CRM reads when it runs the first record or the last record
+request. It does this before the SQL statement that automatically
+reruns with a reversed sort sequence.</p><p class="- topic/p p">The default value is 100.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004860">Scripted <strong class="+ topic/ph hi-d/b ph b">(S)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Indicates a Siebel VB or Siebel eScript script
+is attached to the business component:</p><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> Script is
+attached.</p><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> No script is attached.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004867">Search Specification <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies a conditional expression that Siebel
+CRM uses to restrict the records it gets for this business component.
+You can enter a maximum of 255 characters in this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004872">Sort Specification <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the sort expression that Siebel
+CRM uses to sort the records it gets from the server database.</p><p class="- topic/p p">If the business component references any class other than CSSBusComp,
+then Siebel CRM might disable the sort specification.</p><p class="- topic/p p">For performance
+reasons, the Application Object Manager ignores the sort specification
+property for the All view mode and the Manager view mode.</p><p class="- topic/p p">You
+cannot define a sort specification on an administrative list.</p><p class="- topic/p p">The user can sort records after the first query. To improve performance,
+Siebel CRM requires the user to filter for a smaller record set.</p><p class="- topic/p p">You can enter a maximum of 255 characters in this property.</p><p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_Properties_of_the_Business_Component_User_Prop_ad1004953.html">Business Component User Prop</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004886">Status Field <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the name of a field that contains
+the value that determines the New status for a record. If this field
+value is:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">TRUE.</strong> The record is new and no user has viewed it.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">FALSE.</strong> A user has viewed the record.</p></li>
+</ul><p class="- topic/p p">You use this property with the visibility properties of the
+business component, such as the Visibility MVLink property and the
+Position Visibility Field property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004894">Synonym Field <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the field that contains synonyms
+for the business component. If this property includes a value, then
+any bounded picklist that the business component contains searches
+these synonyms.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004899">Table<strong class="+ topic/ph hi-d/b ph b"> (R)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the name of the primary SQL table
+where Siebel CRM gets records for this business component. The table
+name is case-sensitive. It must use the same format that it uses in
+the Siebel database.</p><p class="- topic/p p">A virtual business component does not use
+this property.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p">Type</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">You can use one of the following values:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Transient.</strong> Save data only when the task UI commits it.
+You use this value only with a task UI.</p></li>
+<li class="- topic/li li"><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Non-Transient.</strong> Save data in an underlying table. You
+use this value with any business component that a task UI does not
+reference.</p></li>
+</ul><p class="- topic/p p">For more information, see <span class="- topic/ph ph"><cite class="- topic/cite cite">Siebel Business Process Framework: Task
+UI Guide</cite></span>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p">Upgrade Ancestor</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_Common_Object_Properties_ac860077.html">Common Object Properties</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004922">XA Attribute Value BusComp <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the child business component that
+contains the attribute values for this business component. This property
+enables extended dynamic attributes for this business component.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__1 "><p class="- topic/p p" id="ad1005059__ad1004927">XA Class Id Field <strong class="+ topic/ph hi-d/b ph b">(O)</strong> </p></td>
+<td class="- topic/entry entry rowsep-1" headers="ad1005059__ad1004637__entry__2 "><p class="- topic/p p">Specifies the field that this business component
+references that contains the class data.</p></td>
+</tr>
+</tbody></table></div>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

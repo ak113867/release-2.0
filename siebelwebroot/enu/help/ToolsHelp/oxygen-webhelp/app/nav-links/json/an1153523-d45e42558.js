@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"How Running Tool Tip Differs from Tool Tips in Script Assist ","href":"UsingTools\/topicrefs\/c_How_Running_Tool_Tip_Differs_from_Tool_Tips_in_Script_Assist__an1145851.html","attributes": {"data-id":"an1145851",},"menu": {"hasChildren":false,},"tocID":"an1145851-d45e42576","topics":[]}]});

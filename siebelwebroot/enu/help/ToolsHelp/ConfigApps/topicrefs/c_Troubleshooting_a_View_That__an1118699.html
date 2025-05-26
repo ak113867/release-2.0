@@ -1,0 +1,217 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="To resolve a problem with a view that Siebel CRM does not display in the Siebel client, look for it in the list of Diagnostic Steps or Cause column in the following table. Table 1 . Problems with a ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../ConfigApps/topicrefs/c_Configuring_a_View_an1098998.html" /><meta name="DC.Relation" scheme="URI" content="../../ConfigApps/topicrefs/c_Restricting_Access_to_Records_in_a_View_an1102412.html" /><meta name="DC.Relation" scheme="URI" content="../../ConfigApps/topicrefs/c_Process_of_Creating_a_Screen_an1096187.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="an1118699" /><meta name="DC.Language" content="en" /><title>Troubleshooting a View That Siebel CRM Does Not Display in the Siebel Client</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="an1118699-d45e54247" /><meta name="wh-source-relpath" content="ConfigApps/topicrefs/c_Troubleshooting_a_View_That__an1118699.dita" /><meta name="wh-out-relpath" content="ConfigApps/topicrefs/c_Troubleshooting_a_View_That__an1118699.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="an1118699" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html">Configuring Siebel Business Applications</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../ConfigApps/topicrefs/c_Procedures_UI_layer.html">Configuring Views, Screens, and Applications</a></span></span></li><li><span class="topicref" data-id="an1098998"><span class="title"><a href="../../ConfigApps/topicrefs/c_Configuring_a_View_an1098998.html">Configuring a View</a></span></span></li><li class="active"><span class="topicref" data-id="an1118699"><span class="title"><a href="../../ConfigApps/topicrefs/c_Troubleshooting_a_View_That__an1118699.html">Troubleshooting a View That <span xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" class="ph">Siebel CRM</span> Does Not Display in the Siebel Client</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../ConfigApps/topicrefs/c_Restricting_Access_to_Records_in_a_View_an1102412.html" title="Restricting Access to Records in a View" aria-label="Previous topic: Restricting Access to Records in a View" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../ConfigApps/topicrefs/c_Process_of_Creating_a_Screen_an1096187.html" title="Process of Creating a Screen" aria-label="Next topic: Process of Creating a Screen" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e46524" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46525" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46525-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46525-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46581" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46581-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_OverviewArch.html" id="tocId-d45e46581-link">Architecture of Siebel CRM</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e47717" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e47717-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_TablesColumns.html" id="tocId-d45e47717-link">About Tables and Columns</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e48529" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e48529-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_BusComp.html" id="tocId-d45e48529-link">About Business Components, Fields, Joins, and Links</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e49520" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e49520-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_BusObj.html" id="tocId-d45e49520-link">About Business Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e49671" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e49671-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Applets.html" id="tocId-d45e49671-link">About Applets, Controls and List Columns</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e50185" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e50185-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_ScreensViews.html" id="tocId-d45e50185-link">About Views, Screens, and Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e50569" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e50569-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_WebTemplates.html" id="tocId-d45e50569-link">About Siebel Web Templates and Siebel Tags</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e51738" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e51738-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_RoadMap.html" id="tocId-d45e51738-link">Configuring a Siebel Application</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e52104" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e52104-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Reusing_Predefined_Objects_az1055246.html" id="tocId-d45e52104-link">Reusing Predefined Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e52729" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e52729-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_ERD.html" id="tocId-d45e52729-link">Using the Entity Relationship Designer</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e53132" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e53132-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Procedures_data_layer.html" id="tocId-d45e53132-link">Configuring Tables</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e53370" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e53370-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Procedures_business_layer.html" id="tocId-d45e53370-link">Configuring Business Components, Links, and Business Objects</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e53974" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e53974-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Procedures_UI_layer.html" id="tocId-d45e53974-link">Configuring Views, Screens, and Applications</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="procedures_ui_layer-d45e53975" class="topicref" data-id="procedures_ui_layer" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Procedures_UI_layer.html" id="procedures_ui_layer-d45e53975-link">Configuring Views, Screens, and Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="an1099077-d45e53993" class="topicref" data-id="an1099077" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action an1099077-d45e53993-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Process_of_Creating_a_View_an1099077.html" id="an1099077-d45e53993-link">Process of Creating a View</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="an1098998-d45e54066" class="topicref" data-id="an1098998" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action an1098998-d45e54066-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Configuring_a_View_an1098998.html" id="an1098998-d45e54066-link">Configuring a View</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="an1099062-d45e54085" class="topicref" data-id="an1099062" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Using_the_Views_List_to_Create_a_View_an1099062.html" id="an1099062-d45e54085-link">Using the Views List to Create a View</a></span></span></li><li role="treeitem"><span data-tocid="an1095890-d45e54103" class="topicref" data-id="an1095890" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Configuring_the_Thread_Bar_an1095890.html" id="an1095890-d45e54103-link">Configuring the Thread Bar</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="an1102472-d45e54121" class="topicref" data-id="an1102472" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action an1102472-d45e54121-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Defining_the_Drilldown_Sequence_to_Configure_Searchfor_an_Account_an1102472.html" id="an1102472-d45e54121-link">Defining the Drilldown Sequence to Configure Search for an Account</a></span></span></li><li role="treeitem"><span data-tocid="an1119363-d45e54157" class="topicref" data-id="an1119363" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Creating_an_Applet_Toggle_an1119363.html" id="an1119363-d45e54157-link">Creating an Applet Toggle</a></span></span></li><li role="treeitem"><span data-tocid="an1148390-d45e54175" class="topicref" data-id="an1148390" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Defining_Whether_a_View_Is_Cachable_an1148390.html" id="an1148390-d45e54175-link">Defining Whether a View Is Cachable</a></span></span></li><li role="treeitem"><span data-tocid="an1102387-d45e54193" class="topicref" data-id="an1102387" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Creating_a_Secure_View_an1102387.html" id="an1102387-d45e54193-link">Creating a Secure View</a></span></span></li><li role="treeitem"><span data-tocid="an1102398-d45e54211" class="topicref" data-id="an1102398" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Creating_a_View_That_Requires_an_Explicit_User_Login_an1102398.html" id="an1102398-d45e54211-link">Creating a View That Requires an Explicit User Login</a></span></span></li><li role="treeitem"><span data-tocid="an1102412-d45e54229" class="topicref" data-id="an1102412" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Restricting_Access_to_Records_in_a_View_an1102412.html" id="an1102412-d45e54229-link">Restricting Access to Records in a View</a></span></span></li><li role="treeitem" class="active"><span data-tocid="an1118699-d45e54247" class="topicref" data-id="an1118699" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Troubleshooting_a_View_That__an1118699.html" id="an1118699-d45e54247-link">Troubleshooting a View That <span xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:toc="http://www.oxygenxml.com/ns/webhelp/toc" class="ph">Siebel CRM</span> Does Not Display in the Siebel Client</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="an1096187-d45e54268" class="topicref" data-id="an1096187" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action an1096187-d45e54268-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Process_of_Creating_a_Screen_an1096187.html" id="an1096187-d45e54268-link">Process of Creating a Screen</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="an1096349-d45e54380" class="topicref" data-id="an1096349" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action an1096349-d45e54380-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Process_of_Creating_a_Screen_Home_Page_View_an1096349.html" id="an1096349-d45e54380-link">Process of Creating a Screen Home Page View</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="an1107734-d45e54564" class="topicref" data-id="an1107734" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action an1107734-d45e54564-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Creating_and_Deploying_an_Application_an1107734.html" id="an1107734-d45e54564-link">Creating and Deploying an Application</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e54692" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e54692-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_AppletLayout.html" id="tocId-d45e54692-link">Configuring Applet Layouts</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e55144" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e55144-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_ConfigApplets.html" id="tocId-d45e55144-link">Configuring Applets</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e56075" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e56075-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Configuring_SpecialPurpose_Applets_ad1042891.html" id="tocId-d45e56075-link">Configuring Special-Purpose Applets</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e57123" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e57123-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_MVGAssociation.html" id="tocId-d45e57123-link">Configuring Multi-Value Group, Association, and Shuttle Applets</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e57695" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e57695-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_ToolbarsMenus.html" id="tocId-d45e57695-link">Configuring Menus, Toolbars, and Icons</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e58406" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e58406-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_WebTemplatesCustomize.html" id="tocId-d45e58406-link">Configuring Siebel Web Templates</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e59055" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e59055-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Tuning.html" id="tocId-d45e59055-link">Improving the Performance of Siebel CRM</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e59736" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e59736-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_EIMInterfaces.html" id="tocId-d45e59736-link">Mapping a Custom Table to an Interface Table for Siebel EIM</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e60153" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e60153-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_DockObjects.html" id="tocId-d45e60153-link">Configuring Dock Objects for Siebel Remote</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e60500" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e60500-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_GlobalDeployment.html" id="tocId-d45e60500-link">Localizing Siebel CRM</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e61359" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e61359-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_ConfigDataVisualization.html" id="tocId-d45e61359-link">Configuring Data Visualization</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e61703" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e61703-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_CustDash.html" id="tocId-d45e61703-link">Configuring the Customer Dashboard</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e62314" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e62314-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Reference.html" id="tocId-d45e62314-link">Reference Materials for Configuring Siebel CRM</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Troubleshooting a View That <span class="- topic/ph ph">Siebel CRM</span> Does
+Not Display in the Siebel Client</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">To resolve a problem with a view that <span class="- topic/ph ph">Siebel CRM</span> does
+not display in the Siebel client, look for it in the list of Diagnostic
+Steps or Cause column in the following table. </p>
+<div class="tablenoborder"><table class="- topic/table table" id="an1118699__an1101634"><caption class="- topic/title title tablecap" caption-side="top" is-repeated="true"><span class="table--title-label">Table<span class="table--title-label-number"> 1</span><span class="table--title-label-punctuation">. </span></span><span class="table--title">Problems with a View That <span class="- topic/ph ph">Siebel CRM</span> Does
+Not Display in the Siebel Client</span></caption><colgroup><col style="width:175pt" /><col style="width:293pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="an1118699__an1101634__entry__1">Diagnostic Steps or Cause</th>
+<th class="- topic/entry entry rowsep-1" id="an1118699__an1101634__entry__2">Solution</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view does not exist in the Siebel runtime
+repository. The spelling of the view name does not match the view
+name in the Siebel runtime repository.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">A view name that you do not spell correctly
+when you register the view in the Views view of the Administration
+- Application screen might cause this problem. Make sure the spelling
+is correct, then deploy your changes to the Siebel runtime repository.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view belongs to a screen that is not
+included in the Siebel application that is currently running.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">In Siebel Tools, make sure the screen is
+defined as a child screen menu item of the Siebel application.</p><p class="- topic/p p">Make sure the name of the Siebel application is spelled correctly
+in the configuration file of the Siebel application.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view is not included in one of the responsibilities
+for the user who is currently logged in.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">Use the Administration - User screen, Employees
+view to identify the responsibilities that <span class="- topic/ph ph">Siebel CRM</span> assigns
+to the user.</p><p class="- topic/p p">Use the Administration - Application screen, Responsibilities
+view to determine to include or not include the view.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view is hidden using personalization
+rules.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">Use the Administration - Personalization
+screen, Views view to determine whether the view is hidden. For testing
+purposes, you can switch off the EnablePersonalization parameter in
+the configuration file for Siebel Tools. For more information, see <a class="- topic/xref xref" href="c_Setting_Up_the_Configuration_File_for_Siebel_Tools_ah1095747.html">Setting Up the Configuration File for Siebel Tools</a>. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p"><span class="- topic/ph ph">Siebel CRM</span> does
+not display the view in the menu or in the view tabs. The user must
+drill down from another view to access the view.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">In Siebel Tools, make sure the Screen Menu
+property of the View object is TRUE. It must be TRUE in order for <span class="- topic/ph ph">Siebel CRM</span> to
+include the view in the Site Map.</p><p class="- topic/p p">Make sure the view is included
+in a screen and that the Viewbar Text property of the Screen View
+child object of the screen is set appropriately.</p><p class="- topic/p p">Make sure the Visibility Applet and Visibility Applet Type properties of the view are set
+        correctly. For more information, see <span class="- topic/ph ph"><cite class="- topic/cite cite">Siebel Security Guide</cite></span>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view does not belong to the same business
+object as the default view for the screen.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">Make sure the view references the same business
+object.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p"><span class="- topic/ph ph">Siebel CRM</span> does
+not translate the screen menu item or page tab into the appropriate
+language.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">Make sure a translated string is available
+for each language for each screen menu item and each screen menu item
+locale. If a translated string is not available, then <span class="- topic/ph ph">Siebel CRM</span> does
+not display the screen in the Site Map.</p><p class="- topic/p p">For a page tab to display,
+the page tab must include a translated string and a page tab locale
+that contains the appropriate language code.</p><p class="- topic/p p">For example, if <span class="- topic/ph ph">Siebel CRM</span> runs
+in Norwegian, then the Language Code property of the screen menu item
+locale and page tab locale must be NOR.</p><p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_GlobalDeployment.html">Localizing Siebel CRM</a>. </p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view is not available because of an upgrade
+problem.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">If you performed an upgrade, then examine
+the log files that <span class="- topic/ph ph">Siebel CRM</span> created
+during the upgrade to make sure the upgrade was successful. These
+log files are located in the <code class="+ topic/ph pr-d/codeph ph codeph">DBSRVR\</code><em class="+ topic/ph hi-d/i ph i">DB_PLATFORM</em> directory.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__1 "><p class="- topic/p p">The view is not included in your license
+keys.</p></td>
+<td class="- topic/entry entry rowsep-1" headers="an1118699__an1101634__entry__2 "><p class="- topic/p p">Make sure the view is included in your license
+keys. Send the license keys to Oracle for examination. For more information,
+see Article ID 475818.1 on My Oracle Support. This document was previously
+published as Siebel Alert 41.</p></td>
+</tr>
+</tbody></table></div>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

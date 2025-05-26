@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"How <span class=\"ph\">Siebel CRM</span> Handles Certain Date Formats","href":"ConfigApps\/topicrefs\/c_How_ph_conrefcommonvariablesditavariablesProduct_NamephHandles_Certain_Date_Formats_aw1176127.html","attributes": {"data-id":"aw1176127",},"menu": {"hasChildren":false,},"tocID":"aw1176127-d45e62555","topics":[]}]});

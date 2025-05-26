@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Using SWE Classes Starting with Siebel CRM Version7.x","href":"ToolsDevRef\/topicrefs\/c_Using_SWE_Classes_Starting_with_Siebel_CRM_Version7x_ac280476.html","attributes": {"data-id":"ac280476",},"menu": {"hasChildren":false,},"tocID":"ac280476-d45e308","topics":[]}]});

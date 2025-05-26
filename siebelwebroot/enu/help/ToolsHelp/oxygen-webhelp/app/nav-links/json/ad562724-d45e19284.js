@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"State Management Type Property of a Workflow Process","href":"OTR\/topicrefs\/c_State_Management_Type_Property_of_a_Workflow_Process_ad1028185.html","attributes": {"data-id":"ad1028185",},"menu": {"hasChildren":false,},"tocID":"ad1028185-d45e19302","topics":[]}]});

@@ -1,0 +1,190 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" whc:version="22.0" xml:lang="en" lang="en">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="The Clib time object measures time in the following ways: As an integral value of the number of seconds that have occurred since January 1, 1970. As a time object that includes properties for the day, ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_Clib_Date_and_Time_Methods_af1302866.html" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_Clib_Date_and_Time_Methods_af1302866.html" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_About_the_Objects_That_Each_Clib_Time_Method_Returns_af1302974.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="af1302914" /><meta name="DC.Language" content="en" /><title>Overview of Clib Date and Time Methods</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="af1302914-d45e33352" /><meta name="wh-source-relpath" content="eScript/topicrefs/c_Overview_of_Clib_Date_and_Time_Methods_af1302914.dita" /><meta name="wh-out-relpath" content="eScript/topicrefs/c_Overview_of_Clib_Date_and_Time_Methods_af1302914.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="af1302914" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html">Siebel eScript Language Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../eScript/topicrefs/c_C_Language_Reference.html">C Language Library Reference</a></span></span></li><li><span class="topicref" data-id="af1302866"><span class="title"><a href="../../eScript/topicrefs/c_Clib_Date_and_Time_Methods_af1302866.html">Clib Date and Time Methods</a></span></span></li><li class="active"><span class="topicref" data-id="af1302914"><span class="title"><a href="../../eScript/topicrefs/c_Overview_of_Clib_Date_and_Time_Methods_af1302914.html">Overview of Clib Date and Time Methods</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../eScript/topicrefs/c_Clib_Date_and_Time_Methods_af1302866.html" title="Clib Date and Time Methods" aria-label="Previous topic: Clib Date and Time Methods" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../eScript/topicrefs/c_About_the_Objects_That_Each_Clib_Time_Method_Returns_af1302974.html" title="About the Objects That Each Clib Time Method Returns" aria-label="Next topic: About the Objects That Each Clib Time Method Returns" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e26654" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26655" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26655-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26655-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26693" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26693-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_About_Siebel_e_Script_ac1040343.html" id="tocId-d45e26693-link">About Siebel eScript</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e27457" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e27457-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Using_Siebel_e_Script_ad1040343.html" id="tocId-d45e27457-link">Using Siebel eScript</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e28349" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e28349-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Statements_Reference_ag1040343.html" id="tocId-d45e28349-link">Statements Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e28586" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e28586-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Methods_Reference.html" id="tocId-d45e28586-link">Methods Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e32135" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e32135-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_C_Language_Reference.html" id="tocId-d45e32135-link">C Language Library Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="c_language_reference-d45e32136" class="topicref" data-id="c_language_reference" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_C_Language_Reference.html" id="c_language_reference-d45e32136-link">C Language Library Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1004828-d45e32154" class="topicref" data-id="af1004828" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1004828-d45e32154-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Overview_of_the_Clib_Object_af1004828.html" id="af1004828-d45e32154-link">Overview of the Clib Object</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1300166-d45e32191" class="topicref" data-id="af1300166" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1300166-d45e32191-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_File_and_Directory_Methods_af1300166.html" id="af1300166-d45e32191-link">Clib File and Directory Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1300771-d45e32445" class="topicref" data-id="af1300771" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1300771-d45e32445-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_File_Input_and_Output_Methods_af1300771.html" id="af1300771-d45e32445-link">Clib File Input and Output Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1299500-d45e32843" class="topicref" data-id="af1299500" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1299500-d45e32843-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_String_Methods_af1299500.html" id="af1299500-d45e32843-link">Clib String Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1267050-d45e33061" class="topicref" data-id="af1267050" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1267050-d45e33061-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Buffer_Methods_af1267050.html" id="af1267050-d45e33061-link">Clib Buffer Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1302481-d45e33152" class="topicref" data-id="af1302481" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1302481-d45e33152-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Mathematical_Methods_af1302481.html" id="af1302481-d45e33152-link">Clib Mathematical Methods</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="af1302866-d45e33333" class="topicref" data-id="af1302866" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action af1302866-d45e33333-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Date_and_Time_Methods_af1302866.html" id="af1302866-d45e33333-link">Clib Date and Time Methods</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" class="active"><span data-tocid="af1302914-d45e33352" class="topicref" data-id="af1302914" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Overview_of_Clib_Date_and_Time_Methods_af1302914.html" id="af1302914-d45e33352-link">Overview of Clib Date and Time Methods</a></span></span></li><li role="treeitem"><span data-tocid="AboutTheObjectsThatEachClibTimeMeth-A7FF81BD-d45e33370" class="topicref" data-id="AboutTheObjectsThatEachClibTimeMeth-A7FF81BD" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_About_the_Objects_That_Each_Clib_Time_Method_Returns_af1302974.html" id="AboutTheObjectsThatEachClibTimeMeth-A7FF81BD-d45e33370-link">About the Objects That Each Clib Time Method Returns</a></span></span></li><li role="treeitem"><span data-tocid="af1303054-d45e33388" class="topicref" data-id="af1303054" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Convert_Integer_to_GMT_Method_af1303054.html" id="af1303054-d45e33388-link">Clib Convert Integer to GMT Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303096-d45e33406" class="topicref" data-id="af1303096" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Convert_Integer_to_Local_Time_Method_af1303096.html" id="af1303096-d45e33406-link">Clib Convert Integer to Local Time Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303125-d45e33424" class="topicref" data-id="af1303125" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Convert_Time_to_Integer_Method_af1303125.html" id="af1303125-d45e33424-link">Clib Convert Time to Integer Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303188-d45e33442" class="topicref" data-id="af1303188" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Convert_Time_Object_to_Integer_Method_af1303188.html" id="af1303188-d45e33442-link">Clib Convert Time Object to Integer Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303243-d45e33460" class="topicref" data-id="af1303243" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Get_Date_and_Time_Method_af1303243.html" id="af1303243-d45e33460-link">Clib Get Date and Time Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303291-d45e33478" class="topicref" data-id="af1303291" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Get_Formatted_Date_and_Time_Method_af1303291.html" id="af1303291-d45e33478-link">Clib Get Formatted Date and Time Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303505-d45e33496" class="topicref" data-id="af1303505" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Get_Local_Date_and_Time_Method_af1303505.html" id="af1303505-d45e33496-link">Clib Get Local Date and Time Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303560-d45e33515" class="topicref" data-id="af1303560" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Get_Difference_in_Seconds_Method_af1303560.html" id="af1303560-d45e33515-link">Clib Get Difference in Seconds Method</a></span></span></li><li role="treeitem"><span data-tocid="af1303603-d45e33533" class="topicref" data-id="af1303603" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Get_Tick_Count_Method_af1303603.html" id="af1303603-d45e33533-link">Clib Get Tick Count Method</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1048413-d45e33551" class="topicref" data-id="af1048413" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1048413-d45e33551-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Character_Classification_Methods_af1048413.html" id="af1048413-d45e33551-link">Clib Character Classification Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1299313-d45e33805" class="topicref" data-id="af1299313" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1299313-d45e33805-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Clib_Error_Methods_af1299313.html" id="af1299313-d45e33805-link">Clib Error Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="af1050293-d45e33914" class="topicref" data-id="af1050293" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action af1050293-d45e33914-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Other_Clib_Methods_af1050293.html" id="af1050293-d45e33914-link">Other Clib Methods</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34042" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34042-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Quick_Reference.html" id="tocId-d45e34042-link">Siebel eScript Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34387" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34387-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Appendix_A_Error_Messages.html" id="tocId-d45e34387-link">Compilation Error Messages</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Overview of Clib Date and Time Methods</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">The Clib time object measures time in the following ways: </p>
+<ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">As an integral value of the number of seconds that have occurred
+since January 1, 1970.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">As a time object that includes properties for the day, month,
+year, and so on. This time object is distinct from the standard JavaScript
+date object. </p></li>
+</ul>
+<p class="- topic/p p">Note the following:</p>
+<ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">The time object is for use with the date and time functions
+in the Clib object. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">You cannot write code that uses a date object property with
+a time object or a time object property with a date object.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Although the time object is different than the date object,
+these objects contain similar data. </p></li>
+</ul>
+<p class="- topic/p p">The following table information lists the integer properties for
+the timeInt argument of the Clib time object. </p>
+<div class="tablenoborder"><table class="- topic/table table" id="af1302914__af1302926"><caption><span class="- topic/desc desc tabledesc"><p class="- topic/p p">This table shows the integer properties for the timeInt argument
+(of Clib time object).</p></span></caption><colgroup><col style="width:176pt" /><col style="width:292pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="af1302914__af1302926__entry__1">Value for the timeInt Argument</th>
+<th class="- topic/entry entry rowsep-1" id="af1302914__af1302926__entry__2">Integer Property</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_sec</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Second after the minute, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_min</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Minutes after the hour, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_hour</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Hour of the day, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_mday</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Day of the month, from 1.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_mon</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Month of the year, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_year</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Years since 1900, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_wday</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Days since Sunday, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_yday</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Day of the year, from 0.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__1 "><p class="- topic/p p">tm_isdst</p></td>
+<td class="- topic/entry entry rowsep-1" headers="af1302914__af1302926__entry__2 "><p class="- topic/p p">Flag for Daylight Savings Time.</p></td>
+</tr>
+</tbody></table></div>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

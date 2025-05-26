@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Checking In Assignment Objects","href":"OTR\/topicrefs\/c_Checking_In_Assignment_Objects_ad1003431.html","attributes": {"data-id":"ad1003431",},"menu": {"hasChildren":false,},"tocID":"ad1003431-d45e14196","topics":[]}]});

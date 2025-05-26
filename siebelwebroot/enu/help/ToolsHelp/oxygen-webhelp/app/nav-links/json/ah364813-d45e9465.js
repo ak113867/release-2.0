@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Using View Templates","href":"ToolsDevRef\/topicrefs\/c_Guidelines_for_Using_View_Templates_ah364822.html","attributes": {"data-id":"ah364822",},"menu": {"hasChildren":false,},"tocID":"ah364822-d45e9483","topics":[]}]});

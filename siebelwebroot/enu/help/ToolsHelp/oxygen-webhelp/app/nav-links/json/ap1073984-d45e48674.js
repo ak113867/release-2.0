@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Caution About Using Specialized Classes","href":"ConfigApps\/topicrefs\/c_Caution_About_Using_Specialized_Classes_ap1098128.html","attributes": {"data-id":"ap1098128",},"menu": {"hasChildren":false,},"tocID":"ap1098128-d45e48692","topics":[]}]});

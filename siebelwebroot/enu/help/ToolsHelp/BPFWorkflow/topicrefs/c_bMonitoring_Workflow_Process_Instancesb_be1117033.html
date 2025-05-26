@@ -1,0 +1,181 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="The Workflow Instance Monitor view allows you to monitor the progress and status of Workflow Process instances, step instances, and aggregate data. If monitoring is turned on for a Workflow Process, ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../BPFWorkflow/topicrefs/c_Setting_Monitoring_Levels_for_a_Workflow_Process_be1023358.html" /><meta name="DC.Relation" scheme="URI" content="../../BPFWorkflow/topicrefs/c_Monitoring_Level_and_Compatibility_with_the_70_Workflow_Process_be1104775.html" /><meta name="DC.Relation" scheme="URI" content="../../BPFWorkflow/topicrefs/c_Monitoring_Levels_for_Tracing_and_the_Event_Log_be1013058.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="be1117033" /><meta name="DC.Language" content="en" /><title>Monitoring Workflow Process Instances</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="be1117033-d45e72021" /><meta name="wh-source-relpath" content="BPFWorkflow/topicrefs/c_bMonitoring_Workflow_Process_Instancesb_be1117033.dita" /><meta name="wh-out-relpath" content="BPFWorkflow/topicrefs/c_bMonitoring_Workflow_Process_Instancesb_be1117033.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="be1117033" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html">Siebel Business Process Framework: Workflow Guide</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../BPFWorkflow/topicrefs/c_administering.html">Administering a Workflow Process</a></span></span></li><li><span class="topicref" data-id="be1042566"><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Monitoring_a_Workflow_Process_be1042566.html">Monitoring a Workflow Process</a></span></span></li><li><span class="topicref" data-id="be1023358"><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Setting_Monitoring_Levels_for_a_Workflow_Process_be1023358.html">Setting Monitoring Levels for a Workflow Process</a></span></span></li><li class="active"><span class="topicref" data-id="be1117033"><span class="title"><a href="../../BPFWorkflow/topicrefs/c_bMonitoring_Workflow_Process_Instancesb_be1117033.html">Monitoring Workflow Process Instances</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../BPFWorkflow/topicrefs/c_Monitoring_Level_and_Compatibility_with_the_70_Workflow_Process_be1104775.html" title="Monitoring Level and Compatibility with the 7.0 Workflow Process" aria-label="Previous topic: Monitoring Level and Compatibility with the 7.0 Workflow Process" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../BPFWorkflow/topicrefs/c_Monitoring_Levels_for_Tracing_and_the_Event_Log_be1013058.html" title="Monitoring Levels for Tracing and the Event Log" aria-label="Next topic: Monitoring Levels for Tracing and the Event Log" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e68481" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68482" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68482-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68482-link">Whats New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68502" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68502-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_overview.html" id="tocId-d45e68502-link">Overview of Siebel Workflow</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68760" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68760-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_architecture.html" id="tocId-d45e68760-link">Siebel Workflow Process Architecture</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68960" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68960-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_developing_a_workflow.html" id="tocId-d45e68960-link">Developing Workflow Processes</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e69361" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e69361-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_using_development_environment.html" id="tocId-d45e69361-link">Using the Siebel Workflow Process Development Environment</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e69471" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e69471-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_creating_a_workflow.html" id="tocId-d45e69471-link">Creating a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e69564" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e69564-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Adding_Workflow_Process_Steps_bo1286495.html" id="tocId-d45e69564-link">Adding Workflow Process Steps</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e70359" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e70359-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_manipulating_data.html" id="tocId-d45e70359-link">Manipulating Data in a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e71387" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e71387-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_testing.html" id="tocId-d45e71387-link">Testing a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e71749" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e71749-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_administering.html" id="tocId-d45e71749-link">Administering a Workflow Process</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="administering-d45e71750" class="topicref" data-id="administering" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_administering.html" id="administering-d45e71750-link">Administering a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="be1116848-d45e71768" class="topicref" data-id="be1116848" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action be1116848-d45e71768-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Managing_a_Workflow_Process.html" id="be1116848-d45e71768-link">Managing a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="be1042566-d45e71931" class="topicref" data-id="be1042566" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action be1042566-d45e71931-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Monitoring_a_Workflow_Process_be1042566.html" id="be1042566-d45e71931-link">Monitoring a Workflow Process</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="true"><span data-tocid="be1023358-d45e71949" class="topicref" data-id="be1023358" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action be1023358-d45e71949-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Setting_Monitoring_Levels_for_a_Workflow_Process_be1023358.html" id="be1023358-d45e71949-link">Setting Monitoring Levels for a Workflow Process</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="u30011271-d45e71967" class="topicref" data-id="u30011271" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Setting_the_Monitoring_Level_Parameter_be1120734.html" id="u30011271-d45e71967-link">Setting the Monitoring Level Parameter</a></span></span></li><li role="treeitem"><span data-tocid="be1043686-d45e71985" class="topicref" data-id="be1043686" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Guidelines_for_Setting_the_Monitoring_Level_be1043686.html" id="be1043686-d45e71985-link">Guidelines for Setting the Monitoring Level</a></span></span></li><li role="treeitem"><span data-tocid="be1104775-d45e72003" class="topicref" data-id="be1104775" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Monitoring_Level_and_Compatibility_with_the_70_Workflow_Process_be1104775.html" id="be1104775-d45e72003-link">Monitoring Level and Compatibility with the 7.0 Workflow Process</a></span></span></li><li role="treeitem" class="active"><span data-tocid="be1117033-d45e72021" class="topicref" data-id="be1117033" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_bMonitoring_Workflow_Process_Instancesb_be1117033.html" id="be1117033-d45e72021-link">Monitoring Workflow Process Instances</a></span></span></li></ul></li><li role="treeitem"><span data-tocid="be1013058-d45e72039" class="topicref" data-id="be1013058" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Monitoring_Levels_for_Tracing_and_the_Event_Log_be1013058.html" id="be1013058-d45e72039-link">Monitoring Levels for Tracing and the Event Log</a></span></span></li><li role="treeitem"><span data-tocid="be1091319-d45e72057" class="topicref" data-id="be1091319" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Increasing_Tracing_Levels_for_Server_Components_of_the_Workflow_Management_Server_be1091319.html" id="be1091319-d45e72057-link">Increasing Tracing Levels for Server Components of the Workflow Management Server</a></span></span></li><li role="treeitem"><span data-tocid="u30011278-d45e72075" class="topicref" data-id="u30011278" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Collecting_Data_About_the_Properties_of_a_Workflow_Process__be1118595.html" id="u30011278-d45e72075-link">Collecting Data About Workflow Process Properties</a></span></span></li><li role="treeitem"><span data-tocid="be1118614-d45e72093" class="topicref" data-id="be1118614" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Collecting_Timing_Data_be1118614.html" id="be1118614-d45e72093-link">Collecting Timing Data</a></span></span></li><li role="treeitem"><span data-tocid="be1103410-d45e72111" class="topicref" data-id="be1103410" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Collecting_Information_About_System_Behavior_and_Server_Component_Behavior_be1103410.html" id="be1103410-d45e72111-link">Collecting Data About System Behavior and Server Component Behavior</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="u30011282-d45e72129" class="topicref" data-id="u30011282" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action u30011282-d45e72129-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Deploying_a_Workflow_Process_to_the_Siebel_Mobile_Web_Client_be1098291.html" id="u30011282-d45e72129-link">Deploying a Workflow Process to Siebel Mobile Web Client</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="be1104531-d45e72201" class="topicref" data-id="be1104531" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action be1104531-d45e72201-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Diagnosing_a_Workflow_Process_That_Has_Failed_be1104531.html" id="be1104531-d45e72201-link">Diagnosing a Failed Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="be1087142-d45e72294" class="topicref" data-id="be1087142" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action be1087142-d45e72294-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Recovering_a_Workflow_Process_be1087142.html" id="be1087142-d45e72294-link">Recovering a Workflow Process</a></span></span></li><li role="treeitem"><span data-tocid="be1096975-d45e72492" class="topicref" data-id="be1096975" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Upgrading_a_Workflow_Process_be1096975.html" id="be1096975-d45e72492-link">Upgrading a Workflow Process</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e72511" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e72511-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_design_options.html" id="tocId-d45e72511-link">Configuring a Workflow Process</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e74048" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e74048-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_example_workflows.html" id="tocId-d45e74048-link">Example Workflow Processes</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e74427" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e74427-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_example_workflows_that_call_a_business_service.html" id="tocId-d45e74427-link">Example Workflow Processes That Call a Business Service</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e74536" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e74536-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_using_predefined_policies.html" id="tocId-d45e74536-link">Using Predefined Workflow Policies</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e75331" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e75331-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_customizing_workflow_policies.html" id="tocId-d45e75331-link">Defining Custom Workflow Policies</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e76449" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e76449-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Administering_Workflow_Policies_bi1100502.html" id="tocId-d45e76449-link">Administering Workflow Policies</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e77190" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e77190-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_monitor_test_migrate_policies.html" id="tocId-d45e77190-link">Monitoring, Testing, and Migrating Workflow Policies</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e77354" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e77354-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_appendix_a_reference.html" id="tocId-d45e77354-link">Siebel Workflow Process and Workflow Policy Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e77709" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e77709-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/g_70_flow_bp1009909.html" id="tocId-d45e77709-link">Glossary</a></span></span></li></ul></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Monitoring Workflow Process Instances</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">The Workflow Instance Monitor view allows you to monitor the progress and status of Workflow
+   Process instances, step instances, and aggregate data.</p>
+  <p class="- topic/p p">If monitoring is turned on for a Workflow Process,
+   then the Workflow Process instance remains in the Workflow Instance Monitor view after it
+   finishes and Siebel CRM no longer displays it in the Workflow Instance Admin view. Siebel CRM
+   might not display any records in the Step Instances or Aggregate Data views, depending on the
+   monitoring level that is set for the Workflow Process you choose.</p>
+<section class="- topic/section section" id="be1117033__be1117035"><h2 class="- topic/title title sectiontitle">To monitor instances of a Workflow Process</h2>  <ol class="- topic/ol ol">
+<li class="- topic/li li"><p class="- topic/p p">Navigate to the Administration - Business Process screen, then the Workflow Instance Monitor
+      view.</p>
+     <p class="- topic/p p">The Workflow Process list that appears displays the definitions of Workflow Processes
+      (according to Name, Version, Business Object, Status, and so on) that have monitoring turned
+      on. A monitoring level of 1, 2, 3, or 4 indicates that monitoring is turned on for a Workflow
+      Process. For more information, see <a class="- topic/xref xref" href="c_Setting_the_Monitoring_Level_Parameter_be1120734.html">Setting the Monitoring Level Parameter</a>.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the Workflow Process list, query the Name field for the Workflow Process that you want.</p></li>
+<li class="- topic/li li">
+     <p class="- topic/p p">Monitor and review the progress and status information for the selected Workflow Process as
+      required. The following table describes the view tabs and corresponding information available
+      for a Workflow Process.</p>
+     <div class="tablenoborder"><table class="- topic/table table" id="be1117033__be1117040"><caption><span class="- topic/desc desc tabledesc">This table describes the lists and view tabs available for a Workflow
+       Processes.</span></caption><colgroup><col style="width:170pt" /><col style="width:360pt" /></colgroup><thead class="- topic/thead thead">
+        <tr class="- topic/row">
+         <th class="- topic/entry entry rowsep-1" id="be1117033__be1117040__entry__1">View Tab </th>
+         <th class="- topic/entry entry rowsep-1" id="be1117033__be1117040__entry__2">Description</th>
+        </tr>
+       </thead><tbody class="- topic/tbody tbody">
+        <tr class="- topic/row">
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__1 ">
+          <p class="- topic/p p">Process Instances</p>
+         </td>
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__2 ">
+          <p class="- topic/p p">Displays the related log instances for the selected Workflow Process.</p>
+         </td>
+        </tr>
+        <tr class="- topic/row">
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__1 ">
+          <p class="- topic/p p">Step Instances</p>
+         </td>
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__2 ">
+          <p class="- topic/p p">Displays the steps and process properties for the selected Workflow Process.</p>
+         </td>
+        </tr>
+        <tr class="- topic/row">
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__1 ">
+          <p class="- topic/p p">Aggregate Data</p>
+         </td>
+         <td class="- topic/entry entry rowsep-1" headers="be1117033__be1117040__entry__2 ">
+          <p class="- topic/p p">Displays aggregate data as a chart view for the selected Workflow Process.</p>
+         </td>
+        </tr>
+       </tbody></table></div>
+     <p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_Removing_a_Workflow_Process_from_Workflow_Instance_Monitor.html">Removing a Workflow Process Instance from Workflow Instance Monitor</a>.</p>
+    </li>
+</ol> </section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

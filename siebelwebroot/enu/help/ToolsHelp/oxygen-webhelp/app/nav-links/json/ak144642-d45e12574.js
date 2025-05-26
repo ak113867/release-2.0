@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Configuring Siebel CRM to Do Calculations with the Timestamp Function","href":"ToolsDevRef\/topicrefs\/c_Configuring_Siebel_CRM_to_Do_Calculations_with_the_Timestamp_Function_ak144649.html","attributes": {"data-id":"ak144649",},"menu": {"hasChildren":false,},"tocID":"ak144649-d45e12592","topics":[]}]});

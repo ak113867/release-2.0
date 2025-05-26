@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Requirements for a View Link","href":"ConfigApps\/topicrefs\/c_Requirements_for_a_View_Link_an1096587.html","attributes": {"data-id":"an1096587",},"menu": {"hasChildren":false,},"tocID":"an1096587-d45e54435","topics":[]}]});

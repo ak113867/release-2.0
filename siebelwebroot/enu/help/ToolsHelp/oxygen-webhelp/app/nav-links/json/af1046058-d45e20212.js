@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Example of Accessing the Mobile Web Client Automation Server","href":"OIRef\/topicrefs\/c_Example_of_Accessing_the_Mobile_Web_Client_Automation_Server_af1046627.html","attributes": {"data-id":"af1046627",},"menu": {"hasChildren":false,},"tocID":"af1046627-d45e20230","topics":[]}]});

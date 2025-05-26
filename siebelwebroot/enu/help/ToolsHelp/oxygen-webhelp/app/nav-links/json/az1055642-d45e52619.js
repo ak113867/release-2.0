@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Considering a Foreign Key Relationship","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Considering_a_Foreign_Key_Relationship_az1055901.html","attributes": {"data-id":"az1055901",},"menu": {"hasChildren":false,},"tocID":"az1055901-d45e52638","topics":[]}]});

@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Configuring a Workflow Policy Condition That References a Foreign Key","href":"BPFWorkflow\/topicrefs\/c_Configuring_a_Workflow_Policy_Condition_That_Referencesa_Foreign_Key_bm1212685.html","attributes": {"data-id":"bm1212685",},"menu": {"hasChildren":false,},"tocID":"bm1212685-d45e76070","topics":[]}]});

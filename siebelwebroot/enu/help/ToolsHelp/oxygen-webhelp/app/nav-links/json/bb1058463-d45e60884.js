@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Example of Searching a Multilingual List of Values","href":"ConfigApps\/topicrefs\/c_Example_of_Searching_a_Multilingual_List_of_Values_bb1058470.html","attributes": {"data-id":"bb1058470",},"menu": {"hasChildren":false,},"tocID":"bb1058470-d45e60903","topics":[]}]});

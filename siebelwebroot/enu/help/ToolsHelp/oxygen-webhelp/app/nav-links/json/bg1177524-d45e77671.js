@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Synchronous Assignment Manager Requests Business Service","href":"BPFWorkflow\/topicrefs\/c_Synchronous_Assignment_Manager_Requests_Business_Service_bg1160986.html","attributes": {"data-id":"bg1160986",},"menu": {"hasChildren":false,},"tocID":"bg1160986-d45e77689","topics":[]}]});

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="The Set File Position method sets the position of the next read or write operation in an open file. It does not return a value. If you write to a file after reading beyond the end of the file, then ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../VBLANG/topicrefs/c_File_Input_and_Output_Methods_ae1275756.html" /><meta name="DC.Relation" scheme="URI" content="../../VBLANG/topicrefs/c_Print_Data_to_File_Method_ae1276206.html" /><meta name="DC.Relation" scheme="URI" content="../../VBLANG/topicrefs/c_Set_File_Width_Method_ae1276309.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ae1276263" /><meta name="DC.Language" content="en" /><title>Set File Position Method</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ae1276263-d45e36908" /><meta name="wh-source-relpath" content="VBLANG/topicrefs/c_Set_File_Position_Method_ae1276263.dita" /><meta name="wh-out-relpath" content="VBLANG/topicrefs/c_Set_File_Position_Method_ae1276263.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ae1276263" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html">Siebel VB Language Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../VBLANG/topicrefs/c_Language_Reference.html">Methods Reference for Siebel VB</a></span></span></li><li><span class="topicref" data-id="ae1275756"><span class="title"><a href="../../VBLANG/topicrefs/c_File_Input_and_Output_Methods_ae1275756.html">File Input and Output Methods</a></span></span></li><li class="active"><span class="topicref" data-id="ae1276263"><span class="title"><a href="../../VBLANG/topicrefs/c_Set_File_Position_Method_ae1276263.html">Set File Position Method</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../VBLANG/topicrefs/c_Print_Data_to_File_Method_ae1276206.html" title="Print Data to File Method" aria-label="Previous topic: Print Data to File Method" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../VBLANG/topicrefs/c_Set_File_Width_Method_ae1276309.html" title="Set File Width Method" aria-label="Next topic: Set File Width Method" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e34499" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34500" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34500-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34500-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34538" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34538-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Overview.html" id="tocId-d45e34538-link">About Siebel Visual Basic</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34864" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34864-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Using_Siebel_VB.html" id="tocId-d45e34864-link">Using Siebel VB</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e36237" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e36237-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Language_Reference.html" id="tocId-d45e36237-link">Methods Reference for Siebel VB</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="language_reference-d45e36238" class="topicref" data-id="language_reference" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Language_Reference.html" id="language_reference-d45e36238-link">Methods Reference for Siebel VB</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1206642-d45e36256" class="topicref" data-id="ae1206642" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1206642-d45e36256-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Overview_of_Siebel_VB_Language_Reference_ae1206642.html" id="ae1206642-d45e36256-link">Overview of Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1273628-d45e36313" class="topicref" data-id="ae1273628" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1273628-d45e36313-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Disk_and_Directory_Control_Methods_ae1273628.html" id="ae1273628-d45e36313-link">Disk and Directory Control Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1273904-d45e36421" class="topicref" data-id="ae1273904" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1273904-d45e36421-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_File_Control_Methods_ae1273904.html" id="ae1273904-d45e36421-link">File Control Methods</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ae1275756-d45e36728" class="topicref" data-id="ae1275756" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ae1275756-d45e36728-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_File_Input_and_Output_Methods_ae1275756.html" id="ae1275756-d45e36728-link">File Input and Output Methods</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ae1275816-d45e36746" class="topicref" data-id="ae1275816" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_End_of_File_Method_ae1275816.html" id="ae1275816-d45e36746-link">End of File Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1275871-d45e36764" class="topicref" data-id="ae1275871" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Get_Characters_From_File_Method_ae1275871.html" id="ae1275871-d45e36764-link">Get Characters From File Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1275913-d45e36782" class="topicref" data-id="ae1275913" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Get_File_Contents_Method_ae1275913.html" id="ae1275913-d45e36782-link">Get File Contents Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1275982-d45e36800" class="topicref" data-id="ae1275982" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Get_File_Offset_Method_ae1275982.html" id="ae1275982-d45e36800-link">Get File Offset Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276017-d45e36818" class="topicref" data-id="ae1276017" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Get_File_Position_Method_ae1276017.html" id="ae1276017-d45e36818-link">Get File Position Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276062-d45e36836" class="topicref" data-id="ae1276062" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Get_Line_From_File_Method_ae1276062.html" id="ae1276062-d45e36836-link">Get Line From File Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276112-d45e36854" class="topicref" data-id="ae1276112" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Parse_File_Contents_Method_ae1276112.html" id="ae1276112-d45e36854-link">Parse File Contents Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276161-d45e36872" class="topicref" data-id="ae1276161" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Print_Spaces_Method_ae1276161.html" id="ae1276161-d45e36872-link">Print Spaces Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276206-d45e36890" class="topicref" data-id="ae1276206" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Print_Data_to_File_Method_ae1276206.html" id="ae1276206-d45e36890-link">Print Data to File Method</a></span></span></li><li role="treeitem" class="active"><span data-tocid="ae1276263-d45e36908" class="topicref" data-id="ae1276263" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Set_File_Position_Method_ae1276263.html" id="ae1276263-d45e36908-link">Set File Position Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276309-d45e36927" class="topicref" data-id="ae1276309" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Set_File_Width_Method_ae1276309.html" id="ae1276309-d45e36927-link">Set File Width Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276344-d45e36945" class="topicref" data-id="ae1276344" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Set_Print_Position_Method_ae1276344.html" id="ae1276344-d45e36945-link">Set Print Position Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276390-d45e36963" class="topicref" data-id="ae1276390" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Write_Data_to_File_Method_ae1276390.html" id="ae1276390-d45e36963-link">Write Data to File Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1276434-d45e36981" class="topicref" data-id="ae1276434" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Write_Variable_to_File_Method_ae1276434.html" id="ae1276434-d45e36981-link">Write Variable to File Method</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1256094-d45e36999" class="topicref" data-id="ae1256094" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1256094-d45e36999-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Code_Setup_and_Control_Methods_ae1256094.html" id="ae1256094-d45e36999-link">Code Setup and Control Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1279313-d45e37216" class="topicref" data-id="ae1279313" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1279313-d45e37216-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Code_Control_Statements_ae1279313.html" id="ae1279313-d45e37216-link">Code Control Statements</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1261457-d45e37433" class="topicref" data-id="ae1261457" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1261457-d45e37433-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Variable_Manipulation_Methods_ae1261457.html" id="ae1261457-d45e37433-link">Variable Manipulation Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1262849-d45e37613" class="topicref" data-id="ae1262849" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1262849-d45e37613-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_String_Methods_ae1262849.html" id="ae1262849-d45e37613-link">String Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1271827-d45e38029" class="topicref" data-id="ae1271827" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1271827-d45e38029-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Array_Methods_ae1271827.html" id="ae1271827-d45e38029-link">Array Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1182045-d45e38137" class="topicref" data-id="ae1182045" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1182045-d45e38137-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Mathematical_Methods_ae1182045.html" id="ae1182045-d45e38137-link">Mathematical Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1264958-d45e38499" class="topicref" data-id="ae1264958" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1264958-d45e38499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Date_and_Time_Methods_ae1264958.html" id="ae1264958-d45e38499-link">Date and Time Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1272681-d45e38842" class="topicref" data-id="ae1272681" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1272681-d45e38842-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_ODBC_Methods_ae1272681.html" id="ae1272681-d45e38842-link">ODBC Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1268258-d45e39022" class="topicref" data-id="ae1268258" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1268258-d45e39022-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Object_Querying_Methods_ae1268258.html" id="ae1268258-d45e39022-link">Object Querying Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1266914-d45e39166" class="topicref" data-id="ae1266914" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1266914-d45e39166-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Financial_Methods_ae1266914.html" id="ae1266914-d45e39166-link">Financial Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1004579-d45e39382" class="topicref" data-id="ae1004579" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1004579-d45e39382-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Conversion_Methods_ae1004579.html" id="ae1004579-d45e39382-link">Conversion Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1270182-d45e39544" class="topicref" data-id="ae1270182" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1270182-d45e39544-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_COM_Methods_ae1270182.html" id="ae1270182-d45e39544-link">COM Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1255825-d45e39652" class="topicref" data-id="ae1255825" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1255825-d45e39652-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Error_Handling_Methods_ae1255825.html" id="ae1255825-d45e39652-link">Error Handling Methods</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e39797" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e39797-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Quick_Reference.html" id="tocId-d45e39797-link">Quick Reference for Siebel VB Methods</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Set File Position Method</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">The Set File Position method sets the position of the next read
+or write operation in an open file. It does not return a value. If
+you write to a file after reading beyond the end of the file, then
+this method increases the file length. If a read operation attempts
+to specify a negative or zero position, then Visual Basic returns
+an error message.</p>
+<section class="- topic/section section" id="ae1276263__ae1276267"><h2 class="- topic/title title sectiontitle">Format</h2>  <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>Seek [#]<em class="+ topic/ph hi-d/i ph i">filenumber, position
+</em></code></pre><p class="- topic/p p">The following table describes the arguments that
+you can use with this method.</p> <div class="tablenoborder"><table class="- topic/table table" id="ae1276263__ae1276269"><caption><span class="- topic/desc desc tabledesc"><p class="- topic/p p">The following table describes arguments you can use for Set
+File Position method.</p></span></caption><colgroup><col style="width:64pt" /><col style="width:403pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="ae1276263__ae1276269__entry__1">Argument</th>
+<th class="- topic/entry entry rowsep-1" id="ae1276263__ae1276269__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1276263__ae1276269__entry__1 "><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">filenumber</em></p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1276263__ae1276269__entry__2 "><p class="- topic/p p">The file number that the Open statement uses
+to open the file. For more information, see <a class="- topic/xref xref" href="c_Open_File_Method_ae1274532.html">Open File Method</a>.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1276263__ae1276269__entry__1 "><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">position</em></p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1276263__ae1276269__entry__2 "><p class="- topic/p p">An expression of type long that identifies
+the position depending on the following mode that this method uses
+to open the file:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">Random mode. The position of a record number. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Other modes. The position of the byte offset. </p></li>
+</ul><p class="- topic/p p"><em class="+ topic/ph hi-d/i ph i">The position </em>is in the range of 1 through 2,147,483,647.
+The first byte or record in the file is at position 1, the second
+is at position 2, and so on.</p></td>
+</tr>
+</tbody></table></div></section>
+<section class="- topic/section section"><h2 class="- topic/title title sectiontitle">Example</h2> <p class="- topic/p p">The following example reads the
+contents of a sequential file line by line to a carriage return, and
+then displays the results. The CreateFile subroutine creates the <kbd class="+ topic/ph sw-d/userinput ph userinput">c:\temp001</kbd> file that the main subroutine uses:</p> <pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>(general) (declarations)
+Option Explicit
+Declare Sub CreateFile
+</code></pre><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>Sub CreateFile
+   Rem Put the numbers 10-100 into a file
+   Dim x as Integer
+   Open "c:\temp001" for Output as #1
+   For x = 10 to 100 step 10
+      Write #1, x
+   Next x
+   Close #1
+End Sub
+</code></pre><pre class="+ topic/pre pr-d/codeblock pre codeblock"><code>Sub Button_Click
+   Dim testscore as String
+   Dim x
+   Dim y
+   Dim newline
+   Call CreateFile
+   Open "c:\temp001" for Input as #1
+   x = 1
+   newline = Chr(10)
+   msgtext = "The test scores are: " &amp; newline
+   Do Until x = Lof(1)
+      Line Input #1, testscore
+      x = x + 1
+      y = Seek(1)
+      If y&gt;Lof(1) then
+         x = Lof(1)
+      Else
+         Seek 1,y
+      End If
+      msgtext = msgtext &amp; newline &amp; testscore 
+   Loop
+   Close #1
+      Kill "c:\temp001"
+End Sub
+</code></pre></section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Using the Revision Condition User Property","href":"ToolsDevRef\/topicrefs\/c_Using_the_Revision_Condition_User_Property_af878649.html","attributes": {"data-id":"af878649",},"menu": {"hasChildren":false,},"tocID":"af878649-d45e6595","topics":[]}]});

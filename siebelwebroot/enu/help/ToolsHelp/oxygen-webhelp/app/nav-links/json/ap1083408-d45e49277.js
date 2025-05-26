@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Creating Joins With a Party Table","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Creating_Joins_With_a_Party_Table_ap1083418.html","attributes": {"data-id":"ap1083418",},"menu": {"hasChildren":false,},"tocID":"ap1083418-d45e49295","topics":[]}]});

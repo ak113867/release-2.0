@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Siebel Management Console</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="description" content="Oracle Siebel Cloud">
+    <meta name="keywords" content="Oracle, Siebel">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../files/login.css?v=32e47ab7b2">
+    <style>
+        @media (max-width: 922px) {
+            .siebui-login-body .siebui-fieldset .siebui-ctrl-input select {
+                width: 100%;
+            }
+        }
+        @media (min-width: 922px) {
+            .siebui-login-body .siebui-login-form {
+                padding: 0 311px;
+            }
+        }
+    </style>
+</head>
+
+<body class="siebui-login-body">
+    <component-login></component-login>
+    <script id='template-login' type='text/html'>
+        <form action="" method="post">
+            <div class="siebui-login-container">
+                <div class="siebui-login-logo"></div>
+                <div class="siebui-login-form">
+                    <div class="siebui-fieldset">
+                        <label class="siebui-ctrl-label" id="labelUsername" for="username" data-bind="text: labels.username()"></label>
+                        <span class="siebui-ctrl-input">
+                            <input type="text" id="username" data-bind="textInput: username, hasFocus: true" name="username" autofocus="autofocus" tabindex="0" role="textbox" aria-required="true" aria-labelledby="labelUsername">
+                        </span>
+                    </div>
+                    <div class="siebui-fieldset">
+                        <label class="siebui-ctrl-label" id="labelPassword" for="password" data-bind="text: labels.password()"></label>
+                        <span class="siebui-ctrl-input">
+                            <input type="password" id="password" data-bind="textInput: password" name="password" tabindex="0" role="textbox" aria-required="true" aria-labelledby="labelPassword">
+                        </span>
+                    </div>
+                    <div class="siebui-fieldset">
+                        <label class="siebui-ctrl-label" id="labelLang" for="lang" data-bind="text: labels.language()"></label>
+                        <span class="siebui-ctrl-input">
+                            <select class="form-control" id="lang" data-bind="value: language, options: metaData.languageOptions, optionsText: 'name', optionsValue: 'value'" tabindex="0" role="listbox" aria-required="true" aria-labelledby="labelLang"></select>
+                        </span>
+                    </div>
+                </div>
+                <div class="siebui-login-btn">
+                    <a href="javascript:;" data-bind="text: labels.loginText(), click: events.login" tabindex="0" role="button"></a>
+                </div>
+                <div class="siebui-login-title" data-bind="text: labels.appName()"></div>
+            </div>
+        </form>
+    </script>
+    <script>
+        window.require = {
+            waitSeconds: 0
+        };
+    </script>
+    <script src="../scripts/3rdParty/require.js?v=0.0.1" data-main="js/login.js?v=cfeafaea37"></script>
+</body>
+
+</html>

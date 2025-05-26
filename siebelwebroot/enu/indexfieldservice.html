@@ -1,0 +1,47 @@
+<html>
+<body>
+
+<!-- Note that you must edit the values WEB_SITE_NAME and IP_ADDRESS according to your configuration -->
+
+<!-- Include file to "sniff" OS and browser type -->
+<SCRIPT LANGUAGE="javascript" src="sniffer.js">
+</SCRIPT>
+
+<SCRIPT language="javascript">
+function hiModeOpt ()
+{
+   // Need to load Active X control to enable optimization
+
+   // Important: you MUST specify the host name NOT the IP address (number)
+   // For example substitute WEB_SITE_NAME by ebiz.siebel.com
+   window.navigate ("http://$(SWE_ADDRESS2)/fieldservice/axfieldservice.html");
+}
+
+function noOpt ()
+{
+   // navigate directly to siebel home page
+   // Important: you MUST specify the IP address (number), 
+   // NOT the host name in the line below
+   // For example substitute IP_ADDRESS by 10.20.30.40
+   window.navigate ("http://$(SWE_ADDRESS1)/fieldservice/default.htm");   
+}
+</SCRIPT>
+
+
+
+<SCRIPT language="javascript">
+  var ret = start_sniffer ();
+  if (ret == 1)
+  {
+     // OS is Win95/98/Me or Browser is not WinHTTP enabled
+     hiModeOpt ();
+  }
+  else
+  {
+     // WinHTTP enabled
+     noOpt ();
+  }
+</SCRIPT>
+
+</body>
+</html>

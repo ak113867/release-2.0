@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"How Siebel CRM Uses an Applet Search Specification","href":"OTR\/topicrefs\/c_How_Siebel_CRM_Uses_an_Applet_Search_Specification_ad983106.html","attributes": {"data-id":"ad983106",},"menu": {"hasChildren":false,},"tocID":"ad983106-d45e13107","topics":[]}]});

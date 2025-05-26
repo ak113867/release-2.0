@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Using Siebel eScript Methods Instead of Clib Methods","href":"eScript\/topicrefs\/c_Using_Siebel_e_Script_Methods_Instead_of_Clib_Methods_af1293119.html","attributes": {"data-id":"af1293119",},"menu": {"hasChildren":false,},"tocID":"af1293119-d45e32173","topics":[]}]});

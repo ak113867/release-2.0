@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Remote Synchronous Processing","href":"BPFWorkflow\/topicrefs\/c_Remote_Synchronous_Processing_bh1220168.html","attributes": {"data-id":"bh1220168",},"menu": {"hasChildren":false,},"tocID":"bh1220168-d45e73308","topics":[]}]});

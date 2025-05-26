@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Fields in an Attachment Business Component","href":"ConfigApps\/topicrefs\/c_Fields_in_an_Attachment_Business_Component_ad1049194.html","attributes": {"data-id":"ad1049194",},"menu": {"hasChildren":false,},"tocID":"ad1049194-d45e57069","topics":[]}]});

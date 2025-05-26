@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Arbortext, Inc., 1988-2015, v.4002-->
+
+<element xmlns:whc="http://www.oxygenxml.com/webhelp/components" whc:version="22.0">&lt;html xmlns="http://www.w3.org/1999/xhtml">
+&lt;head>
+&lt;title>&lt;/title>
+&lt;/head>
+&lt;body>&lt;div id="catalyst">
+&lt;noscript>
+&lt;p>Scripting on this page enhances content navigation, but does not change the content in any way.&lt;/p>
+&lt;/noscript>
+&lt;script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js">
+&lt;/script>
+&lt;/div>
+This is test data
+&lt;/body>
+&lt;/html>
+     
+    </element>
+

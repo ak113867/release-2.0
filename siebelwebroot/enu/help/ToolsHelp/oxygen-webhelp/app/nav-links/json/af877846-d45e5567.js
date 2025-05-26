@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Naming a Link","href":"ToolsDevRef\/topicrefs\/c_Naming_a_Link_af877859.html","attributes": {"data-id":"af877859",},"menu": {"hasChildren":false,},"tocID":"af877859-d45e5585","topics":[]}]});

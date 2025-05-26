@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"User Properties and Methods that You Can Use with the CSSBCFINOppty Class","href":"ToolsDevRef\/topicrefs\/c_User_Properties_and_Methods_That_You_Can_Use_withthe_CSSBCFINOppty_Class_ad852527.html","attributes": {"data-id":"ad852527",},"menu": {"hasChildren":false,},"tocID":"ad852527-d45e1391","next":"ad852527-d45e1391",}]});

@@ -1,0 +1,174 @@
+<div class="siebui-d2p-tab-content">
+    <div class="siebui-action-area">
+        <div class="siebui-area-title" id="migrationTitle">
+            <div data-res="INTL_TITLE_MIGRATION" class="siebui-title-header">Migration Plans</div>
+            <div class="siebui-button-section siebui-title-header">
+                <button id="addMigrationPlan" type="button" class="siebui-d2p-button btn"
+                    data-bind="click: $root.createMigrationPlan" data-res="INTL_MIGRATION_CREATE">
+                    New Migration
+                </button>
+            </div>
+        </div>
+        <div class="siebui-d2p-tile-outer-container">
+            <div id="migrationRightArrow" class="siebui-d2p-tile-arrow siebui-d2p-tile-arrow-right siebui-icon-arrow-right"
+                style="display: none">
+            </div>
+            <div id="siebui-d2p-tile-migration-innercontainer" class="siebui-d2p-inner-container">
+                <div id="migrationTileContainer">
+                    <!-- ko if: migrationplans().length > 0-->
+                    <div data-bind="foreach: migrationplans">
+                        <div class="tile siebui-d2p-migration-tile"
+                            data-bind="attr: {id: 'migrationTile' + id() },click: $root.showMigrationPlanObjects">
+                            <div class="siebui-d2p-migration-inner-tile">
+                                <div class="tile-header">
+                                    <div class="tile-title siebui-d2p-tile-title siebui-d2p-migration-tile-title">
+                                        <div data-bind="class: typeIconClass"></div>
+                                        <div data-bind="text: name, attr: { title: name }" class="siebui-d2p-tile-name"></div>
+                                    </div>
+                                </div>
+                                <div class="tile-body">
+                                    <div class="siebui-d2p-migration-source siebui-d2p-migration-source-edit">
+                                        <b data-res="INTL_MIGRATION_SOURCE" class=" siebui-d2p-migration-edit-label">Source</b><b class="siebui-d2p-source-label">:  </b>
+                                        <span data-bind="text : source, attr: { title: source }" class=" siebui-d2p-migration-edit-label"></span>
+                                    </div>
+                                    <div class="siebui-d2p-migration-dest siebui-d2p-migration-dest-edit">
+                                        <b data-res="INTL_MIGRATION_DEST" class=" siebui-d2p-migration-edit-label">Destination</b><b class="siebui-d2p-source-label">:  </b>
+                                        <span data-bind="text : destination, attr: { title: destination }" class=" siebui-d2p-migration-edit-label"></span>
+                                    </div>
+                                    <div class="siebui-d2p-migration-version">
+                                        <b data-res="INTL_LABEL_VERSION" class="siebui-d2p-migration-edit-label">Description</b><b class="siebui-d2p-source-label">:  </b>
+                                        <span data-bind="text : version, attr: { title: version }" class="siebui-d2p-migration-edit-label"></span>
+                                    </div>
+                                    <div class="siebui-d2p-migration-type">
+                                        <b data-res="INTL_MIGRATION_TYPE_LABEL" class="siebui-d2p-migration-edit-label">Type</b><b class="siebui-d2p-source-label">:  </b>
+                                        <span data-bind="text : type, attr: { title: type }" class="siebui-d2p-migration-edit-label"></span>
+                                    </div>
+                                    <input type="hidden" data-bind="value: id">
+                                </div>
+                                <div class="tile-footer">
+                                    <span data-bind="attr: {id: 'editMigrationTile' + id() }, click: $root.editMigrationPlan"
+                                        class="siebui-d2p-migration-icon siebui-icon-edit" data-title="INTL_TITLE_EDIT" title="Edit"></span>
+
+                                    <span data-bind="visible: deleteEnable, click: $root.deleteMigrationPlan"
+                                        class="siebui-d2p-migration-icon siebui-icon-delete siebui-d2p-migration-delete" data-title="INTL_TITLE_DELETE" title="Delete"></span>
+
+                                    <span data-bind="visible: !deleteEnable()"
+                                        class="siebui-d2p-migration-icon siebui-icon-delete siebui-d2p-migration-delete disabled" data-title="INTL_TITLE_DELETE" title="Delete Disabled"></span>
+                                </div>
+                                <div data-bind="attr: {id: 'migration' + id() }" class="siebui-callout-migration ui-helper-hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div id="migrationLeftArrow" class="siebui-d2p-tile-arrow siebui-icon-arrow-left siebui-d2p-tile-arrow-left"
+                style="display: none">
+            </div>
+        </div>
+    </div>
+    <!-- ko if: migrationplans().length > 0-->
+    <div class="siebui-action-area" id="migrationObjects">
+        <div id="data" class="siebui-d2p-migration-data">
+            <div class="siebui-area-title" data-res="INTL_SUPPORTED_RESOURCES">Supported Resources for Migration</div>
+            <div class="siebui-d2p-migration-objects">
+                <div class="form-expand">
+                    <a class="group-toggle siebui-accordionButtonRead">
+                        <i class="siebui-d2p-accordion siebui-icon-arrow-down"></i>
+                        <span class="siebui-text-underline siebui-active-plan" data-res="INTL_MIGRATION_RESOURCE_DBUTILS" data-bind="click: function(data, event) { openSiebelApplication('DBUtils', event) }">
+                            Metadata and Files
+                        </span>
+                        <span class="siebui-text-underline siebui-disabled siebui-inactive-plan" data-res="INTL_MIGRATION_RESOURCE_DBUTILS">
+                            Metadata and Files
+                        </span>
+                    </a>
+                    <fieldset class="grid-padded form-collapse siebui-accordionContentRead siebui-accordionContentDBRead">
+                        <!-- ko if: migrationplanResourcesDB().length > 0-->
+                        <ul data-bind="foreach: migrationplanResourcesDB">
+                            <li>
+                                <!--<span class="siebui-icon-add siebui-d2p-edit-migration-objects" data-bind="visible: isFullRepository() && selected(), click: $root.showWSMigrationObjects"></span>-->
+                                <!--<span class="siebui-icon-add siebui-d2p-edit-migration-objects disabled" data-bind="visible: isFullRepository() && !selected()"></span>-->
+
+                                <label data-bind="text: name, attr: { title: name }" class="siebui-d2-object-label siebui-d2p-source-label siebui-d2p-migration-db"></label>
+                                <span data-bind="visible: selected" class="siebui-icon-checkbox-checked siebui-migration-disabled"></span>
+                                <span data-bind="visible: !selected()" class="siebui-icon-checkbox-unchecked siebui-migration-disabled"></span>
+                            </li>
+                        </ul>
+                        <!-- /ko -->
+                        <!-- ko if: migrationplanResourcesDB().length == 0-->
+                        <div class="siebui-accordian-nodata"></div>
+                        <!-- /ko -->
+                    </fieldset>
+                </div>
+                <div class="form-expand">
+                    <a class="group-toggle siebui-accordionButtonRead"><i class="siebui-d2p-accordion siebui-icon-arrow-down"></i>
+                        <span class="siebui-text-underline siebui-active-plan" data-res="INTL_MIGRATION_RESOURCE_ADM" data-bind="click: function(data, event) { openSiebelApplication('ADM', event) }">
+                            Application Deployment Manager Projects
+                        </span>
+                        <span class="siebui-text-underline siebui-disabled siebui-inactive-plan" data-res="INTL_MIGRATION_RESOURCE_ADM">
+                            Application Deployment Manager Projects
+                        </span>
+                    </a>
+                    <fieldset class="grid-padded form-collapse siebui-accordionContentRead siebui-accordionContentADMRead">
+                        <!-- ko if: migrationplanResourcesADM().length > 0-->
+                        <ul data-bind="foreach: migrationplanResourcesADM">
+                            <li>
+                                <label data-bind="text: name, attr: { title: name }" class="siebui-d2-object-label siebui-d2p-source-label"></label>
+                                <input disabled="" class="form-control siebui-d2p-sequence siebui-d2p-source-label" data-bind="value: sequenceNo" data-title="INTL_TITLE_SEQUENCE" title="Sequence Number">
+                                <span data-bind="visible: selected" class="siebui-icon-checkbox-checked siebui-migration-disabled"></span>
+                                <span data-bind="visible: !selected()" class="siebui-icon-checkbox-unchecked siebui-migration-disabled"></span>
+                            </li>
+                        </ul>
+                        <!-- /ko -->
+                        <!-- ko if: migrationplanResourcesADM().length == 0-->
+                        <div class="siebui-accordian-nodata"></div>
+                        <!-- /ko -->
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div id="migrationObjectRead" class="siebui-d2p-log-popup info hide siebui-d2p-workspace-container">
+            <div class="siebui-d2p-log-header">
+                <div class="siebui-d2p-log-header-menu">
+                    <div data-res="INTL_WORKSPACE_HEADER">Workspace Details</div>
+                </div>
+                <div class="siebui-d2p-log-button-pane">
+                </div>
+            </div>
+            <div class="siebui-d2p-log-content" data-bind="with: migrationObjectDataRead">
+                <div class="siebui-d2p-workspace-header">
+                    <div class="siebui-d2p-workspace-label" data-res="INTL_WORKSPACE_BRANCH_NAME">Workspace Branch Name</div>
+                    <div class="siebui-d2p-workspace-value">
+                        <input type="text" min="1" data-bind="value: wsNameSelected" disabled>
+                    </div>
+                </div>
+                <div class="siebui-d2p-workspace-header">
+                    <div class="siebui-d2p-workspace-label" data-res="INTL_WORKSPACE_VERSION_NUMBER">Version Number</div>
+                    <div class="siebui-d2p-workspace-version">
+                        <input type="number" min="1" data-bind="value: wsVersionSelected" disabled>
+                    </div>
+                </div>
+                <div class="siebui-d2p-workspace-header">
+                    <div class="siebui-d2p-workspace-label" data-res="INTL_WORKSPACE_LANGUAGES">Languages</div>
+                    <div class="siebui-d2p-workspace-lang">
+                        <ul data-bind="foreach: wsLanguages">
+                            <li>
+                                <span data-bind="text: $data"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="siebui-d2p-log-header">
+                    <div class="siebui-d2p-log-header-menu">
+                    </div>
+                    <div class="siebui-d2p-log-button-pane">
+                        <button class="btn siebui-d2p-log-refresh" data-bind="click: $root.cancelRRInfo" data-res="INTL_CANCEL_TEXT">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: migrationplans().length == 0-->
+    <!-- /ko -->
+</div>

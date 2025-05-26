@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Elements You Can Use in Calculated Fields and Query By Example","href":"ToolsDevRef\/topicrefs\/c_Elements_You_Can_Use_in_Calculated_Fields_and_Query_By_Example_ak143884.html","attributes": {"data-id":"ak143884",},"menu": {"hasChildren":false,},"tocID":"ak143884-d45e12646","topics":[]}]});

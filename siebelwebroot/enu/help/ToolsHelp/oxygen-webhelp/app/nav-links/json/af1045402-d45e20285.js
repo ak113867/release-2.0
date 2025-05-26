@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Example of Accessing the COM Data Server","href":"OIRef\/topicrefs\/c_Example_of_Accessing_the_COM_Data_Server_af1045605.html","attributes": {"data-id":"af1045605",},"menu": {"hasChildren":false,},"tocID":"af1045605-d45e20303","topics":[]}]});

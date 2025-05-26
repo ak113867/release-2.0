@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Creating an Application","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Creating_an_Application_am1060806.html","attributes": {"data-id":"am1060806",},"menu": {"hasChildren":false,},"tocID":"am1060806-d45e50551","topics":[]}]});

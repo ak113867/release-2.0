@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Configuring Search When No Drilldown Object Is Defined","href":"ConfigApps\/topicrefs\/c_Configuring_Search_When_No_Drilldown_Object_Is_Defined_an1102487.html","attributes": {"data-id":"an1102487",},"menu": {"hasChildren":false,},"tocID":"an1102487-d45e54139","topics":[]}]});

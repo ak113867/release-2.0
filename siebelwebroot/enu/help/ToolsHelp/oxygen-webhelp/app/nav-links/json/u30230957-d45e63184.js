@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Examining the Logic of a Task","href":"BusProcFramework\/topicrefs\/c_Examining_the_Logic_of_a_Task_UI_ac1021134.html","attributes": {"data-id":"u30227783",},"menu": {"hasChildren":false,},"tocID":"u30227783-d45e63202","topics":[]}]});

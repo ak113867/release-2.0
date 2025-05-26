@@ -1,0 +1,198 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="The following table describes the values that you must use with blobDescriptor object properties. To indicate the number of bytes that are required to store the property, you use one of these values. ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_About_the_BLOB_Descriptor_ae1260452.html" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_Example_of_Using_a_BLOB_Descriptor_ae1003647.html" /><meta name="DC.Relation" scheme="URI" content="../../eScript/topicrefs/c_Get_BLOB_Data_Method_ae1003708.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ae1260726" /><meta name="DC.Language" content="en" /><title>Values You Must Use with a blobDescriptor</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ae1260726-d45e29291" /><meta name="wh-source-relpath" content="eScript/topicrefs/c_Values_You_Must_Use_with_a_BLOB_Descriptor_ae1260726.dita" /><meta name="wh-out-relpath" content="eScript/topicrefs/c_Values_You_Must_Use_with_a_BLOB_Descriptor_ae1260726.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ae1260726" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html">Siebel eScript Language Reference</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../eScript/topicrefs/c_Methods_Reference.html">Methods Reference</a></span></span></li><li><span class="topicref" data-id="ae1003622"><span class="title"><a href="../../eScript/topicrefs/c_BLOB_Methods_ae1003622.html">BLOB Methods</a></span></span></li><li><span class="topicref" data-id="ae1260452"><span class="title"><a href="../../eScript/topicrefs/c_About_the_BLOB_Descriptor_ae1260452.html">About the blobDescriptor</a></span></span></li><li class="active"><span class="topicref" data-id="ae1260726"><span class="title"><a href="../../eScript/topicrefs/c_Values_You_Must_Use_with_a_BLOB_Descriptor_ae1260726.html">Values You Must Use with a blobDescriptor</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../eScript/topicrefs/c_Example_of_Using_a_BLOB_Descriptor_ae1003647.html" title="Example of Using a blobDescriptor" aria-label="Previous topic: Example of Using a blobDescriptor" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../eScript/topicrefs/c_Get_BLOB_Data_Method_ae1003708.html" title="Get BLOB Data Method" aria-label="Next topic: Get BLOB Data Method" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e26654" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26655" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26655-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26655-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26693" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26693-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_About_Siebel_e_Script_ac1040343.html" id="tocId-d45e26693-link">About Siebel eScript</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e27457" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e27457-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Using_Siebel_e_Script_ad1040343.html" id="tocId-d45e27457-link">Using Siebel eScript</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e28349" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e28349-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Statements_Reference_ag1040343.html" id="tocId-d45e28349-link">Statements Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e28586" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e28586-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Methods_Reference.html" id="tocId-d45e28586-link">Methods Reference</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="methods_reference-d45e28587" class="topicref" data-id="methods_reference" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Methods_Reference.html" id="methods_reference-d45e28587-link">Methods Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1250725-d45e28605" class="topicref" data-id="ae1250725" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1250725-d45e28605-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Overview_of_Methods_Reference_ae1250725.html" id="ae1250725-d45e28605-link">Overview of Methods Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1307783-d45e28641" class="topicref" data-id="ae1307783" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1307783-d45e28641-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Array_Methods_ae1307783.html" id="ae1307783-d45e28641-link">Array Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1306077-d45e28948" class="topicref" data-id="ae1306077" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1306077-d45e28948-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_String_Methods_ae1306077.html" id="ae1306077-d45e28948-link">String Methods</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ae1003622-d45e29237" class="topicref" data-id="ae1003622" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ae1003622-d45e29237-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_BLOB_Methods_ae1003622.html" id="ae1003622-d45e29237-link">BLOB Methods</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="true"><span data-tocid="ae1260452-d45e29255" class="topicref" data-id="ae1260452" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ae1260452-d45e29255-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_About_the_BLOB_Descriptor_ae1260452.html" id="ae1260452-d45e29255-link">About the blobDescriptor</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="ae1003647-d45e29273" class="topicref" data-id="ae1003647" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Example_of_Using_a_BLOB_Descriptor_ae1003647.html" id="ae1003647-d45e29273-link">Example of Using a blobDescriptor</a></span></span></li><li role="treeitem" class="active"><span data-tocid="ae1260726-d45e29291" class="topicref" data-id="ae1260726" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Values_You_Must_Use_with_a_BLOB_Descriptor_ae1260726.html" id="ae1260726-d45e29291-link">Values You Must Use with a blobDescriptor</a></span></span></li></ul></li><li role="treeitem"><span data-tocid="ae1003708-d45e29309" class="topicref" data-id="ae1003708" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Get_BLOB_Data_Method_ae1003708.html" id="ae1003708-d45e29309-link">Get BLOB Data Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1292581-d45e29327" class="topicref" data-id="ae1292581" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Get_BLOB_Size_Method_ae1292581.html" id="ae1292581-d45e29327-link">Get BLOB Size Method</a></span></span></li><li role="treeitem"><span data-tocid="ae1260978-d45e29345" class="topicref" data-id="ae1260978" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Write_BLOB_Data_Method_ae1260978.html" id="ae1260978-d45e29345-link">Write BLOB Data Method</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1003891-d45e29363" class="topicref" data-id="ae1003891" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1003891-d45e29363-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Buffer_Methods_ae1003891.html" id="ae1003891-d45e29363-link">Buffer Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1009174-d45e29635" class="topicref" data-id="ae1009174" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1009174-d45e29635-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Date_and_Time_Methods_ae1009174.html" id="ae1009174-d45e29635-link">Date and Time Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1269798-d45e30196" class="topicref" data-id="ae1269798" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1269798-d45e30196-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_UTC_Methods_ae1269798.html" id="ae1269798-d45e30196-link">UTC Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1012028-d45e30521" class="topicref" data-id="ae1012028" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1012028-d45e30521-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Global_Methods_ae1012028.html" id="ae1012028-d45e30521-link">Global Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1274495-d45e30630" class="topicref" data-id="ae1274495" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1274495-d45e30630-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Conversion_Methods_ae1274495.html" id="ae1274495-d45e30630-link">Conversion Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1310774-d45e30992" class="topicref" data-id="ae1310774" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1310774-d45e30992-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Data_Querying_Methods_ae1310774.html" id="ae1310774-d45e30992-link">Data Querying Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1013139-d45e31138" class="topicref" data-id="ae1013139" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1013139-d45e31138-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Mathematical_Methods_ae1013139.html" id="ae1013139-d45e31138-link">Mathematical Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1069314-d45e31700" class="topicref" data-id="ae1069314" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1069314-d45e31700-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Regular_Expression_Methods_ae1069314.html" id="ae1069314-d45e31700-link">Regular Expression Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1069570-d45e31881" class="topicref" data-id="ae1069570" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1069570-d45e31881-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Siebel_Library_Methods_ae1069570.html" id="ae1069570-d45e31881-link">Siebel Library Methods</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="ae1157492-d45e31972" class="topicref" data-id="ae1157492" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action ae1157492-d45e31972-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Custom_Methods_ae1157492.html" id="ae1157492-d45e31972-link">Custom Methods</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e32135" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e32135-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_C_Language_Reference.html" id="tocId-d45e32135-link">C Language Library Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34042" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34042-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Quick_Reference.html" id="tocId-d45e34042-link">Siebel eScript Quick Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34387" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34387-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Appendix_A_Error_Messages.html" id="tocId-d45e34387-link">Compilation Error Messages</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40108" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Values You Must Use with a blobDescriptor</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">The following table describes the values that you must use with
+blobDescriptor object properties. To indicate the number of bytes
+that are required to store the property, you use one of these values.
+If the BLOB descriptor describes an object property that is a string,
+then you must set the corresponding property to a numeric value that
+is larger than the length of the longest string that the property
+can hold. You can write code that omits an object method from a BLOB
+descriptor. </p>
+<div class="tablenoborder"><table class="- topic/table table" id="ae1260726__ae1144046"><caption><span class="- topic/desc desc tabledesc"><p class="- topic/p p">Values You Can use With the blob Descriptor.</p></span></caption><colgroup><col style="width:148pt" /><col style="width:320pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="ae1260726__ae1144046__entry__1">Value</th>
+<th class="- topic/entry entry rowsep-1" id="ae1260726__ae1144046__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">WCHAR</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Handled as a native Unicode string.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">UWORD8</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as an unsigned byte.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">SWORD8</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as an integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">UWORD16</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as an unsigned 16-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">SWORD16</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as a signed 16-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">UWORD24</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as an unsigned 24-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">SWORD24</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as a signed 24-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">UWORD32</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as an unsigned 32-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">SWORD32</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as a signed 32-bit integer.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">FLOAT32</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as a floating-point number.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">FLOAT64</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Stored as a double-precision floating-point
+number.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__1 "><p class="- topic/p p">STRINGHOLDER</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ae1260726__ae1144046__entry__2 "><p class="- topic/p p">Indicates a value that Siebel eScript saves
+in a string. Siebel eScript passes this value to a function. This
+function saves this string. Siebel eScript does the following work:</p><ol class="- topic/ol ol">
+<li class="- topic/li li"><p class="- topic/p p">Allocates 10,000 bytes to contain the string.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Truncates this length to the appropriate size.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Removes any terminating null characters.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">Initializes the properties of the string.</p></li>
+</ol></td>
+</tr>
+</tbody></table></div>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

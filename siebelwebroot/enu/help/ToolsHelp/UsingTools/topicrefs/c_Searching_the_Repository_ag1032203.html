@@ -1,0 +1,186 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" xml:lang="en" lang="en" whc:version="22.0">
+    <head><link rel="shortcut icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><link rel="icon" href="../../oxygen-webhelp\template\images/favicon.ico"><!----></link><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><html:meta xmlns:html="http://www.w3.org/1999/xhtml" http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="This topic describes how to locate object definitions for multiple object types. For information about how to locate object definitions for a single object type, see Locating Object Definitions in the ..." /><meta charset="UTF-8" /><meta name="copyright" content="(C) Copyright 2022" /><meta name="DC.rights.owner" content="(C) Copyright 2022" /><meta name="DC.Type" content="concept" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Examining_Objects_ag1104951.html" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Examining_Objects_ag1104951.html" /><meta name="DC.Relation" scheme="URI" content="../../UsingTools/topicrefs/c_Viewing_Object_Relationships_ag1113276.html" /><meta name="DC.Contributor" content="JDOYLE" /><meta name="DC.Date.Modified" content="2022-01-26" /><meta name="DC.Date.Modified" content="2022-07-19" /><meta name="DC.Date.Modified" content="2022-07-21" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="ag1032203" /><meta name="DC.Language" content="en" /><title>Searching the Repository</title><!--  Generated with Oxygen version 22.1, build number 2020061014.  --><meta name="wh-path2root" content="../../" /><meta name="wh-toc-id" content="ag1032203-d45e43210" /><meta name="wh-source-relpath" content="UsingTools/topicrefs/c_Searching_the_Repository_ag1032203.dita" /><meta name="wh-out-relpath" content="UsingTools/topicrefs/c_Searching_the_Repository_ag1032203.html" /><script>
+          function debug(msg, object){
+              console.log(msg, object);
+          }
+          function executeQuery(){
+              $('#searchForm').submit();
+              return true;
+          }
+      </script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css" />
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/app/topic-page.css?buildId=2020061014" />
+    
+    
+    <script type="text/javascript" src="../../oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"><!----></script>
+    
+    <script data-main="../../oxygen-webhelp/app/topic-page.js" src="../../oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="../../oxygen-webhelp/template/variants/tree/oracle/skin.css?buildId=2020061014" /></head>
+
+    <body id="ag1032203" class="wh_topic_page frmBody">
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        
+        
+        
+<nav class="navbar navbar-default wh_header" whc:version="22.0">
+    <div class="container">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <!--
+                            This component will be generated when the next parameters are specified in the transformation scenario:
+                            'webhelp.logo.image' and 'webhelp.logo.image.target.url'.
+                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
+                    -->
+                    <a href="http://www.oracle.com" class=" wh_logo d-none d-sm-block "><img src="../../oxygen-webhelp/template/variants/tree/oracle/resources/images/oracle_logo.gif" alt="Siebel Tools Online Help" /></a>
+                    <div class=" wh_publication_title "><a href="../../index.html"><span class="title">Siebel Tools Online Help</span></a></div>
+                    
+                </div>
+                
+                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+      
+        <!-- GMB moved webhelp search input 2/6/2018 -->
+        <div class="container">
+		  <div class=" wh_search_input "><form id="searchForm" method="get" role="search" action="../../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required" /><button type="submit" class="wh_search_button" aria-label="Search"><span>Search</span></button></div></form></div>
+            <div class="row">
+
+                <nav class="wh_tools d-print-none">
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol xmlns:html="http://www.w3.org/1999/xhtml" class="d-print-none"><li><span class="home"><a href="../../index.html"><span>Home</span></a></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html">Using Siebel Tools</a></span></span></li><li><span class="topicref"><span class="title"><a href="../../UsingTools/topicrefs/c_customizing_objects.html">Customizing Objects</a></span></span></li><li><span class="topicref" data-id="ag1104951"><span class="title"><a href="../../UsingTools/topicrefs/c_Examining_Objects_ag1104951.html">Examining Objects</a></span></span></li><li class="active"><span class="topicref" data-id="ag1032203"><span class="title"><a href="../../UsingTools/topicrefs/c_Searching_the_Repository_ag1032203.html">Searching the Repository</a></span></span></li></ol></div>
+
+                    <div class="wh_right_tools "><button class="wh_hide_highlight" aria-label="Show/Hide the search highlights" title="Show/Hide the search highlights"></button><div class=" wh_navigation_links "><span id="topic_navigation_links" class="navheader">
+  
+<span class="navprev"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_Examining_Objects_ag1104951.html" title="Examining Objects" aria-label="Previous topic: Examining Objects" rel="prev"></a></span>  
+<span class="navnext"><a class="- topic/link link" href="../../UsingTools/topicrefs/c_Viewing_Object_Relationships_ag1113276.html" title="Viewing Object Relationships" aria-label="Next topic: Viewing Object Relationships" rel="next"></a></span>  </span></div><div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+				<!-- GMB moved nav role=navigation 2/6/2018 -->
+					<nav role="navigation" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 d-none d-md-block d-print-none navbar" id="wh_publication_toc">
+                        <div class=" wh_publication_toc " data-tooltip-position="right"><ul role="tree" aria-label="Table of Contents"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsOLH/topicrefs/c_Welcome_to_Siebel_Tools_Online_Help.html" id="tocId-d45e26-link">Welcome to Siebel Tools Online Help</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e155" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e155-link" class="wh-expand-btn"></span><span class="title"><a href="../../ToolsDevRef/topicrefs/c_Whats_New_in_Siebel_Developers_Reference_Siebel_CRM_20_1_Update.html" id="tocId-d45e155-link">Siebel Developer's Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e12757" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e12757-link" class="wh-expand-btn"></span><span class="title"><a href="../../OTR/topicrefs/c_Whats_New_In_Siebel_Object_Types_Reference_Guide_Siebel_CRM_22.5_Update.html" id="tocId-d45e12757-link">Siebel Object Types Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e19322" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e19322-link" class="wh-expand-btn"></span><span class="title"><a href="../../OIRef/topicrefs/c_Whats_New_in_Siebel_Object_Interfaces_Reference_Siebel_CRM_20_3_Update.html" id="tocId-d45e19322-link">Siebel Object Interfaces Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e26654" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e26654-link" class="wh-expand-btn"></span><span class="title"><a href="../../eScript/topicrefs/c_Whats_New_in_Siebel_CRM_20_1_Update.html" id="tocId-d45e26654-link">Siebel eScript Language Reference</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e34499" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e34499-link" class="wh-expand-btn"></span><span class="title"><a href="../../VBLANG/topicrefs/c_Whats_New_In_Siebel_VB_Language_Reference_Guide_Siebel_CRM_20.1_Update.html" id="tocId-d45e34499-link">Siebel VB Language Reference</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e40108" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e40108-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40108-link">Using Siebel Tools</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40109" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40109-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e40109-link">What’s New in This Release</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40130" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40130-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Web_Tools_Setup.html" id="tocId-d45e40130-link">Web Tools Setup</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e40330" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e40330-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_getting_started.html" id="tocId-d45e40330-link">Getting Started With Your Application</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41020" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41020-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_workspaces.html" id="tocId-d45e41020-link">Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e41814" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e41814-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_parallel_development_using_workspaces.html" id="tocId-d45e41814-link">Parallel Development Using Workspaces</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e42068" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e42068-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_using_script_editors.html" id="tocId-d45e42068-link">Using Siebel Script Editors</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="tocId-d45e42903" class="topicref" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tocId-d45e42903-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_customizing_objects.html" id="tocId-d45e42903-link">Customizing Objects</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem"><span data-tocid="u30216220-d45e42904" class="topicref" data-id="u30216220" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_customizing_objects.html" id="u30216220-d45e42904-link">Customizing Objects</a></span></span></li><li role="treeitem"><span data-tocid="u30231304-d45e42922" class="topicref" data-id="u30231304" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Overview_of_Customizing_Objects_ag1113984.html" id="u30231304-d45e42922-link">Overview of Customizing Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="u30216220-d45e42940" class="topicref" data-id="u30216220" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action u30216220-d45e42940-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Creating_and_Modifying_Objects.html" id="u30216220-d45e42940-link">Creating and Modifying Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="u30216225-d45e43084" class="topicref" data-id="u30216225" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action u30216225-d45e43084-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Validating_Objects_ag1120380.html" id="u30216225-d45e43084-link">Validating Objects</a></span></span></li><li role="treeitem" aria-expanded="true"><span data-tocid="ag1104951-d45e43192" class="topicref" data-id="ag1104951" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action ag1104951-d45e43192-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Examining_Objects_ag1104951.html" id="ag1104951-d45e43192-link">Examining Objects</a></span></span><ul role="group" class="navbar-nav nav-list"><span class="expand-button-action-labels"><span id="button-expand-action" aria-label="Expand"></span><span id="button-collapse-action" aria-label="Collapse"></span><span id="button-pending-action" aria-label="Pending"></span></span><li role="treeitem" class="active"><span data-tocid="ag1032203-d45e43210" class="topicref" data-id="ag1032203" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Searching_the_Repository_ag1032203.html" id="ag1032203-d45e43210-link">Searching the Repository</a></span></span></li><li role="treeitem"><span data-tocid="ag1113276-d45e43228" class="topicref" data-id="ag1113276" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Viewing_Object_Relationships_ag1113276.html" id="ag1113276-d45e43228-link">Viewing Object Relationships</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="u30216941-d45e43246" class="topicref" data-id="u30216941" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action u30216941-d45e43246-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Comparing_and_Synchronizing_Objects_Between_Repositoriesand_Archives_ag1114090.html" id="u30216941-d45e43246-link">Comparing and Synchronizing Objects Between Repositories and Archives</a></span></span></li><li role="treeitem"><span data-tocid="u30231100-d45e43354" class="topicref" data-id="u30231100" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Comparing_WorkflowProcesses_or_TaskUIs.html" id="u30231100-d45e43354-link">Comparing Workflow Processes or Task UIs</a></span></span></li><li role="treeitem"><span data-tocid="ag1119225-d45e43372" class="topicref" data-id="ag1119225" data-state="leaf"><span role="button" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_Determining_When_Siebel_CRM_Created_or_Updateda_Record_ag1119225.html" id="ag1119225-d45e43372-link">Determining When Siebel Created or Updated a Record</a></span></span></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e43390" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e43390-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_managing_repositories.html" id="tocId-d45e43390-link">Managing Repositories</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e43734" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e43734-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_localizing_strings_and_locale.html" id="tocId-d45e43734-link">Localizing Strings and Locale Data</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44567" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44567-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_compile_test_trouble.html" id="tocId-d45e44567-link">Testing and Troubleshooting Your Customizations</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44640" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44640-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_archiving_objects.html" id="tocId-d45e44640-link">Archiving Objects</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e44931" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e44931-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/c_appendix_a.html" id="tocId-d45e44931-link">Siebel Tools Reference Information</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e45454" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e45454-link" class="wh-expand-btn"></span><span class="title"><a href="../../UsingTools/topicrefs/g_Advanced_Compile_ao1019447.html" id="tocId-d45e45454-link">Glossary</a></span></span></li></ul></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e46524" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e46524-link" class="wh-expand-btn"></span><span class="title"><a href="../../ConfigApps/topicrefs/c_Whats_New_In_Config_Bus_Apps_22.6.html" id="tocId-d45e46524-link">Configuring Siebel Business Applications</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e63013" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e63013-link" class="wh-expand-btn"></span><span class="title"><a href="../../BusProcFramework/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e63013-link">Siebel Business Process Framework: Task UI Guide</a></span></span></li><li role="treeitem" aria-expanded="false"><span data-tocid="tocId-d45e68481" class="topicref" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tocId-d45e68481-link" class="wh-expand-btn"></span><span class="title"><a href="../../BPFWorkflow/topicrefs/c_Whats_New_in_This_Release.html" id="tocId-d45e68481-link">Siebel Business Process Framework: Workflow Guide</a></span></span></li></ul></div>
+                    </nav>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+
+<h1 class="- topic/title title topictitle1" id="ariaid-title1">Searching the Repository</h1>
+<div class="- topic/body concept/conbody body conbody">
+<p class="- topic/p p">This topic describes how to locate object definitions for multiple
+object types. For information about how to locate object definitions
+for a single object type, see <a class="- topic/xref xref" href="c_Locating_and_Modifying_Object_Definitions_in_the_Object_List_Editor_ac1168519.html">Locating Object Definitions in the Object List Editor</a>. </p>
+<p class="- topic/p p">If you know that one or more properties includes a value, then
+you can search the repository across all properties of multiple object
+types to locate the objects that include this value.</p>
+<section class="- topic/section section" id="ag1032203__ag1040086"><h2 class="- topic/title title sectiontitle">To search the repository (Siebel Tools)</h2> <ol class="- topic/ol ol">
+<li class="- topic/li li"><p class="- topic/p p">Click the Tools menu and then click Search Repository.</p><p class="- topic/p p">Searching the repository can consume a significant amount of time.
+You can click Cancel in the Search Repository dialog box to cancel
+a search at any time while the search runs.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the Search Repository dialog box, in the Parameters section,
+enter the search criteria in the Search value window.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">To limit the search to values that are case-sensitive, make
+sure the Case Sensitive check box contains a check mark. </p><p class="- topic/p p">For
+example, select this check box to locate objects that include a value
+of Account and not account.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">To limit the search to values that match the entire search
+string that you enter in Step 2, make sure the Exact Match check box
+contains a check mark.</p></li>
+<li class="- topic/li li"><p class="- topic/p p">In the Types to Search list, choose the object type that Siebel must search for. </p><p class="- topic/p p">Note the following:</p><ul class="- topic/ul ul">
+<li class="- topic/li li"><p class="- topic/p p">All object types are searched, by default. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Click the object type to choose a single object type. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">Use multiselect to choose multiple object types. </p><p class="- topic/p p">For more information, see <a class="- topic/xref xref" href="c_Choosing_More_Than_One_Record_in_the_Object_List_Editor_ac1172505.html">Selecting Multiple Records in the Object List Editor</a>. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">For improved performance, search only the minimum number of
+object types.</p></li>
+</ul></li>
+<li class="- topic/li li"><p class="- topic/p p">Click Search Now. </p>
+     <p class="- topic/p p">The returned search results appear in the window at the end of the Search Repository dialog
+      box.  The window lists all objects that match the search criteria. The window includes the
+      following columns:  </p><div class="tablenoborder"><table class="- topic/table table" id="ag1032203__ag1040272"><caption></caption><colgroup><col style="width:100pt" /><col style="width:390pt" /></colgroup><thead class="- topic/thead thead">
+<tr class="- topic/row">
+<th class="- topic/entry entry rowsep-1" id="ag1032203__ag1040272__entry__1">Column</th>
+<th class="- topic/entry entry rowsep-1" id="ag1032203__ag1040272__entry__2">Description</th>
+</tr>
+</thead><tbody class="- topic/tbody tbody">
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__1 "><p class="- topic/p p">Type</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__2 "><p class="- topic/p p">Object type of the object that the search
+returns.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__1 "><p class="- topic/p p">Name</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__2 "><p class="- topic/p p">Name of the object that the search returns.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__1 "><p class="- topic/p p">Property</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__2 "><p class="- topic/p p">Property name of the object that the search
+returns.</p></td>
+</tr>
+<tr class="- topic/row">
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__1 "><p class="- topic/p p">Value</p></td>
+<td class="- topic/entry entry rowsep-1" headers="ag1032203__ag1040272__entry__2 "><p class="- topic/p p">Property value of the object that the search
+returns.</p></td>
+</tr>
+</tbody></table></div></li>
+<li class="- topic/li li"><p class="- topic/p p">To display the object definition of an item that the search
+returns, double-click this item in the results window. </p><p class="- topic/p p">The object definition of the item is displayed in the Object List Editor. </p></li>
+<li class="- topic/li li"><p class="- topic/p p">To export the search results to a file, click Export.</p></li>
+</ol> </section>
+</div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <nav class="navbar navbar-default wh_footer" whc:version="22.0">
+  <div class=" footer-container  mx-auto">
+    <a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en" alt="Oracle Copyright Statement" whc:version="22.0">Copyright © 1994-2022, Oracle and/or its affiliates.</a>
+  </div>
+</nav>
+ <!-- Latest compiled and minified JavaScript -->
+        
+        <div id="go2top">
+            <html:span xmlns:html="http://www.w3.org/1999/xhtml" class="oxy-icon oxy-icon-up"></html:span>
+        </div>
+        
+        
+        
+        
+        
+        <div id="catalyst" whc:version="22.0"><noscript><p>Scripting on this page enhances content navigation, but does not change the content in any way.</p></noscript><script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script></div>
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

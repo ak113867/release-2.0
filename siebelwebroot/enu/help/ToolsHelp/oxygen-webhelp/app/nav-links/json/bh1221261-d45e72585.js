@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Interactive Workflow Process in a UI Context","href":"BPFWorkflow\/topicrefs\/c_Interactive_Workflow_Process_in_a_UI_Context_bh1262929.html","attributes": {"data-id":"bh1262929",},"menu": {"hasChildren":false,},"tocID":"bh1262929-d45e72603","topics":[]}]});

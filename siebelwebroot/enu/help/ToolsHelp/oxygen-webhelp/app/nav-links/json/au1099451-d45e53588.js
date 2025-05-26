@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"How <span class=\"ph\">Siebel CRM</span> Validates Start and End Dates","href":"ConfigApps\/topicrefs\/c_How_ph_conrefcommonvariablesditavariablesProduct_NamephValidates_Start_and_End_Dates_au1103395.html","attributes": {"data-id":"au1103395",},"menu": {"hasChildren":false,},"tocID":"au1103395-d45e53606","topics":[]}]});

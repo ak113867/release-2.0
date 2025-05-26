@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Example of Using an Associative Array","href":"eScript\/topicrefs\/c_Example_of_Using_an_Associative_Array_ae1003521.html","attributes": {"data-id":"ae1003521",},"menu": {"hasChildren":false,},"tocID":"ae1003521-d45e28731","topics":[]}]});

@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Format Requirements of Siebel Web Format (SWF) Content","href":"ConfigApps\/topicrefs\/c_Format_Requirements_of_an_SWF_File_aj1066610.html","attributes": {"data-id":"aj1066610",},"menu": {"hasChildren":false,},"tocID":"aj1066610-d45e58925","topics":[]}]});

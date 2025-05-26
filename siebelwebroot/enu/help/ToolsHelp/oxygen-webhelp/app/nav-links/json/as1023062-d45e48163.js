@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Guidelines for Using the S_PARTY_PER and S_PARTY_REL Tables","href":"ConfigApps\/topicrefs\/c_Guidelines_for_Using_the_S_PARTY_PER_and_S_PARTY_REL_Tables_as1111230.html","attributes": {"data-id":"as1111230",},"menu": {"hasChildren":false,},"tocID":"as1111230-d45e48181","topics":[]}]});

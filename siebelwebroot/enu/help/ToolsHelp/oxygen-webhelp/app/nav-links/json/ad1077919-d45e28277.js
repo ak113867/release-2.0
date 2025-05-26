@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Using White Space in a String Literal Can Cause Errors","href":"eScript\/topicrefs\/c_Using_White_Space_in_a_String_Literal_Can_Cause_Errors_ad1077931.html","attributes": {"data-id":"ad1077931",},"menu": {"hasChildren":false,},"tocID":"ad1077931-d45e28295","topics":[]}]});

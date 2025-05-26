@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Defining the Layout of the Applet Message","href":"BusProcFramework\/topicrefs\/c_Defining_the_Layout_of_the_Applet_Message_ak1246456.html","attributes": {"data-id":"u30010263",},"menu": {"hasChildren":false,},"tocID":"u30010263-d45e67266","topics":[]}]});

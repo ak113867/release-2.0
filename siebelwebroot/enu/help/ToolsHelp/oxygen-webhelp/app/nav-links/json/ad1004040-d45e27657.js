@@ -1,0 +1,1 @@
+define({"topics" : [{"title":"Examples of Concatenating Strings","href":"eScript\/topicrefs\/c_Examples_of_Concatenating_Strings_ad1076755.html","attributes": {"data-id":"ad1076755",},"menu": {"hasChildren":false,},"tocID":"ad1076755-d45e27675","topics":[]}]});
